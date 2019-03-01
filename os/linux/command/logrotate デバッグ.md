@@ -1,4 +1,4 @@
-このとき-dオプションを付けることで実際にlogrotateは行われずに、どのように動作するのかをデバッグすることができます。
+このとき-dオプションを付けることで実際にlogrotateは行われずに、どのように動作するのかをデバッグすることができます。  
 https://qiita.com/zom/items/c72c7bac63462225971b
 <pre>
 $ /usr/sbin/logrotate -d /tmp/log/logrotate.conf
