@@ -1,3 +1,5 @@
+<https://fumiyas.github.io/2013/12/14/read.sh-advent-calendar.html>
+
 <pre>
 #!/bin/sh
 
