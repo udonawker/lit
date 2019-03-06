@@ -7,7 +7,7 @@ IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
 Someone could be eavesdropping on you right now (man-in-the-middle attack)!
 It is also possible that the RSA host key has just been changed.
 The fingerprint for the RSA key sent by the remote host is
-f8:99:fd:f0:5d:e7:ff:1f:36:f5:ae:63:10:25:f2:03.
+xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx.
 Please contact your system administrator.
 Add correct host key in /root/.ssh/known_hosts to get rid of this message.
 Offending key in /root/.ssh/known_hosts:90
