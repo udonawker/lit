@@ -41,7 +41,7 @@ eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 # nmcli c up eth1
 </pre>
 ここで指定する「eth1」はデバイス名ではなくて、先に指定した「接続名」ですので、ご注意下さい。デバイスに対するIPアドレスなどの割り当てもnmcliでやるのがよいでしょう。
-<br/>
+<br/><br/>
 ・ルーティングテーブルの確認
 <pre>
 # route -n
