@@ -1,5 +1,5 @@
 引用 
- [RHEL7/CentOS7でipコマンドをマスター](http://enakai00.hatenablog.com/entry/20140712/1405139841 "RHEL7/CentOS7でipコマンドをマスター")
+ [ループバックマウントなしで iso イメージファイルの中身をみるには](http://d.hatena.ne.jp/kyagi/20080601/1212313444 "ループバックマウントなしで iso イメージファイルの中身をみるには")
 <br/>
 <pre>
 $ sudo mount -o loop xxx.iso /mnt/iso
