@@ -34,10 +34,38 @@ ok: [garnet-vm10]
 
 FATAL: all hosts have already failed -- aborting
 
-PLAY RECAP ******************************************************************** 
+PLAY RECAP ********************************************************************
            to retry, use: --limit @/root/check.retry
 
-garnet-vm10                : ok=1    changed=0    unreachable=0    failed=0   
-garnet-vm11                : ok=1    changed=0    unreachable=0    failed=0   
-garnet-vm12                : ok=0    changed=0    unreachable=1    failed=0   
+garnet-vm10                : ok=1    changed=0    unreachable=0    failed=0
+garnet-vm11                : ok=1    changed=0    unreachable=0    failed=0
+garnet-vm12                : ok=0    changed=0    unreachable=1    failed=0
+</pre>
+なお、上記の check.yml で gather_facts: false としているところを削除する、もしくは gather_facts: true にすると以下の実行結果になる。<br/>
+GATHERING FACTS できないサーバが自動的に無視されてしまっているように見えるので、希望の対象サーバが全台チェックされるためには注意したほうがよさそう。<br/>GATHERING FACTS 関連のマニュアルを読めば謎が解けるのだろうか。<br/>
+<pre>
+# ansible-playbook check.yml  -e hosts=all
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+fatal: [garnet-vm12] => SSH encountered an unknown error during the connection.
+We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+ok: [garnet-vm11]
+ok: [garnet-vm10]
+
+TASK: [check reachability] **************************************************** 
+ok: [garnet-vm10]
+ok: [garnet-vm11]
+
+TASK: [check reachability] **************************************************** 
+ok: [garnet-vm10]
+ok: [garnet-vm11]
+
+PLAY RECAP ********************************************************************
+           to retry, use: --limit @/root/check.retry
+
+garnet-vm10                : ok=3    changed=0    unreachable=0    failed=0
+garnet-vm11                : ok=3    changed=0    unreachable=0    failed=0
+garnet-vm12                : ok=0    changed=0    unreachable=1    failed=0
 </pre>
