@@ -23,7 +23,8 @@ check.yml を以下のとおりに作成する。<br/>
       ping:
 </pre>
 <br/>
-garnet-vm10, garnet-vm11 のみが起動しており、garnet-vm12 が起動していない状態で実行すると、最初の ping 失敗で全体が停止する。<br/>
+garnet-vm10, garnet-vm11 のみが起動しており、garnet-vm12 が起動していない状態で実行すると、最初の ping 失敗で全体が停止する。
+<br/>
 <pre>
 # ansible-playbook check.yml -e hosts=all
 
