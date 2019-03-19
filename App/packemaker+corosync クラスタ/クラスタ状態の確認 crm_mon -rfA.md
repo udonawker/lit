@@ -46,6 +46,26 @@ r オプションは停止中のリソース、-f オプションはリソース
 詳細については crm_mon コマンドのオンラインマニュアルを参照してください。  
 <br/>
 「Last updated:」の後に最後にクラスタの状態が更新された日時、「Stack:」の後に Pacemaker とともにクラスタの制御を行うソフトウェア名、「Current DC:」の後に現在の DC のノード名、「Version:」の後に Pacemaker のバージョンが表示されます。  
+<br/>
 **DC とは**  
 **DC (Desinated Co-ordinator) は、クラスタ全体を統一的に管理するノードで、クラスタ内から一台のノードが選択されます。**
 **DC になったノードではほかのノードより多くのログメッセージが出力されます。**  
+<br/>
+「Online:」の後に Pacemaker が起動しているノード名が表示されます。 起動していないノードがあれば「OFFLINE:」の後にノード名が表示されます。  
+<pre>
+Online: [ alice bob ]
+</pre>
+「Full list of resources:」の下にリソースの状態が表示されます。  
+リソースの状態は、リソース名とリソースを制御するリソースエージェント名の後に表示され、Started が起動している状態、Stopped が停止している状態を表します。  
+また、「Started」の後にはリソースが起動しているノード名が表示されます。  
+<br/>
+「Master/Slave Set:」の後にマスタスレーブリソース名が表示されます。  
+マスタスレーブリソースは、複数のノードで起動するリソースで、起動中のリソースにはマスタとスレーブの状態があります。  
+PowerGres HA Pacemaker 版では、DRBD リソースがマスタスレーブリソースになります。  
+<br/>
+DRBD リソースでは、「Masters:」の後に DRBD リソースがプライマルロールとして起動しているノード名、「Slaves:」の後にセカンダリロールとして起動しているノード名が表示されます。 DRBD リソースが停止してい場合には「Stopped:」の後にノード名が表示されます。  
+<pre>
+ Master/Slave Set: powergres_drbd.drbd.ms_drbd
+     Masters: [ alice ]
+     Slaves: [ bob ]
+</pre>
