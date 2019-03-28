@@ -1,2 +1,2 @@
 引用 
-[Markdown記法 チートシート](https://github.hpe.com/vMPN-OVO/ovo_setting_ansible/commit/96aad4683d07c16db7149c81e7972095449b63ea "Markdown記法 チートシート")
+[Markdown記法 チートシート](https://qiita.com/Qiita/items/c686397e4a0f4f11683d "Markdown記法 チートシート")
