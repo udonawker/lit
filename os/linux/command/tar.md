@@ -2,6 +2,28 @@
 archive.tgz内のfile.txtを/home/xxxx/に解凍
 
 <pre>
+hoge.tar.gz
+  hoge/
+    001/
+      001.txt
+    002/
+      002.txt
+
+の場合
+tar xvfz hoge.tar.gz hoge/001/001.txt
+↓
+./hoge/
+  001/
+    001.txt
+
+tar xvfz hoge.tar.gz hoge/001/aaa.txt (-C .) --strip-components 2
+↓
+./001.txt
+
+
+  
+
+<pre>
 $ tar xzvf hoge.tar.gz
 カレントディレクトリに展開
 $ tar xzvf hoge.tar.gz -C tenkai
