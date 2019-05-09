@@ -20,16 +20,17 @@ tar xvfz hoge.tar.gz hoge/001/aaa.txt (-C .) --strip-components 2
 ↓
 ./001.txt
 
-
-  
-
 <pre>
-$ tar xzvf hoge.tar.gz
 カレントディレクトリに展開
-$ tar xzvf hoge.tar.gz -C tenkai
-ディレクトリ(フォルダ)「tenkai」内に展開する。
-$ tar xzvf hoge.tar.gz -C tenkai *.txt
-拡張子が「txt」のファイルのみをディレクトリ(フォルダ)「tenkai」内に展開する。
+$ tar xzvf hoge.tar.gz
+
+ディレクトリ(フォルダ)「/root/tenkai」内に展開する。
+$ tar xzvf hoge.tar.gz -C /root/tenkai
+
+★★★
+拡張子が「txt」のファイルのみをディレクトリ(フォルダ)「/root/tenkai」内に展開する。
+$ tar xzvf hoge.tar.gz -C /root/tenkai *.txt
+
 </pre>
 
 引用 
