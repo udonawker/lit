@@ -19,6 +19,7 @@ tar xvfz hoge.tar.gz hoge/001/001.txt
 tar xvfz hoge.tar.gz hoge/001/aaa.txt (-C .) --strip-components 2
 ↓
 ./001.txt
+</pre>
 
 <pre>
 カレントディレクトリに展開
