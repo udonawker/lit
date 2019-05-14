@@ -21,7 +21,7 @@ IF(COLUMNS(シート一覧) < ROW(A1),"",INDEX(シート一覧,ROW(A1)))
 <pre>
 =HYPERLINK("LINK先","別名")
 </pre>
-3.でシート名を表示したセルを指定して(Bだった場合)
+3.でシート名を表示したセルを指定して(B2だった場合)
 <pre>
 =HYPERLINK("#"&B2&"!A1",B2)
 </pre>
