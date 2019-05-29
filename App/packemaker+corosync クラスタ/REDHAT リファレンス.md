@@ -1,0 +1,1 @@
+[PACEMAKER を使用した RED HAT HIGH AVAILABILITY ADD-ON の設定](https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/6/html/configuring_the_red_hat_high_availability_add-on_with_pacemaker/index "PACEMAKER を使用した RED HAT HIGH AVAILABILITY ADD-ON の設定")
