@@ -105,4 +105,6 @@ IP4.ROUTE[2]:                           dst = 0.0.0.0/0, nh = xxx.xxx.xxx.xxx, m
 <pre>
 # nmcli d show
 # nmcli c show
+
+# teamdctl <teamdevname> state
 </pre>
