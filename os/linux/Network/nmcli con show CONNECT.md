@@ -100,3 +100,9 @@ IP4.GATEWAY:                            xxx.xxx.xxx.xxx
 IP4.ROUTE[1]:                           dst = xxx.xxx.xxx.xxx/24, nh = 0.0.0.0, mt = 400
 IP4.ROUTE[2]:                           dst = 0.0.0.0/0, nh = xxx.xxx.xxx.xxx, mt = 400
 </pre>
+
+
+<pre>
+# nmcli d show
+# nmcli c show
+</pre>
