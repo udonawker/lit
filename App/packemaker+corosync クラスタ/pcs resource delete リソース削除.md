@@ -1,3 +1,3 @@
 <pre>
-pcs resource delete [resource_id]
+pcs resource delete &lt;resource_id&gt;
 </pre>
