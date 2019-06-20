@@ -1,7 +1,9 @@
 #!/bin/bash
 
+#スクリプトディレクトリ
+readonly SCRIPT_DIR=$(cd $(dirname $0); pwd)
 #スクリプトの絶対パス
-readonly SCRIPT_PATH=$(cd $(dirname $0); pwd)/$(basename $0)
+readonly SCRIPT_PATH=${SCRIPT_DIR}/$(basename $0)
 #スクリプト名
 readonly SCRIPT_NAME=${0##*/}
 
