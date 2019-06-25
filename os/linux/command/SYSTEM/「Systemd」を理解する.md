@@ -166,6 +166,354 @@ enabled
 |linked|リンクされている。<br/>Unitファイルは異なるUnitファイルへのシンボリックリンクとなっている。<br/>（Systemdはリンク先の別Unitファイルの設定を読み取る）|
 |static|有効化／無効化の対象外。<br/>UnitファイルにWantedBy句がそもそも指定されていない。|
 
+#### ランレベルを取り扱う
+
+従来のランレベル関連の操作に相当する操作を説明する。
+
+##### 現在稼働するtarget（ランレベル）の変更
+以下のコマンドで現在稼働するtarget（従来のランレベル相当）を変更できる。<br/>
+なお、対象とするUnitは「起動ON / OFFの設定」に記載したUnitを指定する。<br/>
+
+<pre>
+systemctl isolate [対象Target Unit名]
+</pre>
+
+##### デフォルトの起動target（デフォルトのランレベル）の変更
+以下のコマンドでデフォルトで起動するtarget（デフォルトのランレベル相当）を変更できる。
+
+<pre>
+systemctl set-default [対象Target Unit名]
+</pre>
+
+<pre>
+$ #デフォルトtargetをgraphical.targetに設定
+$ #従来の「デフォルトランレベル=5設定」に相当
+$ sudo systemctl set-default graphical.target
+rm '/etc/systemd/system/default.target'
+ln -s '/usr/lib/systemd/system/graphical.target' '/etc/systemd/system/default.target'
+</pre>
+
+実行結果から分かるように`/etc/systemd/system/deafult.target`に`/usr/lib/systemd/graphical.target`へのシンボリックリンクを作成していることが分かる。<br/>
+`default.target`はSystemdによるブートの基点となるUnitである。<br/>
+Systemdはシステムブート時に`default.target`を探索し、`default.target`の設定を元にブートを操作を実行する。<br/>
+従来のランレベル切り替えに相当する操作は、この`default.target`のリンク先を変更することで実現されている。<br/>
+
+#### Unitの状態を把握する
+次に個々のUnitの状態を確認するためのコマンド群を見ていこう。
+
+##### 起動中のUnit一覧を取得
+
+以下のコマンドを実行することで、有効化されているUnit一覧を取得できる。
+
+<pre>
+systemctl  または  systemctl list-units
+</pre>
+
+<pre>
+$ #一部抜粋
+$ #現在有効化されているUnitの一覧
+$ systemctl list-units
+UNIT                                                       LOAD   ACTIVE SUB       DESCRIPTION
+proc-sys-fs-binfmt_misc.automount                          loaded active waiting   Arbitrary Executable File Formats File System Automount Poi
+sys-subsystem-net-devices-enp0s3.device                    loaded active plugged   PRO/1000 MT Desktop Adapter
+sys-subsystem-net-devices-enp0s8.device                    loaded active plugged   PRO/1000 MT Desktop Adapter
+-.mount                                                    loaded active mounted   /
+boot.mount                                                 loaded active mounted   /boot
+dev-hugepages.mount                                        loaded active mounted   Huge Pages File System
+dev-mqueue.mount                                           loaded active mounted   POSIX Message Queue File System
+auditd.service                                             loaded active running   Security Auditing Service
+avahi-daemon.service                                       loaded active running   Avahi mDNS/DNS-SD Stack
+...
+</pre>
+
+また、`--type`オプションを利用することでUnitタイプを指定できる。
+
+<pre>
+$ #一部抜粋
+$ #現在有効化されており、かつserviceタイプのUnit一覧
+$ systemctl list-units --type=service
+UNIT                                                        LOAD   ACTIVE SUB     DESCRIPTION
+auditd.service                                              loaded active running Security Auditing Service
+avahi-daemon.service                                        loaded active running Avahi mDNS/DNS-SD Stack
+crond.service                                               loaded active running Command Scheduler
+dbus.service                                                loaded active running D-Bus System Message Bus
+firewalld.service                                           loaded active running firewalld - dynamic firewall daemon
+getty@tty1.service                                          loaded active running Getty on tty1
+...
+</pre>
+
+表示項目のうちUNITはUnit名、LOADはSystemdへの設定読み込み状況、ACTIVE、SUBがUnitの実行状態、DESCRIPTIONがUnitの概要を表している。<br/>
+起動対象となっているにも関わらず、起動に失敗している場合はACTIVEやSUBがfailedといった表記となる。<br/>
+
+##### Systemdが認識しているUnit一覧の表示
+
+以下のコマンドで確認できる。
+
+<pre>
+systemctl list-unit-files
+</pre>
+
+<pre>
+$ #一部抜粋
+$ #Systemdが認識しているUnitの一覧
+$ systemctl list-unit-files
+UNIT FILE                                   STATE   
+proc-sys-fs-binfmt_misc.automount           static  
+dev-hugepages.mount                         static  
+dev-mqueue.mount                            static  
+proc-sys-fs-binfmt_misc.mount               static  
+sys-fs-fuse-connections.mount               static  
+sys-kernel-config.mount                     static  
+sys-kernel-debug.mount                      static  
+tmp.mount                                   disabled
+brandbot.path                               disabled
+systemd-ask-password-console.path           static  
+systemd-ask-password-plymouth.path          static  
+...
+</pre>
+
+STATE列はUNITの起動設定を表している。<br/>
+表示されている内容は「起動ON / OFFの確認方法」に記載した表の内容と同様である。<br/>
+
+##### Unitの現在の状態を確認
+以下のコマンドでUnitの状態を確認できる。
+
+<pre>
+systemctl status [Unit名]
+</pre>
+
+<pre>
+$ #apache起動
+$ sudo systemctl start httpd.service
+ 
+$ #apacheの状態確認 -起動状態-
+$ systemctl status httpd.service
+httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; linked)
+   Active: active (running) since 土 2014-07-19 23:39:27 JST; 1min 34s ago
+ Main PID: 2641 (httpd)
+   Status: "Total requests: 0; Current requests/sec: 0; Current traffic:   0 B/sec"
+   CGroup: /system.slice/httpd.service
+           ├─2641 /usr/sbin/httpd -DFOREGROUND
+           ├─2642 /usr/sbin/httpd -DFOREGROUND
+           ├─2643 /usr/sbin/httpd -DFOREGROUND
+           ├─2644 /usr/sbin/httpd -DFOREGROUND
+           ├─2645 /usr/sbin/httpd -DFOREGROUND
+           └─2646 /usr/sbin/httpd -DFOREGROUND
+ 
+$ #apache停止
+$ sudo systemctl stop httpd.service
+ 
+$ #apacheの状態確認 -停止状態-
+$ systemctl status httpd.service
+httpd.service - The Apache HTTP Server
+ Loaded: loaded (/usr/lib/systemd/system/httpd.service; linked)
+ Active: inactive (dead)
+ 
+ 7月 19 23:39:27 localhost.localdomain systemd[1]: Starting The Apache HTTP Server...
+ 7月 19 23:39:27 localhost.localdomain httpd[2641]: AH00558: httpd: Could not reliably determine the server's fully qualified domain...essage
+ 7月 19 23:39:27 localhost.localdomain systemd[1]: Started The Apache HTTP Server.
+ 7月 19 23:44:49 localhost.localdomain systemd[1]: Stopping The Apache HTTP Server...
+ 7月 19 23:44:50 localhost.localdomain systemd[1]: Stopped The Apache HTTP Server.
+Hint: Some lines were ellipsized, use -l to show in full.
+</pre>
+
+調査対象Unitの現在の状況（上記例ではactive）や、対象Unitを元としたプロセス一覧などを把握できる。
+
+#### UNITの依存関係を把握する
+
+Unit間の依存関係は個々のUnitファイルに定義されている。<br/>
+しかし、Unitファイルは多数存在し、全体の依存関係を把握するのは困難だ。<br/>
+以下のコマンドで対象のUnitの依存関係をツリー構造で表示できる。<br/>
+
+<pre>
+systemctl list-dependencies [Unit名]
+</pre>
+
+<pre>
+$ #一部抜粋
+$ #apahceが依存しているUnit一覧を表示
+$ systemctl list-dependencies httpd.service
+httpd.service
+├─system.slice
+└─basic.target
+  ├─firewalld.service
+  ├─microcode.service
+  ├─rhel-autorelabel-mark.service
+  ├─rhel-autorelabel.service
+  ├─rhel-configure.service
+  ├─rhel-dmesg.service
+  ├─rhel-loadmodules.service
+  ├─paths.target
+  ├─slices.target
+  │ ├─-.slice
+  │ └─system.slice
+  ├─sockets.target
+  │ ├─avahi-daemon.socket
+  │ ├─dbus.socket
+...
+</pre>
+
+また、以下のオプションも利用可能だ。<br/>
+
+|オプション|意味|
+|--- |--- |
+|--reverse|対象Unitに依存しているUnit一覧を表示する。<br/>例えばsystemctl --reverse list-dependencies sysinit.targetは、sysinit.targetが起動対象とならない限り、起動できないUnitを一覧表示する。|
+|--after|対象Unitよりも先に起動されるべきUnit一覧を表示する。<br/>例えばsystemctl --after list-dependencies sysinit.targetは、systeinit.targetよりも先に起動されるべきUnitを一覧表示する。<br/>※ 結果に表示されるUnitはあくまで起動順を指しており、必ずしも同時起動の対象となるUnitではない|
+|--before|対象Unitよりも後に起動されるべきUnit一覧を表示する。<br/>例えばsystemctl --reverse list-dependencies sysinit.targetは、sysinit.targetが起動した後に起動されるべきUnitを一覧表示する。|
+
+なお、Systemdでは、暗黙的に起動順や依存関係が設定されるtargetが存在する（特殊なUnitはマニュアル[systemd.special(7)](http://www.freedesktop.org/software/systemd/man/systemd.special.html "systemd.special(7)")を参照）。<br/>
+`list-dependencies`はこういったUnitファイルに直接記載されない依存・起動順の表示が行えるため、依存・起動順の確認はファイルの中身を直接見るよりも当コマンドで利用した方が確実だ。<br/>
+
+#### Unitファイルを編集し、Systemdに反映する
+
+##### Unitファイルを編集する
+様々なシステム管理コマンドを列挙したが、Unitファイルを編集することで設定を変更することができる。<br/>
+`/etc/systemd/system`ディレクトリ配下に`/usr/lib/systemd/system`配下のUnitファイルをコピーしてからUnitファイルを編集しよう。<br/>
+`/usr/lib/systemd/system`配下のUnitファイルはUnitインストール時の初期設定を保持するためのディレクトリであり、このディレクトリ配下のUnitは編集してはいけない。<br/>
+
+##### Unitファイルの変更をSystemdに通知する
+
+以下のコマンドを実行する事で、Unitファイルの変更をSystemdに通知することができる。<br/>
+このコマンドを実行しないと変更内容がSystemdに反映されない。<br/>
+（Unitファイルの直接編集ではなく、`systemctl`コマンドを利用して設定変更した場合は実行不要である）<br/>
+
+<pre>
+systemctl daemon-reload
+</pre>
+
+#### サーバシャットダウン・再起動・サスペンドを実施する
+
+`systemctl`コマンドはサーバのシャットダウンや再起動を実施できる。<br/>
+（従来の`shutdown`コマンドも引き続き利用可能）<br/>
+
+<pre>
+systemctl halt/poweroff/reboot/suspend/hibernate/hybrid-sleep
+</pre>
+
+`suspend`は”suspend to ram”、`hibernate`は”suspend to disk(swap)”、`hybrid-sleep`は”suspend to both”と思われる。
+
+### journalctlを利用してSystemdログを参照する
+
+ここからはSystemctl独自のログ機構であるSystemd journalを利用したログの照会方法を解説していく。
+
+#### Systemd journalとは
+
+Systemdは独自のログ機構である[Systemd journal](http://www.freedesktop.org/software/systemd/man/systemd-journald.service.html "Systemd journal")を保持している。RHEL7/CentOS7はFedora19をベースとしており、syslog（rsyslogd）とSystemd Journalが相乗りした状態となっているが、[Fedora20からはsyslogが非デフォルトとなり](http://fedoraproject.org/wiki/Changes/NoDefaultSyslog "http://fedoraproject.org/wiki/Changes/NoDefaultSyslog")、基本的にSystemd journalを利用する方針となった。<br/>
+この点を踏まえるとRHEL/CentOSのログ機構は将来的にはSystemd journalに一本化される可能性が高い。<br/>
+<br/>
+
+Systemd journalではSystemdが記録した様々なログを`journalctl`コマンドを通して照会する。<br/>
+Systemdはシステムの起動〜サービスの管理を行うため、ありとあらゆるシステムのログを収集できる立場にあるが、`journalctl`では、こららのログを必要に応じて抽出して閲覧することができるのだ。<br/>
+<br/>
+当項では、`journalctl`の基本的な利用方法と、Systemdが取得するログの永続化方法について解説する。<br/>
+（RHEL7/CentOS7のSystemdのログはデフォルトではtmpfs上に格納されており、システム再起動時にログが消失してしまう）
+
+#### journalctlの利用方法
+パラメータ無しで`journalctl`を実行すると古いログから順に全ログが出力される。
+
+<pre>
+journalctl
+</pre>
+
+<pre>
+$ #一部抜粋
+$ #全ログの表示
+$ sudo journalctl
+-- Logs begin at 日 2014-07-20 20:23:11 JST, end at 日 2014-07-20 21:02:46 JST. --
+ 7月 20 20:23:11 localhost.localdomain systemd-journal[80]: Runtime journal is using 4.0M (max 24.5M, leaving 36.7M of free 241.1M, current li
+ 7月 20 20:23:11 localhost.localdomain systemd-journal[80]: Runtime journal is using 4.0M (max 24.5M, leaving 36.7M of free 241.1M, current li
+ 7月 20 20:23:11 localhost.localdomain kernel: Initializing cgroup subsys cpuset
+ 7月 20 20:23:11 localhost.localdomain kernel: Initializing cgroup subsys cpu
+ 7月 20 20:23:11 localhost.localdomain kernel: Initializing cgroup subsys cpuacct
+ 7月 20 20:23:11 localhost.localdomain kernel: Linux version 3.10.0-123.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.2 201401
+ 7月 20 20:23:11 localhost.localdomain kernel: Command line: BOOT_IMAGE=/vmlinuz-3.10.0-123.el7.x86_64 root=UUID=3e7830d3-0d7c-4f1d-9b6b-2ca10
+ 7月 20 20:23:11 localhost.localdomain kernel: e820: BIOS-provided physical RAM map:
+...
+</pre>
+ログを見ると分かるが、システム起動時のカーネルログや個々のUnitに関するログが混在した状態で表示される。<br/>
+以下に記載するオプションを利用して、表示対象を抜粋することができる。<br/>
+（オプション一覧と詳細は[journalctlのmanページ](http://www.freedesktop.org/software/systemd/man/journalctl.html "journalctlのmanページ")を参照）
+
+|オプション|書式|意味|
+|--- |--- |--- |
+|-u<br/>--unit|jorunalctl -u [Unit名]<br/>journalctl --unit=[Unit名]|指定したUnitに関するログのみ抜粋する。|
+|_PID|jounalctl _PID=[プロセスID]|指定したプロセスIDを持つプロセスのログのみ抜粋する。|
+|-p<br/>--priority|jounalctl -p [Priority]<br/>jounalctl --priority=[Priority]|指定したプライオリティに関するログのみ抜粋する。<br/>指定できるプライオリティはsyslogと同じ。<br/>(ただし、syslogでいう"warn"は"warning"と表記する)|
+|-b|journalctl -b<br/>jounalctl -b -[数値]|起動時からの全メッセージを表示。<br/>[数値]に"0"（デフォルト）を指定した場合、現在の起動以降のログを表示する。<br/>"1"の場合は前回起動の関するログを表示する。<br/>"2"は前々回起動・・・という形式。|
+|-f|journalctl -f|新しいログを表示し、ログが追加される度に追跡表示する。<br/>tail -fと同じ使い方ができる。|
+|-n<br/>--line|journalctl -n [行数]<br/>journalctl --line=[行数]|指定した末尾の行数を表示する。<br/>-fはデフォルト10行なので、組み合わせて使うと良い。<br/>（よくあるtailの使い方）|
+|-o<br/>--output|journalctl -o [Format]<br/>journalctl --output=[Format]|指定したフォーマットでログを出力する。<br/>指定できるフォーマットはman journalctl(1)を参照。<br/>json形式でログ出力もできる。|
+|-k<br/>--dmesg|journalctl -k<br/>journalctl --dmesg|カーネルログのみ抜粋する。<br/>dmesgと同様の表示。|
+
+
+#### journalログを永続化する
+
+Systemd journalのログはデフォルト設定の場合`/run/log/journal`配下に保存されている。<br/>
+`/run`ディレクトリはtmpfsとなっているため、システムを再起動した場合ログが消失してしまう。<br/>
+これを防ぐ（journalログを永続化する）方法を確認していこう。<br/>
+
+##### jorunalログの設定
+
+Systemd journalの設定は`/etc/systemd/journald.conf`で行う。<br/>
+デフォルトの状態では、以下のように全ての設定がコメントアウトされた状態となっている。<br/>
+
+<pre>
+$ cat /etc/systemd/journald.conf 
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it
+#  under the terms of the GNU Lesser General Public License as published by
+#  the Free Software Foundation; either version 2.1 of the License, or
+#  (at your option) any later version.
+#
+# See journald.conf(5) for details
+ 
+[Journal]
+#Storage=auto
+#Compress=yes
+#Seal=yes
+#SplitMode=login
+#SyncIntervalSec=5m
+#RateLimitInterval=30s
+#RateLimitBurst=1000
+#SystemMaxUse=
+#SystemKeepFree=
+#SystemMaxFileSize=
+#RuntimeMaxUse=
+#RuntimeKeepFree=
+#RuntimeMaxFileSize=
+#MaxRetentionSec=
+#MaxFileSec=1month
+#ForwardToSyslog=yes
+#ForwardToKMsg=no
+#ForwardToConsole=no
+#TTYPath=/dev/console
+#MaxLevelStore=debug
+#MaxLevelSyslog=debug
+#MaxLevelKMsg=notice
+#MaxLevelConsole=info
+ログの永続化に関する設定項目は12行目に表示されてい
+</pre>
+
+ログの永続化に関する設定項目は12行目に表示されているStorageである。Storageは主に以下の項目を設定できる。<br/>
+
+|設定値|内容|
+|--- |--- |
+|auto|デフォルト設定。以下のルールでログの格納先を決定する。<br/>/var/log/journalディレクトリが存在する場合、この配下にログを記録する。<br/>（ディスク保存）<br/>/var/log/journalディレクトリが存在しない場合は/run/log/journal配下にログを記録する。<br/>（メモリ保存）|
+|volatile|ログはメモリ上(/run/log/journal配下）に格納される。<br/>システム再起動後にログを持ち越すことはできない。|
+|persistent|ログはディスク上（/var/log/journal配下）に格納される。<br/>/var/log/journalディレクトリが存在しない場合でも、systemdは自動的にディレクトリを作成し、その配下にログを記録する。|
+
+### まとめ
+駆け足でSystemdによるシステム管理のコマンドを紹介させていただいた。<br/>Systemd理解への一助となれば幸いである。<br/>
+<br/>
+今回、Systemdを調査を通してSystemdの適用範囲が非常に広い事を改めて思い知った次第だ。Systemdはシステムの起動から管理まで至るところに登場し、様々な操作を行うことができる。”システムデーモン”というネーミングは、システムそのものを管理するデーモンという意味で正に的を得ているのではないだろうか。今後RHEL7/CentOS7の導入が進んだ場合、Systemdの理解は必須となると思われる。<br/>
+init/Upstartをはじめ、様々な既存の仕組みを置き換えるSystemdを理解しなければまともなサーバ管理は行えないだろう。<br/>
+<br/>
+また、Systemdではmanが非常に充実している。<br/>
+例えばSystemd本体は[systemd(1)](http://www.freedesktop.org/software/systemd/man/systemd.html "systemd(1)") 、systemctlは[systemctl(1)](http://www.freedesktop.org/software/systemd/man/systemctl.html "systemctl(1)")、Unitファイルは[systemd.unit(5)](http://www.freedesktop.org/software/systemd/man/systemd.unit.html "systemd.unit(5)")といった具合だ。<br/>
+これらのSystemd関連のmanは[systemd.index(7)](http://www.freedesktop.org/software/systemd/man/systemd.unit.html "systemd.index(7)")にまとめられている。<br/>
+Systemdでつまづいた際は、落ち着いてmanを参照すると良いだろう。<br/>
 
 
 
