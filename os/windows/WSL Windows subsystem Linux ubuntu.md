@@ -20,6 +20,8 @@
 $ sudo sed -i.org -e 's%http://.*.ubuntu.com%http://ftp.jaist.ac.jp/pub/Linux%g' /etc/apt/sources.list
 </pre>
 
+<br/><br/>
+
 ### WSL（Linux）でのマウント
 
 mount -t drvfs ＜デバイス名＞ ＜マウントポイント＞<br/>
