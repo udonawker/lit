@@ -17,7 +17,7 @@ $ sudo systemctl start ssh
 * ポートフォワーディングボタン押下<br/>
 * 右端の＋ボタンを押下<br/>
 * 名前カラムに適当な名前、ホストポートに3333、ゲストポートに22を設定<br/>
-![ネットワーク設定](ubuntu_network.png)
+![ネットワーク設定](ubuntu_network_.png)
 
 
 ### 4. Teratermで接続
