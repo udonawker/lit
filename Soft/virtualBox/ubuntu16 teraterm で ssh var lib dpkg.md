@@ -22,3 +22,16 @@ $ sudo systemctl start ssh
 
 ### 4. Teratermで接続
 * Teratermを実行し、ホスト(T)に「localhost:3333」、TCPポート(P)に「22」を設定し接続する
+
+#### *
+E: ロック /var/lib/dpkg/lock が取得できませんでした。 - open（11: リソースが一時的に利用できません）<br/>
+...<br/>
+
+上記が出た場合は下記コマンド実行
+<pre>
+$ sudo rm /var/lib/apt/lists/lock
+$ sudo rm /var/lib/dpkg/lock
+
+$ sudo apt-get update
+</pre>
+
