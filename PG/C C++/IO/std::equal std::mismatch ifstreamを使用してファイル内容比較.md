@@ -2,10 +2,10 @@
 [ファイルの比較](https://www.wabiapp.com/WabiSampleSource/windows/file_compere.html "ファイルの比較")<br/>
 
 <pre>
-#include <stdio.h>
-#include <tchar.h>
-#include <iostream>
-#include <fstream>
+#include &lt;stdio.h&gt;
+#include &lt;tchar.h&gt;
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
  
  
  
