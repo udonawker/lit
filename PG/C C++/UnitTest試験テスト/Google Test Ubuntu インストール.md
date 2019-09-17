@@ -27,8 +27,9 @@ cd /usr/src/gmock/gtest
 sudo make
 </pre>
 
-### gtestライブラリをリンクする
+### gmock,gtestライブラリをリンクする
 
 <pre>
+sudo ln -s /usr/src/gmock/libgmock* /usr/lib/
 sudo ln -s /usr/src/gmock/gtest/libgtest* /usr/lib/
 </pre>
