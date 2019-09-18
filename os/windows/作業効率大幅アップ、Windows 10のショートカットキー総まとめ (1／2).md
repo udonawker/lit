@@ -2,7 +2,7 @@
 [作業効率大幅アップ、Windows 10のショートカットキー総まとめ (1/2)](https://www.atmarkit.co.jp/ait/articles/1805/21/news020.html)<br/>
 <br/>
 Windows Vista以降、Windows OSが標準で提供するショートカットキーのうち、新規に追加されるものは、ほとんどが［Windowsロゴ］キー（以下、［Windows］キーと記す）と他のキーを併用するものになった。<br/>
-![日本語109キーボードのキーレイアウト](https://image.itmedia.co.jp/ait/articles/1805/21/wi-win10shortcut01.png)
+![日本語109キーボードのキーレイアウト](https://image.itmedia.co.jp/ait/articles/1805/21/wi-win10shortcut01.png)<br/>
 また、Windows 8.xでは、タブレットやタッチ、Windowsストアアプリ（UWPアプリ）などを考慮して［Windows］キーを併用するショートカットキーが刷新された。Windows 10では、Windows 8.xとの互換性を考慮しつつ、バージョンが上がるごとにショートカットキーが追加されたり、割り当てが変更されたりしている。<br/>
 そもそも、ショートカットキーの持つ機能には、大きく分けると次のような種類がある<br/>
 <br/>
