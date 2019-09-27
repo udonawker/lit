@@ -1,0 +1,1 @@
+[Cryptographic Hardware and Embedded System - CHES 2003](https://books.google.co.jp/books?id=6L5TXxyfl4UC&pg=PA415&lpg=PA415&dq=key+conjuring&source=bl&ots=w847hWTuo3&sig=ACfU3U2xZ4aJE-W77xHG7-s7k2x0jOUcpw&hl=ja&sa=X&ved=2ahUKEwiHybrmufDkAhXdxYsBHel4DssQ6AEwGXoECAkQAQ#v=onepage&q=key%20conjuring&f=false)<br/>
