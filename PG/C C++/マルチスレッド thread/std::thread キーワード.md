@@ -6,6 +6,8 @@ std::launch<br/>
 std::async<br/>
 std::future_category<br/>
 
+thread_local [スレッドローカルストレージ](https://cpprefjp.github.io/lang/cpp11/thread_local_storage.html)<br/><br/>
+
 - c++11からはスレッドが言語に取り込まれている．
 - コンパイルには-pthreadを付ける．
 - スレッドを一時的に止めるときにはsleepではなく，スレッド用のstd::this_thread::thread_for()を使う．
