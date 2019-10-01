@@ -1,3 +1,7 @@
+使用例<br/>
+[C++11のThreadを使ってRead-Write Lockパターン](https://qiita.com/hiro4669/items/bffbfa93312f2b7f6870)<br/>
+[C++11のthreadで遊んでみる その3 - condition_variable編](https://minus9d.hatenablog.com/entry/20131009/1381326432)<br/>
+
 # [条件変数の利用方法](https://cpprefjp.github.io/article/lib/how_to_use_cv.html)
 
 標準ヘッダ<condition_variable>で提供される、条件変数(condition variable)の利用方法について説明する。<br/>
