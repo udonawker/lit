@@ -10,14 +10,30 @@
 - 実数の比較
 - テンプレート型を明示的に指定
 <pre>
-std::max<int>( a, v.size() )
+std::max&lt;int&gt;( a, v.size() )
 </pre>
 - 論理演算の結果をそのまま使う
 - 二重否定
+<pre>
+res += !!( a % m )
+</pre>
 - 切り上げ整数除算
+<pre>
+( a + m - 1 ) / m
+</pre>
 - 四捨五入
+<pre>
+(int)( a + 0.5 )
+</pre>
 - 条件演算子を左辺に
+<pre>
+vector&lt;int&gt; v1, v2;
+( i &lt; x ? v1 : v2 ).push_back( i );
+</pre>
 - 複合代入式も左辺値
+<pre>
+( res += dp[i] ) %= MOD;
+</pre>
 - 入力の終わりまで処理
 <pre>
 while ( std::cin >> hoge )
@@ -31,11 +47,22 @@ std::string s;
 std::getline( std::cin, s );
 </pre>
 - 余計な文字を読み飛ばす
+<pre>
+cin.ignore();
+</pre>
 - 複数の値を空白区切りで一行に出力
 
 ## STL を使う
 - 文字列の連結
+    - std::accumulate を使って文字列を連結することができます
+<pre>
+vector<string> ss; // 入力で受け取った string の配列
+string s = accumulate( ss.begin(), ss.end(), string() );
+</pre>
 - std::accumulate の型
+<pre>
+accumulate( v.begin(), v.end(), 0LL )
+</pre>
 - ユニーク要素数を手軽に数える
 <pre>
 set<int>( v.begin(), v.end() ).size()
