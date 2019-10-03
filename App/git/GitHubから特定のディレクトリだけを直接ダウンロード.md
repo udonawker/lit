@@ -66,3 +66,6 @@ git svn clone https://github.com/XXX/YYY/trunk/ZZZ
 
 cloneして出来たフォルダですが，Gitの管理から外すには<br/>
 以下のように.gitと書いてあるフォルダを削除します。<br/>
+
+その他
+[GitHub のリポジトリ内のサブディレクトリのみをダウンロードする](https://blog.clock-up.jp/entry/2016/12/09/github-sub-directory-download)<br/>
