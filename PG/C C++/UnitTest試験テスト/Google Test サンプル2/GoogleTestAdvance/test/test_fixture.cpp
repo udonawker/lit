@@ -9,8 +9,8 @@ namespace {//}
 class SamplePredTest : public ::testing::Test
 {
 protected:
-    //static void SetUpTestCase() {}
-    //static void TearDownTestCase() {}
+    static void SetUpTestCase() {}
+    static void TearDownTestCase() {}
 
     SamplePredTest() {}
     virtual ~SamplePredTest() {}
@@ -76,7 +76,14 @@ TEST_F(SamplePredTest, IsPrimePredFormat) {
 }
 
 // 値をパラメータ化したテスト                                                                                    // ↓パラメータの型
-class SamplePredParameterTest : public SamplePredTest, public ::testing::WithParamInterface<int> {};
+class SamplePredParameterTest : public SamplePredTest, public ::testing::WithParamInterface<int> {
+public:
+    static void SetUpTestCase() {}
+    static void TearDownTestCase() {}
+    // SamplePredTest::SetUpTestCase(),SamplePredTest::TearDownTestCase()を削除するか
+    // public SamplePredParameterTest::SetUpTestCase() SamplePredParameterTes::TearDownTestCase()を定義するかしないとコンパイルエラーになる
+    // protected SamplePredParameterTest::SetUpTestCase() ... でもダメ
+};
 
 INSTANTIATE_TEST_CASE_P(
     ParameterTest,
@@ -90,14 +97,7 @@ TEST_P(SamplePredParameterTest, ParameterTest){
 
 // 値をパラメータ化したテスト 複数要素を持つパラメータ
 // 参照[gtest] 複数要素を持つパラメータでテストを書く(https://srz-zumix.blogspot.com/2014/10/gtest.html)
-class SampleMultiParameterTest : public ::testing::TestWithParam<std::tuple<int, int, int>> {
-public:
-    static void SetUpTestCase() {}
-    static void TearDownTestCase() {}
-    
-    SampleMultiParameterTest() {}
-    virtual ~SampleMultiParameterTest() {}
-};
+class SampleMultiParameterTest : public ::testing::TestWithParam<std::tuple<int, int, int>> {};
 
 INSTANTIATE_TEST_CASE_P(
     MultiParameterTest,
