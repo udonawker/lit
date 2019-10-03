@@ -1,3 +1,5 @@
+公式ヘルプ [入力補完機能](https://sakura-editor.github.io/help/HLP000104.html)<br/>
+
 ### 1. 任意の場所にキーワードファイルを作成する。
 
 例. C:/Program Files (x86)/sakura/auto_complete/ak_basic.txt
