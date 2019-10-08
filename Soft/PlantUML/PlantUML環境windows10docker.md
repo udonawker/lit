@@ -14,4 +14,4 @@ Visual Studio Code上では、拡張機能の説明ページに従って、以�
 </pre>
 
 [WindowsでDocker環境を試してみる](https://qiita.com/fkooo/items/d2fddef9091b906675ca)<br/>
-[Dockerの基本機能と全体像のイメージを整理してみる](https://qiita.com/fkooo/items/d2fddef9091b906675ca)<br/>
+[Dockerの基本機能と全体像のイメージを整理してみる](https://qiita.com/fkooo/items/934c7b6f1f0c0e8d1b21)<br/>
