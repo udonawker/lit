@@ -3,7 +3,7 @@
 ### 1. Mardocプロジェクトの[ダウンロードページ](http://mergedoc.osdn.jp/)より Pleiades プラグイン（pleiades.zip）をダウンロードする。
 - pleiades.zipをダウンロードし、解凍する
 
-![1](Pleiades プラグイン・ダウンロード.png) <br/>
+![1](https://bayashita.com/img/sanma.gif) <br/>
 
 ### 2.「Pleiades」の設定ファイルを上書きコピーする
 - 解凍した「Pleiades」フォルダー内の「plugins」と「features」フォルダーと「eclipse.exe -clean.cmd」ファイルを、インストールしたEclipseのホームフォルダーにコピーする
