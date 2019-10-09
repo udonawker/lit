@@ -3,15 +3,15 @@
 ### 1. Mardocプロジェクトの[ダウンロードページ](http://mergedoc.osdn.jp/)より Pleiades プラグイン（pleiades.zip）をダウンロードする。
 - pleiades.zipをダウンロードし、解凍する
 
-![1](eclipse_ja_01.png)<br/>
+![1](eclipse_ja_1.png)<br/>
 
 ### 2.「Pleiades」の設定ファイルを上書きコピーする
 - 解凍した「Pleiades」フォルダー内の「plugins」と「features」フォルダーと「eclipse.exe -clean.cmd」ファイルを、インストールしたEclipseのホームフォルダーにコピーする
 - この操作をすべてのファイルとフォルダーに適用するにチェックをいれ、マージするをクリックする
 
-![2](eclipse_ja_02.png)<br/>
+![2](eclipse_ja_2.png)<br/>
 
-![3](eclipse_ja_03.png)<br/>
+![3](eclipse_ja_3.png)<br/>
 
 ### 3. 「eclipse.ini」ファイルを編集する
 
@@ -23,7 +23,7 @@
 -javaagent:plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar
 </pre>
 
-![3](eclipse_ja_04.png)<br/>
+![3](eclipse_ja_4.png)<br/>
 
 
 ## コマンドライン
