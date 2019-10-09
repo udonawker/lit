@@ -9,7 +9,7 @@
 - 解凍した「Pleiades」フォルダー内の「plugins」と「features」フォルダーと「eclipse.exe -clean.cmd」ファイルを、インストールしたEclipseのホームフォルダーにコピーする
 - この操作をすべてのファイルとフォルダーに適用するにチェックをいれ、マージするをクリックする
 
-![2](eclipse_ja_02)<br/>
+![2](eclipse_ja_02.png)<br/>
 
 ![3](eclipse_ja_03.png)<br/>
 
