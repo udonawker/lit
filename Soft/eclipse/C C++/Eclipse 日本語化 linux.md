@@ -23,7 +23,7 @@
 -javaagent:plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar
 </pre>
 
-![3](eclipse_ja_03.png)<br/>
+![3](eclipse_ja_04.png)<br/>
 
 
 ## コマンドライン
