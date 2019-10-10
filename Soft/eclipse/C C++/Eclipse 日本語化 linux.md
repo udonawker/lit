@@ -15,8 +15,8 @@
 
 ### 3. 「eclipse.ini」ファイルを編集する
 
--Eclipseのホームフォルダー内のeclipse.iniを編集する
--最終行に以下の２行を追加する
+- Eclipseのホームフォルダー内のeclipse.iniを編集する
+- 最終行に以下の２行を追加する
 
 <pre>
 -Xverify:none
