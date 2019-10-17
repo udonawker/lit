@@ -1,0 +1,1 @@
+[Windows 版 Microsoft Word のキーボード ショートカット](https://support.office.com/ja-jp/article/Windows-%E7%89%88-Microsoft-Word-%E3%81%AE%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89-%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88-95ef89dd-7142-4b50-afb2-f762f663ceb2)<br/>
