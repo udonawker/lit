@@ -38,14 +38,20 @@ cd winetricks-20181203
 sudo make install
 </pre>
 
-## 設定画面
+## winetricksによるWineの文字化け解消
 
-Wineの設定画面は以下のコマンドで出ます。<br/>
-上記同様端末（Ctrl+Alt+T）を開いて以下を入力適用すればOKです。（Terminal~$）<br/>
+- winetricks起動
 
 <pre>
-winecfg
+$ winetricks
 </pre>
+
+- 「Select the default wineprefix」を選択してOK。
+- ダイアログが出るのでOKを押す。
+- 「Install a font」を選択。
+- 「cjkfonts」にチェックをつけてOK。
+
+※インストール中エラーが表示されるが、すべてOKで継続
 
 ### ★補足 文字化けについて
 winecfgを起動するとなぜか日本語は表示されるのに、英語が表示されません。<br/>
@@ -54,6 +60,15 @@ winecfgを起動する時は「LANG=C winecfg」<br/>
 wineを起動するときは「LANG=C wine」<br/>
 という風に「LANG=C」を使えば英語表記で使えます。<br/>
 フォントをインストールするとかなり大きなディスク容量を消費します。<br/>
+
+## 設定画面
+
+Wineの設定画面は以下のコマンドで出ます。<br/>
+上記同様端末（Ctrl+Alt+T）を開いて以下を入力適用すればOKです。（Terminal~$）<br/>
+
+<pre>
+winecfg
+</pre>
 
 ## Windowsのインストーラーを起動
 
