@@ -1,0 +1,284 @@
+[Linux Device Drivers](http://www.hep.by/gnu/kernel/device-drivers/index.html)<br/>
+
+# 1. Driver Basics
+- Driver Entry and Exit points
+- Atomic and pointer manipulation
+- Delaying, scheduling, and timer routines
+- Wait queues and Wake events
+- High-resolution timers
+- Workqueues and Kevents
+- Internal Functions
+- Kernel objects manipulation
+- Kernel utility functions
+- Device Resource Management
+# 2. Device drivers infrastructure
+- The Basic Device Driver-Model Structures
+- Device Drivers Base
+- Device Drivers Power Management
+- Device Drivers ACPI Support
+- Device drivers PnP support
+- Userspace IO devices
+# 3. Parallel Port Devices
+- parport_yield — relinquish a parallel port temporarily
+- parport_yield_blocking — relinquish a parallel port temporarily
+- parport_wait_event — wait for an event on a parallel port
+- parport_wait_peripheral — wait for status lines to change in 35ms
+- parport_negotiate — negotiate an IEEE 1284 mode
+- parport_write — write a block of data to a parallel port
+- parport_read — read a block of data from a parallel port
+- parport_set_timeout — set the inactivity timeout for a device
+- parport_register_driver — register a parallel port device driver
+- parport_unregister_driver — deregister a parallel port device driver
+- parport_get_port — increment a port's reference count
+- parport_put_port — decrement a port's reference count
+- parport_register_port — register a parallel port
+- parport_announce_port — tell device drivers about a parallel port
+- parport_remove_port — deregister a parallel port
+- parport_register_device — register a device on a parallel port
+- parport_unregister_device — deregister a device on a parallel port
+- parport_find_number — find a parallel port by number
+- parport_find_base — find a parallel port by base address
+- parport_claim — claim access to a parallel port device
+- parport_claim_or_block — claim access to a parallel port device
+- parport_release — give up access to a parallel port device
+- parport_open — find a device by canonical device number
+- parport_close — close a device opened with parport_open
+# 4. Message-based devices
+- Fusion message devices
+- I2O message devices
+# 5. Sound Devices
+- snd_register_device — Register the ALSA device file for the card
+- snd_printk — printk wrapper
+- snd_printd — debug printk
+- snd_BUG — give a BUG warning message and stack trace
+- snd_BUG_ON — debugging check macro
+- snd_printdd — debug printk
+- register_sound_special_device — register a special sound node
+- register_sound_mixer — register a mixer device
+- register_sound_midi — register a midi device
+- register_sound_dsp — register a DSP device
+- unregister_sound_special — unregister a special sound device
+- unregister_sound_mixer — unregister a mixer
+- unregister_sound_midi — unregister a midi device
+- unregister_sound_dsp — unregister a DSP device
+- snd_pcm_playback_ready — check whether the playback buffer is available
+- snd_pcm_capture_ready — check whether the capture buffer is available
+- snd_pcm_playback_data — check whether any data exists on the playback buffer
+- snd_pcm_playback_empty — check whether the playback buffer is empty
+- snd_pcm_capture_empty — check whether the capture buffer is empty
+- snd_pcm_format_cpu_endian — Check the PCM format is CPU-endian
+- snd_pcm_lib_alloc_vmalloc_buffer — allocate virtual DMA buffer
+- snd_pcm_lib_alloc_vmalloc_32_buffer — allocate 32-bit-addressable buffer
+- snd_pcm_new_stream — create a new PCM stream
+- snd_pcm_new — create a new PCM instance
+- snd_device_new — create an ALSA device component
+- snd_device_free — release the device from the card
+- snd_device_register — register the device
+- snd_iprintf — printf on the procfs buffer
+- snd_info_get_line — read one line from the procfs buffer
+- snd_info_get_str — parse a string token
+- snd_info_create_module_entry — create an info entry for the given module
+- snd_info_create_card_entry — create an info entry for the given card
+- snd_card_proc_new — create an info entry for the given card
+- snd_info_free_entry — release the info entry
+- snd_info_register — register the info entry
+- snd_rawmidi_receive — receive the input data from the device
+- snd_rawmidi_transmit_empty — check whether the output buffer is empty
+- snd_rawmidi_transmit_peek — copy data from the internal buffer
+- snd_rawmidi_transmit_ack — acknowledge the transmission
+- snd_rawmidi_transmit — copy from the buffer to the device
+- snd_rawmidi_new — create a rawmidi instance
+- snd_rawmidi_set_ops — set the rawmidi operators
+- snd_request_card — try to load the card module
+- snd_lookup_minor_data — get user data of a registered device
+- snd_register_device_for_dev — Register the ALSA device file for the card
+- snd_unregister_device — unregister the device on the given card
+- copy_to_user_fromio — copy data from mmio-space to user-space
+- copy_from_user_toio — copy data from user-space to mmio-space
+- snd_pcm_lib_preallocate_free_for_all — release all pre-allocated buffers on the pcm
+- snd_pcm_lib_preallocate_pages — pre-allocation for the given DMA type
+- snd_pcm_lib_preallocate_pages_for_all — pre-allocation for continuous memory type (all substreams)
+- snd_pcm_sgbuf_ops_page — get the page struct at the given offset
+- snd_pcm_lib_malloc_pages — allocate the DMA buffer
+- snd_pcm_lib_free_pages — release the allocated DMA buffer.
+- snd_pcm_lib_free_vmalloc_buffer — free vmalloc buffer
+- snd_pcm_lib_get_vmalloc_page — map vmalloc buffer offset to page struct
+- snd_card_create — create and initialize a soundcard structure
+- snd_card_disconnect — disconnect all APIs from the file-operations (user space)
+- snd_card_set_id — set card identification name
+- snd_card_register — register the soundcard
+- snd_component_add — add a component string
+- snd_card_file_add — add the file to the file list of the card
+- snd_card_file_remove — remove the file from the file list
+- snd_power_wait — wait until the power-state is changed.
+- snd_dma_program — program an ISA DMA transfer
+- snd_dma_disable — stop the ISA DMA transfer
+- snd_dma_pointer — return the current pointer to DMA transfer buffer in bytes
+- snd_ctl_new1 — create a control instance from the template
+- snd_ctl_free_one — release the control instance
+- snd_ctl_add — add the control instance to the card
+- snd_ctl_replace — replace the control instance of the card
+- snd_ctl_remove — remove the control from the card and release it
+- snd_ctl_remove_id — remove the control of the given id and release it
+- snd_ctl_activate_id — activate/inactivate the control of the given id
+- snd_ctl_rename_id — replace the id of a control on the card
+- snd_ctl_find_numid — find the control instance with the given number-id
+- snd_ctl_find_id — find the control instance with the given id
+- snd_ctl_enum_info — fills the info structure for an enumerated control
+- snd_pcm_set_ops — set the PCM operators
+- snd_pcm_set_sync — set the PCM sync id
+- snd_interval_refine — refine the interval value of configurator
+- snd_interval_ratnum — refine the interval value
+- snd_interval_list — refine the interval value from the list
+- snd_pcm_hw_rule_add — add the hw-constraint rule
+- snd_pcm_hw_constraint_integer — apply an integer constraint to an interval
+- snd_pcm_hw_constraint_minmax — apply a min/max range constraint to an interval
+- snd_pcm_hw_constraint_list — apply a list of constraints to a parameter
+- snd_pcm_hw_constraint_ratnums — apply ratnums constraint to a parameter
+- snd_pcm_hw_constraint_ratdens — apply ratdens constraint to a parameter
+- snd_pcm_hw_constraint_msbits — add a hw constraint msbits rule
+- snd_pcm_hw_constraint_step — add a hw constraint step rule
+- snd_pcm_hw_constraint_pow2 — add a hw constraint power-of-2 rule
+- snd_pcm_hw_param_value — return params field var value
+- snd_pcm_hw_param_first — refine config space and return minimum value
+- snd_pcm_hw_param_last — refine config space and return maximum value
+- snd_pcm_lib_ioctl — a generic PCM ioctl callback
+- snd_pcm_period_elapsed — update the pcm status for the next period
+- snd_hwdep_new — create a new hwdep instance
+- snd_pcm_stop — try to stop all running streams in the substream group
+- snd_pcm_suspend — trigger SUSPEND to all linked streams
+- snd_pcm_suspend_all — trigger SUSPEND to all substreams in the given pcm
+- snd_malloc_pages — allocate pages with the given size
+- snd_free_pages — release the pages
+- snd_dma_alloc_pages — allocate the buffer area according to the given type
+- snd_dma_alloc_pages_fallback — allocate the buffer area according to the given type with fallback
+- snd_dma_free_pages — release the allocated buffer
+- snd_dma_get_reserved_buf — get the reserved buffer for the given device
+- snd_dma_reserve_buf — reserve the buffer
+- 6. 16x50 UART Driver
+- uart_handle_dcd_change — handle a change of carrier detect state
+- uart_handle_cts_change — handle a change of clear-to-send state
+- uart_update_timeout — update per-port FIFO timeout.
+- uart_get_baud_rate — return baud rate for a particular port
+- uart_get_divisor — return uart clock divisor
+- uart_parse_options — Parse serial port baud/parity/bits/flow contro.
+- uart_set_options — setup the serial console parameters
+- uart_register_driver — register a driver with the uart core layer
+- uart_unregister_driver — remove a driver from the uart core layer
+- uart_add_one_port — attach a driver-defined port structure
+- uart_remove_one_port — detach a driver defined port structure
+- serial8250_suspend_port — suspend one serial port
+- serial8250_resume_port — resume one serial port
+- serial8250_register_port — register a serial port
+- serial8250_unregister_port — remove a 16x50 serial port at runtime
+# 7. Frame Buffer Library
+- Frame Buffer Memory
+- Frame Buffer Colormap
+- Frame Buffer Video Mode Database
+- Frame Buffer Macintosh Video Mode Database
+- Frame Buffer Fonts
+# 8. Input Subsystem
+- Input core
+- Multitouch Library
+- Polled input devices
+- Matrix keyboars/keypads
+- Sparse keymap support
+# 9. Serial Peripheral Interface (SPI)
+- struct spi_device — Master side proxy for an SPI slave device
+- struct spi_driver — Host side “protocol” driver
+- spi_unregister_driver — reverse effect of spi_register_driver
+- struct spi_master — interface to SPI master controller
+- struct spi_transfer — a read/write buffer pair
+- struct spi_message — one multi-segment SPI transaction
+- spi_write — SPI synchronous write
+- spi_read — SPI synchronous read
+- spi_w8r8 — SPI synchronous 8 bit write followed by 8 bit read
+- spi_w8r16 — SPI synchronous 8 bit write followed by 16 bit read
+- struct spi_board_info — board-specific template for a SPI device
+- spi_register_board_info — register SPI devices for a given board
+- spi_register_driver — register a SPI driver
+- spi_alloc_device — Allocate a new SPI device
+- spi_add_device — Add spi_device allocated with spi_alloc_device
+- spi_new_device — instantiate one new SPI device
+- spi_alloc_master — allocate SPI master controller
+- spi_register_master — register SPI master controller
+- spi_unregister_master — unregister SPI master controller
+- spi_busnum_to_master — look up master associated with bus_num
+- spi_setup — setup SPI mode and clock rate
+- spi_async — asynchronous SPI transfer
+- spi_async_locked — version of spi_async with exclusive bus usage
+- spi_sync — blocking/synchronous SPI data transfers
+- spi_sync_locked — version of spi_sync with exclusive bus usage
+- spi_bus_lock — obtain a lock for exclusive SPI bus usage
+- spi_bus_unlock — release the lock for exclusive SPI bus usage
+- spi_write_then_read — SPI synchronous write followed by read
+# 10. I2C and SMBus Subsystem
+- struct i2c_driver — represent an I2C device driver
+- struct i2c_client — represent an I2C slave device
+- struct i2c_board_info — template for device creation
+- I2C_BOARD_INFO — macro used to list an i2c device and its address
+- struct i2c_msg — an I2C transaction segment beginning with START
+- i2c_register_board_info — statically declare I2C devices
+- i2c_verify_client — return parameter as i2c_client, or NULL
+- i2c_lock_adapter — Get exclusive access to an I2C bus segment
+- i2c_unlock_adapter — Release exclusive access to an I2C bus segment
+- i2c_new_device — instantiate an i2c device
+- i2c_unregister_device — reverse effect of i2c_new_device
+- i2c_new_dummy — return a new i2c device bound to a dummy driver
+- i2c_add_adapter — declare i2c adapter, use dynamic bus number
+- i2c_add_numbered_adapter — declare i2c adapter, use static bus number
+- i2c_del_adapter — unregister I2C adapter
+- i2c_del_driver — unregister I2C driver
+- i2c_use_client — increments the reference count of the i2c client structure
+- i2c_release_client — release a use of the i2c client structure
+- i2c_transfer — execute a single or combined I2C message
+- i2c_master_send — issue a single I2C message in master transmit mode
+- i2c_master_recv — issue a single I2C message in master receive mode
+- i2c_smbus_read_byte — SMBus “receive byte” protocol
+- i2c_smbus_write_byte — SMBus “send byte” protocol
+- i2c_smbus_read_byte_data — SMBus “read byte” protocol
+- i2c_smbus_write_byte_data — SMBus “write byte” protocol
+- i2c_smbus_read_word_data — SMBus “read word” protocol
+- i2c_smbus_write_word_data — SMBus “write word” protocol
+- i2c_smbus_process_call — SMBus “process call” protocol
+- i2c_smbus_read_block_data — SMBus “block read” protocol
+- i2c_smbus_write_block_data — SMBus “block write” protocol
+- i2c_smbus_xfer — execute SMBus protocol operations
+<br/>
+<br/>
+
+## Chapter 1. Driver Basics
+*Table of Contents*
+
+- Driver Entry and Exit points
+- Atomic and pointer manipulation
+- Delaying, scheduling, and timer routines
+- Wait queues and Wake events
+- High-resolution timers
+- Workqueues and Kevents
+- Internal Functions
+- Kernel objects manipulation
+- Kernel utility functions
+- Device Resource Management
+- Driver Entry and Exit points
+- module_init — driver initialization entry point
+- module_exit — driver exit entry point
+
+<br/>
+<br/>
+
+### Wait queues and Wake events
+- wait_event — sleep until a condition gets true
+- wait_event_timeout — sleep until a condition gets true or a timeout elapses
+- wait_event_interruptible — sleep until a condition gets true
+- wait_event_interruptible_timeout — sleep until a condition gets true or a timeout elapses
+- wait_event_interruptible_locked — sleep until a condition gets true
+- wait_event_interruptible_locked_irq — sleep until a condition gets true
+- wait_event_interruptible_exclusive_locked — sleep exclusively until a condition gets true
+- wait_event_interruptible_exclusive_locked_irq — sleep until a condition gets true
+- wait_event_killable — sleep until a condition gets true
+- wait_on_bit — wait for a bit to be cleared
+- wait_on_bit_lock — wait for a bit to be cleared, when wanting to set it
+- finish_wait — clean up after waiting in a queue
+- abort_exclusive_wait — abort exclusive waiting in a queue
+- wake_up_bit — wake up a waiter on a bit
