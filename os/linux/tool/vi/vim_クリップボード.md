@@ -1,5 +1,15 @@
+<pre>
+$ vim --version | grep clipboard
++clipboard       +insert_expand   +path_extra      +user_commands
++emacs_tags      +mouseshape      +startuptime     +xterm_clipboard
+$ /usr/bin/vim.basic --version | grep clipboard
+-clipboard       +insert_expand   +path_extra      +user_commands
++emacs_tags      -mouseshape      +startuptime     -xterm_clipboard
+</pre>
+
 :echo has('clipboard')が0を返す場合システムクリップボードからのコピー/貼り付け機能しません<br/>
-この場合、vimは+clipboard機能でコンパイルされず、別のバージョンをインストールするか、再コンパイルします。一部のLinuxディストリビューションでは、デフォルトで最小限のvimインストールが提供されますが、一般的にvim-gtkまたはvim-gtk3パッケージをインストールを使用すると、追加機能を取得できます。<br/>
+この場合、vimは+clipboard機能でコンパイルされず、別のバージョンをインストールするか、再コンパイルします。<br/>
+一部のLinuxディストリビューションでは、デフォルトで最小限のvimインストールが提供されますが、一般的にvim-gtkまたはvim-gtk3パッケージをインストールを使用すると、追加機能を取得できます。<br/>
 <br/>
 
 [Vim でコピペするときの Tips](http://cohama.hateblo.jp/entry/20130108/1357664352#f2)
