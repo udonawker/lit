@@ -342,6 +342,14 @@ function clipxf() { # $1 = ls list number $2 = r,t
     command ls -l$3 $1 | grep ^- | awk 'NR=='"$2"'' | awk '{print $9}' | tr -d '\n' | xclip -selection c
 }
 
+function pushp() {
+    command pushd $(pwd)
+}
+
+function dirv() {
+    command dirs -v
+}
+
 function treex() {
     command tree $1 --charset=C --si --du -D $2
 }
