@@ -1,0 +1,29 @@
+set expandtab
+" set noexpandtab
+set hidden
+set tabstop=4
+set shiftwidth=4
+" オンのときは、ウィンドウの幅より長い行は折り返され、次の行に続けて表示される。（有効:wrap/無効:nowrap）
+set nowrap
+" 毎行の前に行番号を表示する。（有効:number/無効:nonumber）
+set number
+" カーソルが何行目の何列目に置かれているかを表示する。（有効:ruler/無効:noruler）
+set ruler
+" タブ文字を CTRL-I で表示し、行末に $ で表示する。（有効:list/無効:nolist）
+set list
+" Listモード (訳注: オプション 'list' がオンのとき) に使われる文字を設定する。
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+" コマンドラインモードでtabで補完する(本来は Ctrl + d -> Ctrl + l)
+set wildmenu
+
+" ls -laのような表示になります
+let g:netrw_liststyle=1
+" サイズを(K,M,G)で表示
+let g:netrw_sizestyle="H"
+" 日付フォーマットを yyyy/mm/dd(曜日) hh:mm:ss で表示
+let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
+
+" ヘッダを非表示にする
+let g:netrw_banner=0
+" プレビューウィンドウを垂直分割で表示する
+let g:netrw_preview=1
