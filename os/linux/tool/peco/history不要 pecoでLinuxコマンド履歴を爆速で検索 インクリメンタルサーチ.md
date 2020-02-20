@@ -19,3 +19,39 @@ sudo cp peco /usr/local/bin
 cd ..
 sudo rm -r peco_linux_386/
 </pre>
+
+
+<br/><br/><br/>
+#### pecoの利用シーン
+<pre>
+vi $(find . -name '*.go' | peco)
+
+# 現在以下のディレクトリを検索し、インクリメンタルサーチ後移動
+cd "$(find . -type d | peco)"
+
+# git logをインクリメンタルサーチ後、その結果をgit showする
+git log --oneline | peco | cut -d" " -f1 | xargs git show
+
+# sshしたことのあるサーバをインクリメンタルサーチ
+ssh $(grep -o '^\S\+' ~/.ssh/known_hosts | tr -d '[]' | tr ',' '\n' | sort | peco)
+</pre>
+
+#### bash history インクリメンタルサーチ
+.bashrcに以下のステップで設定を入れる<br/>
+履歴の設定<br/>
+<pre>
+export HISTCONTROL=ignoreboth:erasedups # 重複履歴を無視
+HISTSIZE=5000 # historyに記憶するコマンド数
+HISTIGNORE="fg*:bg*:history*:h*" # historyなどの履歴を保存しない
+HISTTIMEFORMAT='%Y.%m.%d %T' # historyに時間を追加
+</pre>
+
+pecoを利用した関数をショートカットに登録<br/>
+<pre>
+peco_history() {
+    declare l=$(HISTTIMEFORMAT=  history | LC_ALL=C sort -r |  awk '{for(i=2;i&lt;NF;i++){printf("%s%s",$i,OFS=" ")}print $NF}'   |  peco --query "$READLINE_LINE")
+    READLINE_LINE="$l"
+    READLINE_POINT=${#l}
+}
+bind -x '"\C-x\C-r": peco_history'
+</pre>
