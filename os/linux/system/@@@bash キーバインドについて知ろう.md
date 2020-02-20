@@ -33,12 +33,12 @@ emacs-standard は、GNU Emacsというエディタのキーバインドをベ�
 |\e<                                 |beginning-of-history        |履歴の先頭まで戻る|
 |\C-a、Home(\e[H)                    |beginning-of-line           |行頭に移動する|
 |\ec                                 |capitalize-word             |単語をキャピタライズ(単語の先頭のみ大文字で以下小文字)する|
-|\C-]                                |character-search            |文字を一文字読み込み、右側のその文字位置に移動する|
-|\e\C-]                              |character-search-backward   |文字を一文字読み込み、左側のその文字位置に移動する|
+|__\C-]__                                |character-search            |文字を一文字読み込み、右側のその文字位置に移動する|
+|__\e\C-]__                              |character-search-backward   |文字を一文字読み込み、左側のその文字位置に移動する|
 |\C-l                                |clear-screen                |画面をクリアする|
 |TAB(\C-i)、\e\e                     |complete                    |単語を補完する|
-|\e!                                 |complete-command            |コマンドを補完する|
-|\e/                                 |complete-filename           |ファイル名を補完する|
+|__\e!__                                 |complete-command            |コマンドを補完する|
+|__\e/__                                 |complete-filename           |ファイル名を補完する|
 |\e@                                 |complete-hostname           |ホスト名を補完する|
 |\e{                                 |complete-into-braces        |ファイル名を補完し、シェルから利用可能なブレース付きのリストとして展開します|
 |\e~                                 |complete-username           |ユーザ名を補完する|
