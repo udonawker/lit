@@ -55,3 +55,46 @@ peco_history() {
 }
 bind -x '"\C-x\C-r": peco_history'
 </pre>
+
+<br/><br/>
+[bash環境にpecoを導入しました](http://luozengbin.github.io/blog/2015-08-02-%5Bmemo%5D%5Blinux%5Dbash%E7%92%B0%E5%A2%83%E3%81%ABpeco%E3%82%92%E5%B0%8E%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F.html)<br/>
+#### bash履歴の検索をpecoインタフェースにする<br/>
+<pre>
+# 重複履歴を無視
+export HISTCONTROL=ignoreboth:erasedups
+
+# 履歴保存対象から外す
+export HISTIGNORE="fg*:bg*:history*:wmctrl*:exit*:ls -al:cd ~"
+
+# コマンド履歴にコマンドを使ったの時刻を記録する
+export HISTTIMEFORMAT='%Y%m%d %T '
+
+export HISTSIZE=10000
+
+# settings for peco
+_replace_by_history() {
+    local l=$(HISTTIMEFORMAT= history | cut -d" " -f4- | tac | sed -e 's/^\s*[0-9]*    \+\s\+//' | peco --query "$READLINE_LINE")
+    READLINE_LINE="$l"
+    READLINE_POINT=${#l}
+}
+bind -x '"\C-r": _replace_by_history'
+bind    '"\C-xr": reverse-search-history'
+</pre>
+
+#### pecoインタフェースのキーバンディングをカスタマイズする
+
+<pre>
+$ mkdir ~/.config/peco
+$ touch ~/.config/peco/config.json
+$ cat <<_EOT_ > ~/.config/peco/config.json
+{
+    "Keymap": {
+        "C-p": "peco.SelectPrevious",
+        "C-n": "peco.SelectNext",
+        "C-g": "peco.Cancel",
+        "C-v": "peco.SelectNextPage",
+        "C-@": "peco.ToggleSelectionAndSelectNext"
+    }
+}
+_EOT_
+</pre.
