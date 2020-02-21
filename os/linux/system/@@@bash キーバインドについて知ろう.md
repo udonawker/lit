@@ -23,52 +23,52 @@ emacs-standard は、GNU Emacsというエディタのキーバインドをベ�
 
 |キー| 機能 | 説明|
 |:--|:--|:-- |
-|\C-g、\C-x\C-g、\e\C-g              |abort                       |文字入力を中断する|
-|\C-j、\C-m                          |accept-line                 |文字入力位置に関係なく、入力中の文を実行する|
-|\C-b、←(\e[D)                       |backward-char               |一文字戻る|
-|Backspace(\C-?、\C-h                |backward-delete-char        |一文字前を削除する|
+|\C-g<br>\C-x\C-g<br>\e\C-g              |abort                       |文字入力を中断する|
+|\C-j<br>\C-m                          |accept-line                 |文字入力位置に関係なく、入力中の文を実行する|
+|\C-b<br>←(\e[D)                       |backward-char               |一文字戻る|
+|Backspace(\C-?<br>\C-h                |backward-delete-char        |一文字前を削除する|
 |\C-Backspace(\C-x\C-?)              |backward-kill-line          |行頭まで削除する|
-|\eDEL(\e\C-?)、\e\C-h               |backward-kill-word          |一単語前まで削除する|
-|\C-←(\e[1;5D)、\e←(\e\e[D)、\eb     |backward-word               |一単語前まで移動する|
+|\eDEL(\e\C-?)<br>\e\C-h               |backward-kill-word          |一単語前まで削除する|
+|\C-←(\e[1;5D)<br>\e←(\e\e[D)<br>\eb     |backward-word               |一単語前まで移動する|
 |\e<                                 |beginning-of-history        |履歴の先頭まで戻る|
-|\C-a、Home(\e[H)                    |beginning-of-line           |行頭に移動する|
+|\C-a<br>Home(\e[H)                    |beginning-of-line           |行頭に移動する|
 |\ec                                 |capitalize-word             |単語をキャピタライズ(単語の先頭のみ大文字で以下小文字)する|
 |__\C-]__                                |character-search            |文字を一文字読み込み、右側のその文字位置に移動する|
 |__\e\C-]__                              |character-search-backward   |文字を一文字読み込み、左側のその文字位置に移動する|
 |\C-l                                |clear-screen                |画面をクリアする|
-|TAB(\C-i)、\e\e                     |complete                    |単語を補完する|
+|TAB(\C-i)<br>\e\e                     |complete                    |単語を補完する|
 |__\e!__                                 |complete-command            |コマンドを補完する|
 |__\e/__                                 |complete-filename           |ファイル名を補完する|
 |\e@                                 |complete-hostname           |ホスト名を補完する|
 |\e{                                 |complete-into-braces        |ファイル名を補完し、シェルから利用可能なブレース付きのリストとして展開します|
 |\e~                                 |complete-username           |ユーザ名を補完する|
 |\e$                                 |complete-variable           |変数を補完する|
-|\C-d、DEL(\e[3~)                    |delete-char                 |文字入力位置の文字を削除する|
+|\C-d<br>DEL(\e[3~)                    |delete-char                 |文字入力位置の文字を削除する|
 |\C-x\C-v                            |display-shell-version       |shell versionを表示する|
 |\el                                 |downcase-word               |単語を小文字化する|
 |\e\C-i                              |dynamic-complete-history    |文字位置より前のテキストに対し、履歴リストから補完する|
 |\C-x\C-e                            |edit-and-execute-command    |エディタを起動して現在のコマンドラインの内容を開き、 その結果をシェルのコマンドとして実行する|
 |\e>                                 |end-of-history              |履歴の末尾まで戻る|
-|\C-e、\e[F(End)                     |end-of-line                 |行末まで移動する|
-|\C-\、\e[C(→)                       |forward-char                |一文字進む|
+|\C-e<br>\e[F(End)                     |end-of-line                 |行末まで移動する|
+|\C-\ <br>\e[C(→)                       |forward-char                |一文字進む|
 |\C-s                                |forward-search-history      |現在の行から新しい方に履歴の検索をインクリメンタルに行う(別原因で\C-sは使用不可)|
-|\C-→(\e[1;5C)、\e→(\e→(\e\e[C)、\ef |forward-word                |一単語進む|
+|\C-→(\e[1;5C)<br>\e→(\e→(\e\e[C)<br>\ef |forward-word                |一単語進む|
 |\eg                                 |glob-complete-word          |文字位置より前のテキストをファイル名として補完し、リストを表示する|
 |\C-x*                               |glob-expand-word            |文字位置より前のワイルドカードを含むテキストを、ファイル名として補完・展開する|
 |\C-xg                               |glob-list-expansions        |文字位置より前のワイルドカードを含むテキストを、ファイル名として補完してリスト表示する|
 |\e^                                 |history-expand-line         |行中のヒストリ文字列(!で始まる文字列)を展開する|
 |\C-k                                |kill-line                   |行末まで削除する|
 |\ed                                 |kill-word                   |単語を削除する|
-|\C-n、\COB、\e[B                    |next-history                |次の履歴に移動する|
-|\C-p、\eOA、\e[A                    |previous-history            |前の履歴に移動する|
-|\C-q、\C-v、\e[2~                   |quoted-insert               |特殊文字含む文字をそのまま入力|
+|\C-n<br>\COB<br>\e[B                    |next-history                |次の履歴に移動する|
+|\C-p<br>\eOA<br>\e[A                    |previous-history            |前の履歴に移動する|
+|\C-q<br>\C-v<br>\e[2~                   |quoted-insert               |特殊文字含む文字をそのまま入力|
 |\C-r                                |reverse-search-history      |現在の行から古い方に履歴の検索をインクリメンタルに行う|
-|\e\C-r、\er                         |revert-line                 |この行に行った変更をすべて打ち消す|
+|\e\C-r<br>\er                         |revert-line                 |この行に行った変更をすべて打ち消す|
 |a,b,c                               |self-insert                 |押した文字をそのまま入力する|
 |\e\C-e                              |shell-expand-line           |bashが行うのと同じように行を展開する|
 |\C-t                                |transpose-chars             |文字入力位置とその前の文字を置き換える|
 |\et                                 |transpose-words             |文字入力位置の単語とその前の単語を置き換える|
-|\C-_、\C-x\C-u                      |undo                        |前回の操作を打ち消す|
+|\C-_<br>\C-x\C-u                      |undo                        |前回の操作を打ち消す|
 |\C-u                                |unix-line-discard           |入力中の文字列をすべて消す|
 |\C-w                                |unix-word-rubout            |文字位置より前の単語を削除します|
 |\eu                                 |upcase-word                 |単語を大文字化する|
