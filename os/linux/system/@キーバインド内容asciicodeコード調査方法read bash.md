@@ -1,4 +1,5 @@
-readコマンドで 矢印キー や Ctrl+x などの入力を読み取る](https://tanishiking24.hatenablog.com/entry/readascii)<br/>
+[readコマンドで 矢印キー や Ctrl+x などの入力を読み取る](https://tanishiking24.hatenablog.com/entry/readascii)<br/>
+[ASCII 文字の一覧を Bash で表示してみました](https://va2577.github.io/post/164/)<br/>
 
 <pre>
 くわからないので矢印キーの asciiコード16進数表記を調べてみましょう. 入力の16進数変換にはxxdやhexdumpコマンドが便利
