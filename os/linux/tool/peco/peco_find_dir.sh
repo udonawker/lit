@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 
 function peco_find_dir() {
     local DIR="."
@@ -8,11 +7,14 @@ function peco_find_dir() {
         if [ -z "${DIR}" ]; then
             break;
         fi
-        echo -n "${DIR} (n/c)"; IFS= read -r -n1 -s char;
+        #echo -n "${DIR} (n/c)"
+        printf "%s (\e[1mc\e[monfirm/\e[1mp\e[mrevious/\e[1mn\e[mext)" ${DIR}
+        IFS= read -r -n1 -s char;
         echo -en "\r"
-        printf "\e[2K" # ANSIエスケープシーケンス チートシート
-        #IFS= read -r -n1 -s char;
+        printf "\e[2K"
         case ${char} in
+        p)
+            DIR=$(dirname "${DIR}");;
         n)
             ;;
         c|$'\0a')
