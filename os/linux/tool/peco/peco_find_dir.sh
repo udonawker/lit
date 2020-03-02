@@ -1,55 +1,40 @@
 #!/bin/bash
 
+# read 入力キー 1文字 enter escape
+# https://stackoverflow.com/questions/2612274/bash-shell-scripting-return-key-enter-key
+
+PECO_FOUND_DIR=""
+
 function peco_find_dir() {
     local DIR="."
+    local FOUND_DIR=""
 
-    while DIR="$(find ${DIR} -maxdepth 1 -type d | sed -e 's;^\./;;' | grep -v "^\.$" | sort | peco)"; do
-        if [ -z "${DIR}" ]; then
-            break;
+    while FOUND_DIR="$(find "${DIR}" -maxdepth 1 -type d | sed -e 's;^\./;;' | grep -v "^\.$" | sort | peco)"; do
+        if [ -z "${FOUND_DIR}" ]; then
+            DIR=""
+            break
         fi
-        #echo -n "${DIR} (n/c)"
-        printf "%s (\e[1mc\e[monfirm/\e[1mp\e[mrevious/\e[1mn\e[mext)" ${DIR}
+        printf "%s (\e[1mc\e[monfirm/\e[1mp\e[mrevious/\e[1mn\e[mext)" "${FOUND_DIR}"
         IFS= read -r -n1 -s char;
-        echo -en "\r"
         printf "\e[2K"
+        echo -en "\r"
         case ${char} in
-        p)
-            DIR=$(dirname "${DIR}");;
-        n)
-            ;;
-        c|$'\0a')
+        p)          # previous
+            DIR="$(dirname "${FOUND_DIR}")";;
+        n)          # next
+            DIR="${FOUND_DIR}";;
+        c|$'\0a')   # comfirm(Enter)
+            DIR="${FOUND_DIR}"
+            break;;
+        q|$'\e')    # quit(Escape)
+            DIR=""
             break;;
         *)
-            return
         esac
     done
 
-    #DIR=$(echo "${DIR}" | sed -e 's/ /\\ /g' -e 's/(/\\(/g' -e 's/)/\\)/g' -e 's/\./\\./g')
-    echo "${DIR}"
+    PECO_FOUND_DIR="${DIR}"
 }
 
-function peco_find_dir_x() {
-    local DIR="."
-    
-    while DIR="$(find ${DIR} -maxdepth 1 -type d | sed -e 's;^\./;;' | grep -v "^\.$" | sort | peco)"; do
-        if [ -z "${DIR}" ]; then
-            break;
-        fi  
-        #echo -n "${DIR} (n/c)"; IFS= read -r -n1 -s char;
-        #echo -en "\r"
-        IFS= read -r -n1 -s char;
-        case ${char} in
-        n)  
-            ;;  
-        c|$'\0a') 
-            break;;
-        *)  
-            echo ""
-            return
-        esac
-    done
-    
-    echo ${DIR}
-}
-GET_DIR="$(peco_find_dir_x)"
-echo "GET_DIR=${GET_DIR}"
+peco_find_dir
+echo "GET_DIR=${PECO_FOUND_DIR}"
