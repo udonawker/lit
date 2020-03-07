@@ -12,6 +12,7 @@ curl https://sh.rustup.rs -sSf | sh
 2.最新Exaライブラリのダウンロードと解凍、インストール
 ※最新バイナリダウンロードURLはGitHubにて確認して下さい※
 ※各自環境に合わせてダウンロードして下さい、今回は64bit版です※
+https://github.com/ogham/exa
 wget -c https://github.com/ogham/exa/releases/download/v0.9.0/exa-linux-x86_64-0.9.0.zip
 
 unzip exa-linux-x86_64-0.9.0.zip
