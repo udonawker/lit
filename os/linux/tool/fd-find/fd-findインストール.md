@@ -26,11 +26,7 @@ fd-v7.4.0-x86_64-unknown-li 100%[===========================================>]  
 合計 5696
 drwxr-xr-x  3 root root     4096  3月  7 17:29 ./
 drwxr-xr-x 10 root root     4096  4月 26  2016 ../
--rwxr-xr-x  1 root root  1486840  7月 15  2019 exa-linux-x86_64*
--rw-r--r--  1 root root   675661  7月 15  2019 exa-linux-x86_64-0.9.0.zip
 -rw-r--r--  1 root root  1137018  9月 16 02:53 fd-v7.4.0-x86_64-unknown-linux-gnu.tar.gz
-drwxr-xr-x  2  501 staff    4096  1月 10 12:39 peco_linux_amd64/
--rw-rw-r--  1 hama hama  2518717  1月 10 12:46 peco_linux_amd64.tar.gz
 @/usr/local/src# tar tvf fd-v7.4.0-x86_64-unknown-linux-gnu.tar.gz
 drwxrwxr-x travis/travis     0 2019-09-16 02:53 fd-v7.4.0-x86_64-unknown-linux-gnu/autocomplete/
 -rw-rw-r-- travis/travis  3804 2019-09-16 02:53 fd-v7.4.0-x86_64-unknown-linux-gnu/autocomplete/_fd
@@ -46,12 +42,8 @@ drwxrwxr-x travis/travis     0 2019-09-16 02:53 fd-v7.4.0-x86_64-unknown-linux-g
 合計 5700
 drwxr-xr-x  4 root root     4096  3月  7 17:31 ./
 drwxr-xr-x 10 root root     4096  4月 26  2016 ../
--rwxr-xr-x  1 root root  1486840  7月 15  2019 exa-linux-x86_64*
--rw-r--r--  1 root root   675661  7月 15  2019 exa-linux-x86_64-0.9.0.zip
 drwxr-xr-x  3 root root     4096  3月  7 17:31 fd-v7.4.0-x86_64-unknown-linux-gnu/
 -rw-r--r--  1 root root  1137018  9月 16 02:53 fd-v7.4.0-x86_64-unknown-linux-gnu.tar.gz
-drwxr-xr-x  2  501 staff    4096  1月 10 12:39 peco_linux_amd64/
--rw-rw-r--  1 hama hama  2518717  1月 10 12:46 peco_linux_amd64.tar.gz
 @/usr/local/src# cd fd-v7.4.0-x86_64-unknown-linux-gnu/
 @/usr/local/src/fd-v7.4.0-x86_64-unknown-linux-gnu# ll
 合計 2856
