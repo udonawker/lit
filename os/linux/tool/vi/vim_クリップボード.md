@@ -34,10 +34,10 @@ $ /usr/bin/vim.basic --version | grep clipboard
 &lt;C-R&gt;"
 </pre>
 とすると、ノーマルモードに戻らずに無名レジスタの内容を貼り付けることができます。<br/>
-<C-R>のあとはレジスタを指定できます。<br/>
-<C-R>a で a レジスタの内容を貼り付けます。<br/>
+&lt;C-R&gt;のあとはレジスタを指定できます。<br/>
+&lt;C-R&gt;a で a レジスタの内容を貼り付けます。<br/>
 無名レジスタのときは " です。<br/>
-あと、<C-R> による貼り付けはコマンドモードでも使えます。<br/>
+あと、&lt;C-R&gt; による貼り付けはコマンドモードでも使えます。<br/>
 <br/>
 <br/>
 [vimエディタからクリップボードを利用する。](https://nanasi.jp/articles/howto/editing/clipboard.html)<br/>
