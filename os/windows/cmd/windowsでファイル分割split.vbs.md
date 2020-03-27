@@ -76,3 +76,5 @@ outputStream.Close
 Set sourceStream = nothing
 Set outputStream = nothing
 </pre>
+
+[結合](/os/windows/cmd/Windows%20コマンドプロンプトでzipファイルの結合.md)<br/>
