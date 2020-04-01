@@ -1,4 +1,5 @@
 [morrowind/yuv2bmp](https://github.com/morrowind/yuv2bmp)<br/>
+[そのRGB-YUV変換（YUV-RGB変換）間違ってない？](http://whoinside.blog3.fc2.com/blog-entry-2021.html)<br/>
 
 フォーマット参考<br/>
 [YUV pixel formats](http://www.fourcc.org/yuv.php)<br/>
