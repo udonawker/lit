@@ -10,3 +10,4 @@
 [YUVフォーマット及び YUV<->RGB変換](https://vision.kuee.kyoto-u.ac.jp/~hiroaki/firewire/yuv.html)<br/>
 [fourcc.org/yuv](http://www.fourcc.org/yuv.php)<br/>
 [RGB⇔YCbCr換算と色見本](https://stackoverflow.com/questions/45203730/what-is-fourcc-code-for-yuv420-yuv422-10-bit-semi-planar-formats)<br/>
+[YUV420 10bit -> YUV420 8bit](http://blog.sina.com.cn/s/blog_80ce3a550101n5tq.html)<br/>
