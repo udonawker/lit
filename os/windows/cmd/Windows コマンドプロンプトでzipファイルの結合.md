@@ -9,3 +9,10 @@ bunkatsu.zip.003<br/>
 <pre>
 copy /b bunkatsu.zip.001+bunkatsu.zip.002+bunkatsu.zip.003 ketsugou.zip
 </pre>
+
+
+
+Linux<br/>
+<pre>
+$ cat file1 file2 file3 > out_file
+</pre>
