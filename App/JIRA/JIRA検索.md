@@ -1,5 +1,5 @@
 - issues tab - Current Search - Advanced を選択
-- comment ~ "検索ワード"
+- comment ~ "検索ワード" or text ~ "検索ワード"
 でコメントに"検索ワード"が含まれるチケットがリストされる。<br/>
 <br/>
 
