@@ -11,3 +11,4 @@
 [fourcc.org/yuv](http://www.fourcc.org/yuv.php)<br/>
 [RGB⇔YCbCr換算と色見本](https://stackoverflow.com/questions/45203730/what-is-fourcc-code-for-yuv420-yuv422-10-bit-semi-planar-formats)<br/>
 [YUV420 10bit -> YUV420 8bit](http://blog.sina.com.cn/s/blog_80ce3a550101n5tq.html)<br/>
+[OpenCV cv::Matの基本処理](http://opencv.jp/cookbook/opencv_mat.html)<br/>
