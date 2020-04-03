@@ -15,3 +15,4 @@
 
 Bitmap RGP<br/>
 [BMP画像のファイル構造（ヘッダ部・データ部） ](https://algorithm.joho.info/image-processing/bmp-file-data-header/)<br/>
+[Bitmapファイルフォーマット](http://www.umekkii.jp/data/computer/file_format/bitmap.cgi)<br/>
