@@ -7,3 +7,5 @@
 - 一様初期化を用いた実装
 - メンバイニシャライザ
 - エラーになる例
+
+[cpprefjp - C++日本語リファレンス:random](https://cpprefjp.github.io/reference/random.html)<br>
