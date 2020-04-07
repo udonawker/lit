@@ -12,6 +12,7 @@
 [RGB⇔YCbCr換算と色見本](https://stackoverflow.com/questions/45203730/what-is-fourcc-code-for-yuv420-yuv422-10-bit-semi-planar-formats)<br/>
 [YUV420 10bit -> YUV420 8bit](http://blog.sina.com.cn/s/blog_80ce3a550101n5tq.html)<br/>
 [OpenCV cv::Matの基本処理](http://opencv.jp/cookbook/opencv_mat.html)<br/>
+[RGB ビット深度のうんちく (後編) 〜 整数型同士の変換](https://qiita.com/yoya/items/3509bbb54c0732865882)<br>
 
 Bitmap RGP<br/>
 [BMP画像のファイル構造（ヘッダ部・データ部） ](https://algorithm.joho.info/image-processing/bmp-file-data-header/)<br/>
