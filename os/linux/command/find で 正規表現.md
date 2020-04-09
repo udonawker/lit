@@ -2,7 +2,9 @@
 
 <pre>
 ## 「パスを含むファイル名全体が正規表現にマッチするものを検索する」ので、正規表現がパスに完全一致しなければならない
-$ find . -regextype posix-egrep -regex "\./[1-9]{4}$"
+$ find . -maxdepth 1 -regextype posix-egrep -regex "\./[1-9]{4}$"
+./1234
+$ find . -maxdepth 1 -type d | grep -E "\./[1-9]{4}$"
 ./1234
 </pre>
 
