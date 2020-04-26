@@ -1,4 +1,8 @@
 <pre>
+&gt; ffmpeg.exe -i "xxx.bmp" "xxx.jpg"
+</pre>
+
+<pre>
 @echo off
 md "%~dp0\output"
 
