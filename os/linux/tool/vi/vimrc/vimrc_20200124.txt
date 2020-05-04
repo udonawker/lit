@@ -80,3 +80,6 @@ map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 "" ↑Tab設定
+
+"「%」でカーソル移動できる新しい組み合わせを追加する
+set matchpairs+=<:>
