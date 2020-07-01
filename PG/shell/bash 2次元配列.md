@@ -15,7 +15,7 @@ for i in "${dataArray[@]}"; do
     animal=${data[0]}
     place=${data[1]}
     color=${data[2]}
-    echo ${animal}
-    echo ${place}
-    echo ${color}
+    echo "animal = ${animal}"
+    echo "place  = ${place}"
+    echo "color  = ${color}"
 done
