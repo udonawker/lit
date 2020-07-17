@@ -16,7 +16,7 @@
 #### イテレータ範囲指定のmap::erase
 #### map::clear
 ## mapテクニック
-### stringをkeyにする場合にstd::less<>を第3テンプレート引数に指定する
+### stringをkeyにする場合にstd::less<>を第3テンプレート引数に指定する(C++14から？)
 ### map::emplace_hintを使って挿入時のfindを省く
 ### mapのvalue_typeはautoで推論する
 
