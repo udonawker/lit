@@ -16,3 +16,7 @@ $HOME&yen;[_vimrc](https://github.com/udonawker/lit/blob/master/os/linux/tool/vi
 ### スクリプト
 $HOME&yen;vimfiles&yen;<br>
 [ViewChange.vim](https://github.com/udonawker/lit/blob/master/os/linux/tool/vi/vim_script/ViewChange.vim)
+
+### プラグイン
+$HOME&yen;vimfiles&yen;plugin<br>
+[jasentence.vim](https://github.com/deton/jasentence.vim/blob/master/plugin/jasentence.vim)
