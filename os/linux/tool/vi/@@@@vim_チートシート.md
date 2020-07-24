@@ -1,6 +1,9 @@
 # [覚えておきたい Vim コマンド 備忘録](https://qiita.com/colorrabbit/items/755cfbb0e97d48280775)
 # [Vimコマンド : 便利一覧](https://qiita.com/iwaseasahi/items/f536bb3772d2fad5e03c)
 
+## 編集
+`^` 大文字小文字変換
+
 ## ヤンク
 ### 全選択してコピー
 `:%y`<br>
