@@ -19,6 +19,8 @@ set nowrap
 set wildmenu
 " ステータスラインを常に表示(0:表示しない、1:2つ以上ウィンドウがある時だけ表示)
 set laststatus=2
+" clipboard有効
+set clipboard+=unnamed
 
 " ls -laのような表示になります
 let g:netrw_liststyle=1
