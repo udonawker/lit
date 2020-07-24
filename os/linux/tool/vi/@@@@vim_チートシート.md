@@ -1,6 +1,12 @@
 # [覚えておきたい Vim コマンド 備忘録](https://qiita.com/colorrabbit/items/755cfbb0e97d48280775)
 # [Vimコマンド : 便利一覧](https://qiita.com/iwaseasahi/items/f536bb3772d2fad5e03c)
 
+## ヤンク
+### 全選択してコピー
+`:%y`<br>
+クリップボードに全選択コピー<br>
+`"*yG`
+
 ## インデント
 `>>` : インデントを追加。<br>
 `<<` : インデントを削除。<br>
