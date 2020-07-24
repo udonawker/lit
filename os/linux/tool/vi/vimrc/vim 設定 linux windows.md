@@ -10,6 +10,10 @@
 ~/.vim/<br>
 [ViewChange.vim](https://github.com/udonawker/lit/blob/master/os/linux/tool/vi/vim_script/ViewChange.vim)
 
+### プラグイン
+~/.vim/plugin
+[jasentence.vim](https://github.com/deton/jasentence.vim/blob/master/plugin/jasentence.vim)
+
 ## Windows
 ### 設定ファイル
 $HOME&yen;[_vimrc](https://github.com/udonawker/lit/blob/master/os/linux/tool/vi/vimrc/%40%40%40vimrc_win_20200723.txt)<br>
