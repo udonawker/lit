@@ -1,5 +1,7 @@
 # [Java訳語対照表](http://www.y-adagio.com/public/standards/tr_javalang/javaterm.htm)
 
+lhs rhs 左辺値 右辺値<br>
+
 |英語|日本語|
 |:--|:--|
 |A||
