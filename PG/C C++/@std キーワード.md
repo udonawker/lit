@@ -20,3 +20,5 @@
     - size_t count = std::tuple_size<std::tuple<int, double>>::value;
     - size_t count = std::tuple_size<decltype(tupleValue)>::value;
     - int value1 = std::get<0>(tupleValue);
+
+- std::copy_if
