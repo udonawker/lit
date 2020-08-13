@@ -26,7 +26,7 @@
 
 ### Visual Studio Code のインストール
 
-1. Visual Studio Code を開く
+1. [Visual Studio Code を開く](https://code.visualstudio.com/)
 1. [Download for Windows] を押してインストーラーをダウンロードする
 1. ダウンロードしたインストーラーを実行する
 
