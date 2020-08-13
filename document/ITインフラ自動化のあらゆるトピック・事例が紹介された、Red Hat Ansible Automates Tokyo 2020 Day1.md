@@ -1,0 +1,2 @@
+## [ITインフラ自動化のあらゆるトピック・事例が紹介された、Red Hat Ansible Automates Tokyo 2020 Day1](https://zine.qiita.com/event/202007-red-hat/?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=f470bb94a9-Qiita_newsletter_422_08_05_2020&utm_medium=email&utm_term=0_e44feaa081-f470bb94a9-33166269)
+## [自動化の進め方から、導入の経験談、内製ソフトとの連携まで。Red Hat Ansible Automates Tokyo 2020 Day2](https://zine.qiita.com/event/202007-red-hat-2/)
