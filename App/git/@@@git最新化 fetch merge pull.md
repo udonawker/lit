@@ -3,6 +3,7 @@
 
 <pre>
 $ git fetch -p
+$ git fetch origin
 </pre>
 
 2. そのローカルのmaster情報を最新に更新したものをローカルのmasterに反映
