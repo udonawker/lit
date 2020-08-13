@@ -1,4 +1,5 @@
 ## [valgrindが検出するメモリリークの種類](https://www.wagavulin.jp/entry/2016/08/28/231547)
+## [Valgrindの結果の見方、日本語訳、など役に立つことまとめ](https://taiyakisun.hatenablog.com/entry/20150902/1441214819)
 
 <pre>
 valgrind --show-leak-kinds=indirect,reachable --leak-check=full ./executable
