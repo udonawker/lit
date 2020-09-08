@@ -1,0 +1,102 @@
+set expandtab
+" set noexpandtab
+set hidden
+set tabstop=4
+set shiftwidth=4
+" オンのときは、ウィンドウの幅より長い行は折り返され、次の行に続けて表示される。（有効:wrap/無効:nowrap）
+set nowrap
+" 毎行の前に行番号を表示する。（有効:number/無効:nonumber）
+set number
+" カーソルが何行目の何列目に置かれているかを表示する。（有効:ruler/無効:noruler）
+set ruler
+" カレント行ハイライトON
+set cursorline
+" アンダーラインを引く(color terminal)
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+" アンダーラインを引く(gui)
+highlight CursorLine gui=underline guifg=NONE guibg=NONE
+" タブ文字を CTRL-I で表示し、行末に $ で表示する。（有効:list/無効:nolist）
+"set list
+" Listモード (訳注: オプション 'list' がオンのとき) に使われる文字を設定する。
+set listchars=tab:≫-,trail:-,eol:?,extends:≫,precedes:≪,nbsp:%
+" 長い行を折り返して表示(折り返す:wrap/折り返さない:nowrap)
+set nowrap
+" コマンドラインモードでtabで補完する(本来は Ctrl + d -> Ctrl + l)
+set wildmenu
+" ステータスラインを常に表示(0:表示しない、1:2つ以上ウィンドウがある時だけ表示)
+set laststatus=2
+" clipboard有効
+set clipboard+=unnamed
+
+" ls -laのような表示になります
+let g:netrw_liststyle=1
+" サイズを(K,M,G)で表示
+let g:netrw_sizestyle="H"
+" 日付フォーマットを yyyy/mm/dd(曜日) hh:mm:ss で表示
+let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
+
+" ヘッダを非表示にする
+let g:netrw_banner=0
+" プレビューウィンドウを垂直分割で表示する
+let g:netrw_preview=1
+
+source ~/.vim/ViewChange.vim
+
+"" ↓Tab設定
+" Anywhere SID.
+function! s:SID_PREFIX()
+  return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
+endfunction
+
+" Set tabline.
+function! s:my_tabline()  "{{{
+  let s = ''
+  for i in range(1, tabpagenr('$'))
+    let bufnrs = tabpagebuflist(i)
+    let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
+    let no = i  " display 0-origin tabpagenr.
+    let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
+    let title = fnamemodify(bufname(bufnr), ':t')
+    let title = '[' . title . ']'
+    let s .= '%'.i.'T'
+    let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
+    let s .= no . ':' . title
+    let s .= mod
+    let s .= '%#TabLineFill# '
+  endfor
+  let s .= '%#TabLineFill#%T%=%#TabLine#'
+  return s
+endfunction "}}}
+let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
+set showtabline=2 " 常にタブラインを表示
+
+" The prefix key.
+nnoremap    [Tag]   <Nop>
+nmap    t [Tag]
+" Tab jump
+for n in range(1, 9)
+  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
+" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
+
+map <silent> [Tag]c :tablast <bar> tabnew<CR>
+" tc 新しいタブを一番右に作る
+map <silent> [Tag]x :tabclose<CR>
+" tx タブを閉じる
+map <silent> [Tag]n :tabnext<CR>
+" tn 次のタブ
+map <silent> [Tag]p :tabprevious<CR>
+" tp 前のタブ
+"" ↑Tab設定
+
+"「%」でカーソル移動できる新しい組み合わせを追加する
+set matchpairs+=<:>
+
+"カラースキーマを設定
+" # git clone https://github.com/tomasr/molokai
+" # mv molokai/colors/molokai.vim ~/.vim/colors/
+"colorscheme molokai
+"syntax on
+"let g:molokai_original = 1
+"let g:rehash256 = 1
+"set background=dark
