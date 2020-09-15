@@ -37,3 +37,13 @@ vboxguestが表示されれば正常にインストールされています。<b
 <pre>
 sudo reboot
 </pre>
+
+### 3. アクセス権限設定
+<pre>
+~$ sudo gpasswd -a [ユーザー] vboxsf
+Adding user [ユーザー] to group vboxsf
+</pre>
+
+<pre>
+sudo reboot
+</pre>
