@@ -11,6 +11,12 @@ $ export http_proxy="http://username:password@your.proxy.address:proxy.port/"
 $ export ftp_proxy="http://username:password@your.proxy.address:proxy.port/"
 </pre>
 
+### GNOME
+[システム設定] ⇒ [ネットワーク]<br>
+ネットワークプロキシ<br>
+- 自動構成スクリプトの場合 ⇒ 自動 : 設定URL に設定<br>
+- 主導の場合 ⇒ 手動 : 各プロキシ設定<br>
+
 ### sudo
 sudoは一般の環境変数を引き継がないので、configファイルに設定している、http-proxyなどは無視される傾向にあります。<br>
 以下のように、-E を付加すれば、環境変数が引き継ぐ事ができます。<br>
