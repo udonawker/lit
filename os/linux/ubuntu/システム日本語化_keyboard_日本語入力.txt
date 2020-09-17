@@ -3,12 +3,13 @@
 
 ■日本語入力
 1. ubuntuの 「設定」>「テキスト入力」の使用する入力ソースに「日本語(Mozc)(iBus)」を追加し、「日本語(Mozc)(iBus)」、「日本語」の順にする。
+2. 次のソースへ切り替え: に Zenkaku Hankaku を設定する。
 
 ■全角半角ができない場合？
 ○Ubuntu 16.04で日本語入力が出来ない場合の対処法
 https://sicklylife.hatenablog.com/entry/2016/04/23/161024
 
-○/etc/default/keyboart
+○ /etc/default/keyboart
 --------------------------------------------------------------------------------
 $ sdiff /etc/default/keyboard{,.org}
 # KEYBOARD CONFIGURATION FILE					# KEYBOARD CONFIGURATION FILE
@@ -25,7 +26,7 @@ $
 --------------------------------------------------------------------------------
 
 
-○Ubuntu で日本語キーボードレイアウト
+○ Ubuntu で日本語キーボードレイアウト
 https://qiita.com/vochicong/items/6452ac54bde56b0e0bb3
 --------------------------------------------------------------------------------
 sudo dpkg-reconfigure keyboard-configuration
