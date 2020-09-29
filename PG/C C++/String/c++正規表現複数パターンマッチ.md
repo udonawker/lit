@@ -10,15 +10,15 @@
 
 int main()
 {
-  std::string s("a01da123456da999d");
-  std::regex re("\\d+");
+    std::string s("a01da123456da999d");
+    std::regex re("\\d+");
 
-  for (std::sregex_iterator it(std::begin(s), std::end(s), re), end; it != end; ++it) {
-      // *it == std::match_results
-      auto&& m = *it;
-      std::cout << "prefix = " << m.prefix() << ", suffix = " << m.suffix() << ", size =  " << m.size() << std::endl;
-      std::cout << "position = " << m.position() << ", length = " << m.length() << ", str = '" << m.str() << '\'' << std::endl;
-  }
+    for (std::sregex_iterator it(std::begin(s), std::end(s), re), end; it != end; ++it) {
+        // *it == std::match_results
+        auto&& m = *it;
+        std::cout << "prefix = " << m.prefix() << ", suffix = " << m.suffix() << ", size =  " << m.size() << std::endl;
+        std::cout << "position = " << m.position() << ", length = " << m.length() << ", str = '" << m.str() << '\'' << std::endl;
+    }
 }
 
 // $ g++ prog.cc -Wall -Wextra -std=c++11
@@ -30,5 +30,30 @@ prefix = da, suffix = da999d, size =  1
 position = 5, length = 6, str = '123456'
 prefix = da, suffix = d, size =  1
 position = 13, length = 3, str = '999'
+*/
+</pre>
+
+<pre>
+#include &lt;iostream&gt;
+#include &lt;iterator&gt;
+#include &lt;regex&gt;
+#include &lt;string&gt;
+
+int main()
+{
+    std::string s("あしたは[sample \"test\"=3000/]晴れです");
+    std::regex re(R"(\[sample "test"=(\d+)/\])");
+
+    for (std::sregex_iterator it(std::begin(s), std::end(s), re), end; it != end; ++it) {
+        auto&& m = *it;
+        std::cout << "prefix = " << m.prefix() << ", suffix = " << m.suffix() << ", size =  " << m.size() << "position = " << m.position() << std::endl;
+        for (decltype(m.size()) pos = 0; pos < m.size(); ++pos) {
+          std::cout << ", length = " << m[pos].length() << ", str = '" << m[pos].str() << '\'' << std::endl;
+        }
+    }
+}
+
+// regex_iterator
+/*
 */
 </pre>
