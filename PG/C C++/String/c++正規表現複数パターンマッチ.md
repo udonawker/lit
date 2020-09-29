@@ -39,21 +39,80 @@ position = 13, length = 3, str = '999'
 #include &lt;regex&gt;
 #include &lt;string&gt;
 
-int main()
+void regex_match(const std::string& s)
 {
-    std::string s("あしたは[sample \"test\"=3000/]晴れです");
     std::regex re(R"(\[sample "test"=(\d+)/\])");
-
+    const char* suffix = nullptr;
+    std::cout << "■■■ : " << s << std::endl;
     for (std::sregex_iterator it(std::begin(s), std::end(s), re), end; it != end; ++it) {
+        // *it == std::match_results
         auto&& m = *it;
-        std::cout << "prefix = " << m.prefix() << ", suffix = " << m.suffix() << ", size =  " << m.size() << "position = " << m.position() << std::endl;
+        // std::match_results.prefix()|std::match_results.suffix() == std::sub_match
+        std::cout << "prefix = " << m.prefix() << ", suffix = " << m.suffix() << ", size =  " << m.size() << ", position = " << m.position() << std::endl;
+        suffix = m.suffix().str().c_str();
         for (decltype(m.size()) pos = 0; pos < m.size(); ++pos) {
-          std::cout << ", length = " << m[pos].length() << ", str = '" << m[pos].str() << '\'' << std::endl;
+          std::cout << "match_results[" << pos << "] length = " << m[pos].length() << ", str = '" << m[pos].str() << '\'' << std::endl;
         }
+        std::cout << "--------------------------------" << std::endl;
     }
+    std::cout << "last suffix = " << suffix << std::endl;
 }
 
-// regex_iterator
+int main()
+{
+    std::string strs[] = {
+        "[sample \"test\"=10000/]あしたは[sample \"test\"=3000/]晴れです[sample \"test\"=123/]わわわわ～", 
+        "あしたは[sample \"test\"=3000/]晴れです[sample \"test\"=123/]わわわわ～", 
+        "[sample \"test\"=10000/]あしたは[sample \"test\"=3000/]晴れです[sample \"test\"=123/]わわわわ～[sample \"test\"=99999/]" };
+
+    for (const auto& str : strs) {
+        regex_match(str);
+    }
+
+    return 0;
+}
 /*
+■■■ : [sample "test"=10000/]あしたは[sample "test"=3000/]晴れです[sample "test"=123/]わわわわ～
+prefix = , suffix = あしたは[sample "test"=3000/]晴れです[sample "test"=123/]わわわわ～, size =  2, position = 0
+match_results[0] length = 22, str = '[sample "test"=10000/]'
+match_results[1] length = 5, str = '10000'
+--------------------------------
+prefix = あしたは, suffix = 晴れです[sample "test"=123/]わわわわ～, size =  2, position = 34
+match_results[0] length = 21, str = '[sample "test"=3000/]'
+match_results[1] length = 4, str = '3000'
+--------------------------------
+prefix = 晴れです, suffix = わわわわ～, size =  2, position = 67
+match_results[0] length = 20, str = '[sample "test"=123/]'
+match_results[1] length = 3, str = '123'
+--------------------------------
+last suffix = 123
+■■■ : あしたは[sample "test"=3000/]晴れです[sample "test"=123/]わわわわ～
+prefix = あしたは, suffix = 晴れです[sample "test"=123/]わわわわ～, size =  2, position = 12
+match_results[0] length = 21, str = '[sample "test"=3000/]'
+match_results[1] length = 4, str = '3000'
+--------------------------------
+prefix = 晴れです, suffix = わわわわ～, size =  2, position = 45
+match_results[0] length = 20, str = '[sample "test"=123/]'
+match_results[1] length = 3, str = '123'
+--------------------------------
+last suffix = 123
+■■■ : [sample "test"=10000/]あしたは[sample "test"=3000/]晴れです[sample "test"=123/]わわわわ～[sample "test"=99999/]
+prefix = , suffix = あしたは[sample "test"=3000/]晴れです[sample "test"=123/]わわわわ～[sample "test"=99999/], size =  2, position = 0
+match_results[0] length = 22, str = '[sample "test"=10000/]'
+match_results[1] length = 5, str = '10000'
+--------------------------------
+prefix = あしたは, suffix = 晴れです[sample "test"=123/]わわわわ～[sample "test"=99999/], size =  2, position = 34
+match_results[0] length = 21, str = '[sample "test"=3000/]'
+match_results[1] length = 4, str = '3000'
+--------------------------------
+prefix = 晴れです, suffix = わわわわ～[sample "test"=99999/], size =  2, position = 67
+match_results[0] length = 20, str = '[sample "test"=123/]'
+match_results[1] length = 3, str = '123'
+--------------------------------
+prefix = わわわわ～, suffix = , size =  2, position = 102
+match_results[0] length = 22, str = '[sample "test"=99999/]'
+match_results[1] length = 5, str = '99999'
+--------------------------------
+last suffix = 
 */
 </pre>
