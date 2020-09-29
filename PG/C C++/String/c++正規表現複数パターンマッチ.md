@@ -21,6 +21,7 @@ int main()
   }
 }
 
+// $ g++ prog.cc -Wall -Wextra -std=c++11
 // regex_iterator
 /*
 prefix = a, suffix = da123456da999d, size =  1
