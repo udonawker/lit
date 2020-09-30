@@ -46,7 +46,7 @@ position = 13, length = 3, str = '999'
 void regex_match(const std::string& s)
 {
     std::regex re(R"(\[sample "test"=(\d+)/\])");
-    const char* suffix = nullptr;
+    const char* suffix = s.c_str();
     std::cout << "■■■ : " << s << std::endl;
     for (std::sregex_iterator it(std::begin(s), std::end(s), re), end; it != end; suffix = it->suffix().str().c_str(), ++it) {
         // *it == std::match_results
@@ -71,6 +71,7 @@ int main()
         "あしたは[sample \"test\"=3000/]晴れです[sample \"test\"=123/]わわわわ～", 
         "[sample \"test\"=10000/]あしたは[sample \"test\"=3000/]晴れです[sample \"test\"=123/]わわわわ～[sample \"test\"=99999/]",
         "[sample \"test\"=10000/][sample \"test\"=20000/][sample \"test\"=30000/][sample \"test\"=40000/]",
+        "ああああ いいいい",
         "" };
 
     for (const auto& str : strs) {
@@ -80,7 +81,10 @@ int main()
     return 0;
 }
 
-//$ g++ prog.cc -Wall -Wextra -std=c++11
+// $ g++ prog.cc -Wall -Wextra -std=c++11
+// std::string_literal
+// std::regex_iterator
+// constexpr char str[] "aaa";
 /*
 ■■■ : [sample "test"=10000/]あしたは[sample "test"=3000/]晴れです[sample "test"=123/]わわわわ～
 prefix = , suffix = あしたは[sample "test"=3000/]晴れです[sample "test"=123/]わわわわ～, size =  2, position = 0
@@ -146,7 +150,12 @@ match_results[1] length = 5, str = '40000'
 --------------------------------
 last suffix =  length = 0
 
+■■■ : ああああ いいいい
+last suffix = ああああ いいいい length = 25
+
 ■■■ : 
+last suffix =  length = 0
+*/
 */
 // GCC reference:
 //   https://gcc.gnu.org/
