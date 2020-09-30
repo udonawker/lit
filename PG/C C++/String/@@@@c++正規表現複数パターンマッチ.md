@@ -59,7 +59,7 @@ void regex_match(const std::string& s)
         std::cout << "--------------------------------" << std::endl;
     }
     if (suffix) {
-        std::cout << "last suffix = " << suffix << " length = " << std::char_traits<char>::length(suffix) << std::endl;
+        std::cout << "last suffix = " << suffix << " length = " << std::char_traits&lt;char&gt;::length(suffix) << std::endl;
     }
     std::cout << std::endl;
 }
