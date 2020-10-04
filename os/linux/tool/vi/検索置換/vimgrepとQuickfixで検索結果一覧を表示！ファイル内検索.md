@@ -1,4 +1,5 @@
 ## [vimgrepとQuickfixで検索結果一覧を表示！](https://qiita.com/y_hideshi/items/80c85e46360fbb0dbf91?utm_source=stock_summary_mail&utm_medium=email&utm_term=udonta&utm_content=vim%E3%81%AE%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E3%81%97%E3%81%9F%E3%81%84%E5%B0%8F%E6%8A%80%E9%9B%86&utm_campaign=stock_summary_mail_2020-10-03)
+## [vimgrepとQuickfix知らないVimmerはちょっとこっち来い](https://qiita.com/yuku_t/items/0c1aff03949cb1b8fe6b)
 
 #### コマンド
 <pre>
@@ -42,6 +43,7 @@ Ctrl + w
 :vimgrepに加えて:grep、:Ggrepでも自動的にquickfix-windowを開く<br>
 .vimrcに以下を記述<br>
 <pre>
+' :vimgrepに加えて:grep、:Ggrepでも自動的にquickfix-windowを開く
 autocmd QuickFixCmdPost *grep* cwindow
 </pre>
 
