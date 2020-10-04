@@ -11,7 +11,7 @@ namespace std {
   template <class T, class Compare>
   constexpr const T& clamp(const T& v, const T& lo, const T& hi, Compare comp);
 }
-<pre>
+</pre>
 例：<br>
 <pre>
 #include &lt;iostream&gt;
