@@ -2,7 +2,9 @@
 
 ### [詳細設定](https://github.com/yzane/vscode-markdown-pdf/blob/master/README.ja.md)
 
-#### Markdown pdf の詳細設定から以下を設定
+#### 1. 拡張機能からMarkdown PDFをインストール
+
+#### 2. Markdown pdf の詳細設定から以下を設定
 `markdown-pdf.executablePath`<br>
 * バンドルされた Chromium の代わりに実行する Chromium または Chrome のパスを指定します
 * 全ての \ は \\ と記述する必要があります (Windows)
@@ -11,4 +13,4 @@
 "markdown-pdf.executablePath": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 </pre>
 
-#### `Ctrl+Shift+P` を押してコマンドパレットを開き `convert Markdown to PDF`
+#### 3. `Ctrl+Shift+P` を押してコマンドパレットを開き `convert Markdown to PDF`
