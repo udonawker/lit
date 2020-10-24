@@ -1,0 +1,12 @@
+## [VS CodeでMarkdownをHTMLやPDFに変換するには？](https://www.atmarkit.co.jp/ait/articles/1804/27/news034.html)
+
+### [詳細設定](https://github.com/yzane/vscode-markdown-pdf/blob/master/README.ja.md)
+
+#### Markdown pdf の詳細設定から以下を設定
+`markdown-pdf.executablePath`<br>
+* バンドルされた Chromium の代わりに実行する Chromium または Chrome のパスを指定します
+* 全ての \ は \\ と記述する必要があります (Windows)
+* 設定の反映には、Visutal Studio Code の再起動が必要です
+<pre>
+"markdown-pdf.executablePath": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+</pre>
