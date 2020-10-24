@@ -14,3 +14,9 @@
 </pre>
 
 #### 3. `Ctrl+Shift+P` を押してコマンドパレットを開き `convert Markdown to PDF`
+
+<br><br>
+任意に改行を入れる場合<br>
+<pre>
+&lt;div style="page-break-before:always"&gt;&lt;/div&gt;
+</pre>
