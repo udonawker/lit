@@ -10,3 +10,5 @@
 <pre>
 "markdown-pdf.executablePath": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 </pre>
+
+#### `Ctrl+Shift+P` を押してコマンドパレットを開き `convert Markdown to PDF`
