@@ -38,3 +38,45 @@ int main() {
     std::cout << str << std::endl;
 }
 </pre>
+
+<pre>
+std::ifstream f("file.txt");
+
+if (f)
+{
+  std::stringstream buffer;
+  buffer << f.rdbuf();
+  f.close();
+
+  // The content of "file.txt" is available in the string `buffer.str()`
+}
+</pre>
+
+<pre>
+std::ifstream f("file.txt");
+
+if (f)
+{
+  std::string str((std::istreambuf_iterator<char>(f)),
+                  std::istreambuf_iterator<char>());
+
+  // Operations on `str`...
+}
+</pre>
+
+<pre>
+std::ifstream f("file.txt");
+
+if (f)
+{
+  f.seekg(0, std::ios::end);
+  const auto size = f.tellg();
+
+  std::string str(size, ' ');
+  f.seekg(0);
+  f.read(&str[0], size); 
+  f.close();
+
+  // Operations on `str`...
+}
+</pre>
