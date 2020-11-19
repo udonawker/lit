@@ -7,9 +7,14 @@ int main()
 {
     std::stringstream ss;
     ss << "aaa=0.1";
+    //                                                                    $01 + 2
     std::cout << std::regex_replace( ss.str(), std::regex("(aaa=)(.+)"), "$012", std::regex_constants::format_first_only ) << std::endl;
+    //                                                                    $01 + 12345
     std::cout << std::regex_replace( ss.str(), std::regex("(aaa=)(.+)"), "$0112345", std::regex_constants::format_first_only ) << std::endl;
-    std::cout << std::regex_replace( ss.str(), std::regex("(aaa=)(.+)"), "$1112345", std::regex_constants::format_first_only ) << std::endl;
+    //                                                                    $1 + 12345
+    std::cout << std::regex_replace( ss.str(), std::regex("(aaa=)(.+)"), "$1 12345", std::regex_constants::format_first_only ) << std::endl;
+    //                                                                    $11 + 2345
+    std::cout << std::regex_replace( ss.str(), std::regex("(aaa=)(.+)"), "$112345", std::regex_constants::format_first_only ) << std::endl;
     std::cout << std::regex_replace( ss.str(), std::regex("(aaa=)(.+)"), "$0", std::regex_constants::format_first_only ) << std::endl;
     std::cout << std::regex_replace( ss.str(), std::regex("(aaa=)(.+)"), "$1", std::regex_constants::format_first_only ) << std::endl;
     std::cout << std::regex_replace( ss.str(), std::regex("(aaa=)(.+)"), "$2", std::regex_constants::format_first_only ) << std::endl;
