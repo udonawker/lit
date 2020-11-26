@@ -214,3 +214,20 @@ rm -rf $TEMPDIR
 
 echo "$DEST successfully created, copy to build system and unpack with:"
 echo "  tar xfz $DEST"
+
+
+
+
+
+
+https://python5.com/q/kndkvfpb
+GCOVを使用してコードカバレッジを作成したいのですが、テストは別のマシンで実行されます。そのため、実行可能ファイル内の.gcdaファイルへのハードワイヤードパスは機能しません。
+
+このデフォルトのディレクトリを変更するために、hereと言われているように、GCOV_PREFIXとGCOV_PREFIX_STRIPの環境変数を使用できます。
+
+ここで私が使用したコマンド:
+$ export GCOV_PREFIX="/foo/bar"
+$ export GCOV_PREFIX_STRIP="3"
+$ gcc main.c -fprofile-arcs -ftest-coverage
+$ strings a.out | grep gcda
+/home/calmarius/blahblah/main.c.gcda
