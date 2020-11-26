@@ -1,0 +1,216 @@
+https://sites.google.com/site/kandamotohiro/linux/gcov-txt
+gcov.txt
+以下は、Linux カーネル文書、Documentation/gcov.txt の kanda.motohiro@gmail.com による訳です。原文と同じ、GPL v2 で公開します。
+
+gcov を Linux kernel で使う
+================================
+
+1. はじめに
+2. 準備
+3. カスタマイズ
+4. ファイル
+5. モジュール
+6. ビルド機とテスト機が違うとき
+7. トラブルシュート
+Appendix A: sample script: gather_on_build.sh
+Appendix B: sample script: gather_on_test.sh
+
+
+1. はじめに
+===============
+
+gcov プロファイリングのカーネルサポートによって、 GCC のカバレッジテストツールである gcov [1] を Linux カーネルで使うことができます。実行中のカーネルのカバレッジデータは、 gcov 互換の形式で、 "gcov" debugfs ディレクトリに公開されます。
+あるファイルのカバレッジデータを得るには、カーネルビルドディレクトリに移動し、以下のように -o オプションをつけて gcov を動かします。（ルート権限が必要です。）
+
+# cd /tmp/linux-out
+# gcov -o /sys/kernel/debug/gcov/tmp/linux-out/kernel spinlock.c
+
+そうすると、カレントディレクトリに、実行カウントの注釈が付いたソースコードファイルが作成されます。さらに、lcov [2] のような、グラフィカルな gcov フロントエンドを使って、カーネル全体のプロファイルデータを採取したり、カバレッジの概要を HTML 形式で提供することもできます。
+
+主な用途：
+
+* デバッグ（この行は、通ったっけ？）
+* テスト改善（この行をカバーするには、テストをどう変えるべきだろう？）
+* カーネルの構成を最小にする（関連するコードがまるで動いてないのに、このオプションは必要だろうか？）
+
+[1] http://gcc.gnu.org/onlinedocs/gcc/Gcov.html
+[2] http://ltp.sourceforge.net/coverage/lcov.php
+
+
+2. 準備
+==============
+
+カーネルをこれをつけて構成します：
+
+        CONFIG_DEBUG_FS=y
+        CONFIG_GCOV_KERNEL=y
+
+カーネル全体のカバレッジデータを得るにはこうします：
+
+        CONFIG_GCOV_PROFILE_ALL=y
+
+プロファイリングフラグ付きでコンパイルされたカーネルはとても大きくて遅いので注意ください。また、 CONFIG_GCOV_PROFILE_ALL はすべてのアーキテクチャでサポートされているわけではありません。
+
+プロファイリングデータをアクセスするには、 debugfs をマウントします。
+
+        mount -t debugfs none /sys/kernel/debug
+
+
+3. カスタマイズ
+================
+
+特定のファイルやディレクトリにプロファイルを有効にするには、以下のような行をそのカーネル Makefile に追加します。
+
+        特定ファイル (e.g. main.o):
+                GCOV_PROFILE_main.o := y
+
+        あるディレクトリのすべてのファイル:
+                GCOV_PROFILE := y
+
+ CONFIG_GCOV_PROFILE_ALL
+のときでも、特定ファイルをプロファイル対象から除くには、こうします。
+
+                GCOV_PROFILE_main.o := n
+        and:
+                GCOV_PROFILE := n
+
+このしかけは、メインのカーネルイメージにリンクされるファイルあるいは、カーネルモジュールとしてコンパイルされるファイルにだけ有効です。
+
+4. ファイル
+========
+
+gcov カーネルサポートは、 debugfs に以下のファイルを作成します。
+
+        /sys/kernel/debug/gcov
+                gcov 関連ファイルすべての親ディレクトリ
+
+        /sys/kernel/debug/gcov/reset
+                書き込むと、すべてのカバレッジデータをゼロにします。
+
+        /sys/kernel/debug/gcov/path/to/compile/dir/file.gcda
+                gcov ツールが使用する実際の  gcov データファイル。
+                書き込むと、そのファイルのカバレッジデータをゼロにします。
+
+        /sys/kernel/debug/gcov/path/to/compile/dir/file.gcno
+                gcov ツールが使用する静的データファイルへのシンボリックリンク。このファイルは、-ftest-coverage オプション付きでコンパイルする時に、 gcc が作成します。
+
+
+5. モジュール
+==========
+
+カーネルモジュールは、モジュールのアンロード時にだけ動くクリーンアップコードを含むことがあります。gcov 機能は、そのようなコードのカバレッジデータを採取するために、アンロードされたモジュールに関連するデータのコピーを保持する機能があります。このデータは、 debugfs でアクセスできます。モジュールが再度ロードされた時に、関連するカバレッジカウンターは前回の実行時のデータを引き継ぎます。
+このふるまいを抑止するには、こうします。
+
+        gcov_persist=0
+
+アンロードしたモジュールのデータを破棄するのは、そのデータファイルあるいはグローバルリセットファイルに書き込んでもできます。
+
+6. ビルド機とテスト機が違うとき
+====================================
+
+gcov カーネルプロファイリングのしかけは、カーネルをビルドするマシンと実行するマシンが同じ場合ならば、そのまますんなり動きます。そうでないときには、特別な準備が必要で、それは gcov がどこで動くかによります。
+
+a) gcov がテスト機で動くとき
+
+テスト機の gcov ツールバージョンは、カーネルビルドに使われた 
+gcc バージョンと互換でなくてはいけません。また、以下のファイルを、ビルド機からテスト機にコピーする必要があります。
+
+ソースツリーから：
+  - すべての C ソースファイルとヘッダ
+
+ビルドツリーから：
+  - すべての C ソースファイルとヘッダ
+  - すべての .gcda and .gcno ファイル
+  - ディレクトリへのすべてのリンク
+
+これらのファイルは、ビルド機とテスト機で、全く同じファイルシステム上の位置に置かれる必要があることに注意下さい。あるパスコンポーネントがシンボリックリンクである場合、実際のディレクトリにする必要があります。 (make の CURDIR 処理のためです。)
+
+b) gcov がビルド機で動くとき
+
+テストケースが終わったら、以下のファイルをテスト機からビルド機にコピーします。
+
+sysfs の gcov ディレクトリから:
+  - すべての .gcda ファイル
+  -  .gcno ファイルへのすべてのリンク
+
+ビルド機でこれらのファイルを置く場所は任意です。 gcov
+の -o オプションに、そのディレクトリを指定します。
+
+ビルド機でのディレクトリ設定の例：
+
+  /tmp/linux:    kernel source tree
+  /tmp/out:      kernel build directory as specified by make O=
+  /tmp/coverage: location of the files copied from the test machine
+
+  [user@build] cd /tmp/out
+  [user@build] gcov -o /tmp/coverage/tmp/out/init main.c
+
+
+7. トラブルシュート
+==================
+
+問題：リンクエラーでコンパイルできない。
+原因：メインカーネルにリンクされないファイル、あるいは、カスタムなリンク処理でリンクされるファイルに、プロファイルフラグが指定してあります。
+対策：そのファイルの Makefile に以下を指定して、プロファイル対象から除きます。
+          GCOV_PROFILE := n or GCOV_PROFILE_basename.o := n 
+
+問題： sysfs からコピーしたファイルが、空あるいは不完全。
+原因： seq_fileの仕様によって、 cp や tar などのツールは sysfs から正しくファイルをコピーできないことがあります。
+対策： 'cat' で .gcda ファイルを読み、 'cp -d' でリンクをコピーして下さい。あるいは、 Appendix B に従って下さい。
+
+Appendix A: gather_on_build.sh
+==============================
+
+ビルド機でカバレッジメタデータを集めるサンプルスクリプト
+(see 6a):
+#!/bin/bash
+
+KSRC=$1
+KOBJ=$2
+DEST=$3
+
+if [ -z "$KSRC" ] || [ -z "$KOBJ" ] || [ -z "$DEST" ]; then
+  echo "Usage: $0 <ksrc directory> <kobj directory> <output.tar.gz>" >&2
+  exit 1
+fi
+
+KSRC=$(cd $KSRC; printf "all:\n\t@echo \${CURDIR}\n" | make -f -)
+KOBJ=$(cd $KOBJ; printf "all:\n\t@echo \${CURDIR}\n" | make -f -)
+
+find $KSRC $KOBJ \( -name '*.gcno' -o -name '*.[ch]' -o -type l \) -a \
+                 -perm /u+r,g+r | tar cfz $DEST -P -T -
+
+if [ $? -eq 0 ] ; then
+  echo "$DEST successfully created, copy to test system and unpack with:"
+  echo "  tar xfz $DEST -P"
+else
+  echo "Could not create file $DEST"
+fi
+
+
+Appendix B: gather_on_test.sh
+=============================
+
+テスト機でカバレッジデータファイルを集めるサンプルスクリプト
+(see 6b):
+
+#!/bin/bash -e
+
+DEST=$1
+GCDA=/sys/kernel/debug/gcov
+
+if [ -z "$DEST" ] ; then
+  echo "Usage: $0 <output.tar.gz>" >&2
+  exit 1
+fi
+
+TEMPDIR=$(mktemp -d)
+echo Collecting data..
+find $GCDA -type d -exec mkdir -p $TEMPDIR/\{\} \;
+find $GCDA -name '*.gcda' -exec sh -c 'cat < $0 > '$TEMPDIR'/$0' {} \;
+find $GCDA -name '*.gcno' -exec sh -c 'cp -d $0 '$TEMPDIR'/$0' {} \;
+tar czf $DEST -C $TEMPDIR sys
+rm -rf $TEMPDIR
+
+echo "$DEST successfully created, copy to build system and unpack with:"
+echo "  tar xfz $DEST"
