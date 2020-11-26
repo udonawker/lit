@@ -1,0 +1,88 @@
+https://ameblo.jp/rhythmicallife/entry-10518627053.html
+
+【Linuxにおけるカバレッジテスト】
+
+■gcovを使用したカバレッジテストについて
+
+　□gcovとは
+　　C言語で書かれたプログラムのカバレッジを測定するツールで、gccに付属
+
+　□gcovのインストール
+　　不要。gccに付属
+
+　□ざっくり使い方
+　　①測定するテストコードをコンパイルする際に、-coverageを付加すると、gcov用オブジェクトファイル(*.gcno)が生成される。
+　　　但し、古いバージョンのgcc(3.4.6ではこちらに該当)では-fprofile-arcs -ftest-coverage と書く必要がある（以下についても同様）
+　　②テストアプリを実行すると、カバレッジのログを記録した、*.gcdaファイルが生成される
+　　③gcovを実行すると、カバレッジが表示される
+
+
+※ライブラリ側を測定したい場合、ライブラリのコンパイルオプションに-coverageを付加し、
+　アプリケーション側のリンカオプションにも-coverageを付加することで、成功した。
+
+
+■lcovについて
+
+
+　□lcovとは
+　　gcovで生成されたカバレッジ測定結果をHTML形式で見やすくしてくれる
+
+
+　□lcovのインストール
+　 http://ltp.sourceforge.net/coverage/lcov.php より
+　　lcov-1.7.tar.gz(2009/09時点)をダウンロードしてきて展開する。
+　　binフォルダの中にlcovなどのコマンドが入っているので、適宜配置する
+
+
+　□ざっくり使い方
+　　①./lcov -c -d [作業ディレクトリ] -o [出力infoオブジェクト名] コマンド実行
+　　　例)> ./lcov -c -d . -o hoge.info
+　　②①を実行すると.infoが生成される
+　　③./genhtml -o [出力ディレクトリ] [infoファイル] コマンド実行
+　　　例)> ./genhtml -o output hoge.info
+　　④③を実行するとindex.htmlともろもろのファイルが生成される
+
+
+　□【gcov実行後】
+
+# ll
+--------------------------------------------------
+hoge.cpp ソースファイル
+hoge.cpp.gcov gcov実行結果ファイル
+hoge.gcda カバレッジログファイル
+hoge.gcno カバレッジ用オブジェクトファイル
+hoge.o オブジェクトファイル
+hoge 実行ファイル
+lcov lcov実行ファイル
+genhtml HTML出力実行ファイル
+--------------------------------------------------
+
+# ./lcov -c -d . -o hoge.info
+# Capturing coverage data from .
+# Found gcov version: 4.1.2
+# Scanning . for .gcda files ...
+# Found 1 data files in .
+# Processing ./hoge.gcda
+# Finished . info-file creation
+
+# ./genhtml -o output hoge.info
+# Reading data file hoge.info
+# Found 1 entries.
+# Found common filename prefix "/home/work/xxx"
+# Writing .css and .png files.
+# Generation output.
+# Processing file hoge.cpp
+# Writing directory view page.
+# Overall coverage rate:
+# lines......: 56.0% (315 of 563 lines)
+# functions..: 86.4% (19 of 22 functions)
+　□出力結果の特徴
+　　・通過していない行は赤いラインで強調表示される
+　　・通過している行の左には何回通過したかの数字が表示される
+　　・カバレッジ具合がグラフィカルなバーで表示される
+　　　(網羅が少ないほうから赤・黄色・緑で表示されるのでテストが甘いところも良く分かる)
+
+
+　※ http://ltp.sourceforge.net/coverage/lcov.php より
+　　lcov-1.7.tar.gz(2009/09時点)をダウンロードしてきて、
+　　中のexampleが参考になる
