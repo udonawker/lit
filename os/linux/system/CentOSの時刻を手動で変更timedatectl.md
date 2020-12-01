@@ -44,5 +44,5 @@ NTP synchronized: no
 ntpを有効に戻す。<br>
 
 <pre>
-$ sudo timedatectl set
+$ sudo timedatectl set-ntp yes
 </pre>
