@@ -32,6 +32,10 @@ if [ -f ~/tools/enhancd-master/init.sh ]; then
     source ~/tools/enhancd-master/init.sh
 fi
 
+
+#export PATH=~/local/bin:"$PATH"
+#export VIMRUNTIME="$HOME/local/src/vim/runtime"
+
 #export PS1='\[\e[30;47m\]\t\[\e[37;46m\]|\[\e[30m\]\W\[\e[36;49m\]$\[\e[0m\] '
 export PS1='\[\e[30;47m\]\D{%F %T}\[\e[37;46m\]\[\e[30m\]|\W\[\e[36;49m\]$\[\e[0m\] '
 
