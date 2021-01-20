@@ -1,4 +1,5 @@
 ## [長い文字列作成ツール](https://tools.m-bsys.com/ex/long_text_maker.php)
+## [文字列ジェネレーター](https://lazesoftware.com/tool/strgen/)
 ## [単位変換](https://www.convertworld.com/ja/)
 
 # C++
@@ -12,3 +13,4 @@
 # Json
 ## [Json Editor Online](https://jsoneditoronline.org/)
 ## [JSONきれい ～JSON整形ツール～](https://tools.m-bsys.com/development_tooles/json-beautifier.php)
+
