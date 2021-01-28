@@ -1,6 +1,7 @@
 ## [安全なシグナルハンドラを実装するには](https://codezine.jp/article/detail/4700)
 ## [signal-safety(7) — Linux manual page](https://man7.org/linux/man-pages/man7/signal-safety.7.html)
-
+## [pthreadについて（シグナル・バリア等）](https://codezine.jp/article/detail/1973)
+## [シグナルハンドラを使わないでシグナルをハンドルする](https://yupo5656.hatenadiary.org/entry/20060114/p1)
 ## [安全なシグナルハンドラの書き方](https://alpha-netzilla.blogspot.com/2014/10/signal.html)
 
 ### 【シググナルハンドラの基礎】
