@@ -2,6 +2,13 @@
 ## [よく使う特殊文字　一覧](https://qiita.com/masatokato0128/items/b07e02013aed143aa45a "よく使う特殊文字　一覧")
 ## [HTML 特殊文字](https://qiita.com/inabe49/items/303afa114b0204da8a24)
 
+行頭にスペース
+```
+&nbsp;　(+全角スペース)
+```
+&nbsp;　(+全角スペース)<br>
+<br>
+
 ### 基本文字
 |文字表記 | 文字|名称|
 |---       |---      |---|
