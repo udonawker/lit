@@ -5,3 +5,4 @@
 ## [VMWare Workstation Player上のCentOS7（Linux）に固定IPアドレスを設定する 2020/11/28](https://www.wantanblog.com/entry/2020/11/28/182013)
 ## [VMwarePlayer上のCentOSを固定IPにする ブリッジ接続 2014/10/20](https://lanevok.hatenadiary.org/entry/20141020/1413808081)
 ## [【CentOS7】VMwareでIPアドレスを固定にする方法を解説 2020/5/16](https://afigura.net/531/)
+## [VMware Workstation Playerの仮想ネットワーク設定(実験つき) 2017/9/17](https://qiita.com/Higemal/items/b8124b047a3d0393e697)
