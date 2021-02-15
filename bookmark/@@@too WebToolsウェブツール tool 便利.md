@@ -2,6 +2,7 @@
 ## [文字列ジェネレーター](https://lazesoftware.com/tool/strgen/)
 ## [単位変換](https://www.convertworld.com/ja/)
 ## [Markdown エディタ StackEdit](https://stackedit.io/app#)
+## [Base64エンコーダー 画像→Base64](https://lab.syncer.jp/Tool/Base64-encode/)
 
 # C++
 ## [C++実行 wandbox](https://wandbox.org/)
