@@ -2,3 +2,6 @@
 ## [VMware VMnet8（NAT）でネットワーク設定したのでメモ](https://kitigai.hatenablog.com/entry/2018/06/28/233000)
 ## [VMware WorkstationのNAT接続で詰まった話 2020年05月10日](https://qiita.com/EtoKazuki/items/f5ad5712254b526e2c2e)
 ## [VMware のネットワーク設定と格闘した話 ブリッジ接続 2019年02月06日](https://qiita.com/suzuki-maruchan/items/e5f7c539b04e2778a03b)
+## [VMWare Workstation Player上のCentOS7（Linux）に固定IPアドレスを設定する 2020/11/28](https://www.wantanblog.com/entry/2020/11/28/182013)
+## [VMwarePlayer上のCentOSを固定IPにする ブリッジ接続 2014/10/20](https://lanevok.hatenadiary.org/entry/20141020/1413808081)
+## [【CentOS7】VMwareでIPアドレスを固定にする方法を解説 2020/5/16](https://afigura.net/531/)
