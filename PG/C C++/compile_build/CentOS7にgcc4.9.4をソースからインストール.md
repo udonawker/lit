@@ -1,4 +1,6 @@
-## [【CentOS7】gccをソースからインストール](https://www.server-memo.net/memo/gcc-install.html)
+## [【CentOS7】gccをソースからインストール 2019/6/27](https://www.server-memo.net/memo/gcc-install.html)
+## [gcc-10.1.0をCentOS7にソースインストール libstdc++の入れ替え 2021/1/21](https://aulta.co.jp/archives/7554)
+## [CentOS 7にgcc 8.3.0をインストールする ldconfig secure_path 2019/5/10](https://www.pgen.info/archives/1323)
 ## [CentOS 7にgcc 4.9をインストール（SCL）](https://qiita.com/witchcraze/items/b9aa3dc6789cb90b8268) devtoolset
 
 ### 1. ソースダウンロード＆展開
