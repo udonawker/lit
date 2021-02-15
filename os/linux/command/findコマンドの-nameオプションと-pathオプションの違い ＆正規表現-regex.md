@@ -33,3 +33,11 @@ find {検索するディレクトリ} -path "{パターン}"
 /etc/sysconfig/network-scripts/ifcfg-eth0
 /etc/sysconfig/network-scripts/ifdown-eth
 ```
+
+### -regexオプション
+ちなみに正規表現で検索はこう。パス全体がマッチするかどうかを見る。<br>
+
+パス全体が、正規表現`”.*ww/test\.h."*` にマッチすると検索結果に表示される（例えば /home/apache/www/test.html など）<br>
+```
+find /home -regex ".*ww/test\.h.*"
+```
