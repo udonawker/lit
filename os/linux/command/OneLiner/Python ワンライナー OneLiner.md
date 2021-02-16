@@ -31,4 +31,8 @@ hayato:Desktop$ pwd | python -c "import sys; print(input().split('/'))"
 ### jsonを整形するなら
 ```
 $ echo '{"foo": "lorem", "bar": "ipsum"}' | python -mjson.tool
+{
+    "bar": "ipsum",
+    "foo": "lorem"
+}
 ```
