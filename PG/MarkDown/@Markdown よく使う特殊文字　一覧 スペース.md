@@ -1,6 +1,7 @@
 引用
 ## [よく使う特殊文字　一覧](https://qiita.com/masatokato0128/items/b07e02013aed143aa45a "よく使う特殊文字　一覧")
 ## [HTML 特殊文字](https://qiita.com/inabe49/items/303afa114b0204da8a24)
+## [HTMLの特殊文字](http://web-dou.com/html/t023b.html)
 
 行頭にスペース
 ```
