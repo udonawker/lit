@@ -274,3 +274,14 @@ $ awk 'NR%2==0' filename
 ```
 $ kill `ps -aux | grep "プロセス名" | awk '{print $2;}'`
 ``` 
+<br>
+
+### 20:00に/home/hoge/test.txt（空ファイル）を作成するように登録する
+```
+$ at 20:00 -f <(touch /home/hoge/test.txt)
+```
+
+### 20:00に/home/hoge/test.txt（空ファイル）を作成するように登録する例
+```
+(TIME=date "+%H%M"; while[${TIME} -lt 2000]; do sleep 60; TIME=date “+%H%M”; done; touch /home/hoge/test.txt) &
+```
