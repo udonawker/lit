@@ -280,8 +280,29 @@ $ kill `ps -aux | grep "プロセス名" | awk '{print $2;}'`
 ```
 $ at 20:00 -f <(touch /home/hoge/test.txt)
 ```
+<br>
 
 ### 20:00に/home/hoge/test.txt（空ファイル）を作成するように登録する例
 ```
 (TIME=date "+%H%M"; while[${TIME} -lt 2000]; do sleep 60; TIME=date “+%H%M”; done; touch /home/hoge/test.txt) &
+```
+<br>
+
+### cdをしたあとにコマンドを実行し、かつコマンドを実行したシェルはcdしたくない。
+```
+$ pwd
+/Users/watashi_user
+$ sh -c "cd /tmp/; pwd"
+/tmp
+$ pwd
+/Users/watashi_user
+```
+```
+-cオプションが存在する場合、コマンドはstringから読み取られます。文字列の後に引数がある場合は、$0から始まる位置パラメータに割り当てられます。
+```
+sudo -i をしたときでもできるのでAWS環境などでは便利<br>
+```
+$ sudo -i sh -c "cd /tmp/;whoami; pwd"
+root
+/tmp
 ```
