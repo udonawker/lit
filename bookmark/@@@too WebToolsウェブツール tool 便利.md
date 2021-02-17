@@ -3,6 +3,7 @@
 ## [単位変換](https://www.convertworld.com/ja/)
 ## [Markdown エディタ StackEdit](https://stackedit.io/app#)
 ## [Base64エンコーダー 画像→Base64](https://lab.syncer.jp/Tool/Base64-encode/)
+## [写真の縦横比を固定して拡大縮小値を計算するツール](https://www.web-jozu.com/javascript/size.html)
 
 # C++
 ## [C++実行 wandbox](https://wandbox.org/)
