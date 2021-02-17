@@ -1,0 +1,1 @@
+## [Java7からJava16までの変遷。2021/2/9](https://qiita.com/sivertigo/items/8f61f02f7c84b786697a?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=223617310c-Qiita_newsletter_450_02_17_2021&utm_medium=email&utm_term=0_e44feaa081-223617310c-33166269)
