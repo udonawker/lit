@@ -1,4 +1,5 @@
 ## [知ると便利なヒアドキュメント](https://qiita.com/kite_999/items/e77fb521fc39454244e7)
+## [ヒアドキュメントとは](https://qiita.com/take4s5i/items/e207cee4fb04385a9952)
 
 ### ヒアドキュメントとは
 ```
@@ -96,4 +97,22 @@ cd /home
 put hoge2
 put hoge3
 quit
+```
+
+### 変数に代入する
+ヒアドキュメントは標準入力なので、変数に入れるにはちょっとした細工が必要です。<br>
+以下のようにすれば変数に代入することができます。<br>
+```
+HOGE=$(cat << EOS
+hoge
+fuga
+EOS
+)
+
+# もしくは
+HOGE=`cat << EOS
+hoge
+fuga
+EOS
+`
 ```
