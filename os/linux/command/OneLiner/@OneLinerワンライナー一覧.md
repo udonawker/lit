@@ -332,9 +332,9 @@ file.txt.bk
 
 ### 今日の日付のディレクトリ、ファイルを作成する
 ```
-mkdir $(date +%Y%m%d)
-touch $(date +%Y%m%d).txt
-midir $(date +%Y%m%d_%H%M%S) #時分秒
+$ mkdir $(date +%Y%m%d)
+$ touch $(date +%Y%m%d).txt
+$ midir $(date +%Y%m%d_%H%M%S) #時分秒
 ```
 
 ### 雑なサンプルCSVの生成
@@ -348,7 +348,7 @@ echo {a..z}{01..05} | xargs -n 5 | tr \  $'\t'
 ```
 列の値に制限があるのであれば、ブレース展開で処理しているところを書き換えてやれば対応できるだろう。<br>
 
-### コマンド――データを整形して表示する
+### 【 printf 】コマンド――データを整形して表示する
 printfという名前のコマンドは複数あり、一つはbashの内部コマンド（ビルトインコマンド、シェルコマンド）、もう一つは外部コマンド（/usr/bin/printf）です。パスなどを指定しないで実行した場合は、ビルトインコマンドのprintfを実行します<br>
 数値をカンマ区切り<br>
 
@@ -376,4 +376,89 @@ $ printf "%-3d\n" 10
 10
 $ printf "%03d\n" 10
 010
+```
+
+## 【 numfmt 】コマンド――数値を読みやすい単位で整形して表示する
+「numfmt」は数値を読みやすい単位で整形して表示するコマンドです。「k（キロ）」や「M（メガ）」などの換算も可能です。<br>
+　負の数や小数点を含む数も整形できますが、単位換算では正の数だけを受け付けます。<br>
+　「numfmt --format="書式" 数値」で、数値を書式に従って整形して表示します。使用できる書式は「%桁数f」と「%'f」です。例えば「--format="%5f"」とすると数値を5桁の幅で表示し、「--format="%'f"」では数値を3桁区切りで表示します。<br>
+```
+# numfmt --format="書式" 数値
+# （数値を%fで指定した書式で表示）
+# numfmt --format="%5f" 123
+# （123を5桁の幅で表示）
+# numfmt --format="%'f" 10000
+# （10000を3桁区切りで表示）
+# numfmt --format="%'8f" 10000
+# （10000を3桁区切りで8桁の幅で表示）
+# numfmt --grouping 10000
+# （10000をシステムのロケールに従ったスタイルで表示）
+$ numfmt --format="%5f" 123
+  123
+$ numfmt --format="%'f" 10000
+10,000
+$ numfmt --format="%'8f" 10000
+  10,000
+$ numfmt --grouping 10000
+10,000
+```
+
+## scriptコマンドで記録するターミナルログにタイムスタンプを付与する
+Teratermログみたいな形式(行の先頭にタイムスタンプが付いてる形式)でターミナルログを記録する方法<br>
+```
+$ script -fq >(awk '{print strftime("%F %T ") $0}{fflush() }'>> PATH)
+```
+
+### (応用例)コマンド実行とセットで使用する
+応用で、コマンドの実行と同時にターミナルログを取得するようにもできる。<br>
+#### Linuxでのコマンド
+```
+$ script -fq -c "コマンド" >(awk '{print strftime("%F %T ") $0}{fflush() }'>> PATH)
+```
+#### Mac(BSD系)でのコマンド
+```
+script -Fq >(awk '{print strftime("%F %T ") $0}{fflush() }'>> PATH) 'コマンド("などで囲まない)'
+```
+### (応用例)ssh接続と同時にターミナルログをタイムスタンプ付きで取得
+#### Linuxでのコマンド
+```
+script -fq -c "ssh user@hostname" >(awk '{print strftime("%F %T ") $0}{fflush() }'>> PATH)
+```
+#### Mac(BSD系)でのコマンド
+```
+script -Fq >(awk '{print strftime("%F %T ") $0}{fflush() }'>> PATH) "ssh user@hostname"
+```
+### (応用例)pingの行頭にタイムスタンプを付与する
+```
+$ ping 8.8.8.8 | awk '{print strftime("%F %T ") $0}{fflush() }'
+2020-05-02 10:49:48 PING 8.8.8.8 (8.8.8.8): 56 data bytes
+2020-05-02 10:49:48 64 bytes from 8.8.8.8: icmp_seq=0 ttl=55 time=265.068 ms
+2020-05-02 10:49:49 64 bytes from 8.8.8.8: icmp_seq=1 ttl=55 time=67.235 ms
+2020-05-02 10:49:50 64 bytes from 8.8.8.8: icmp_seq=2 ttl=55 time=127.855 ms
+2020-05-02 10:49:51 64 bytes from 8.8.8.8: icmp_seq=3 ttl=55 time=59.600 ms
+```
+ちなみに、`moreutils`にはtsコマンドというタイムスタンプを付与するコマンドがある。 awkやperlなどで処理するのがめんどくさかったらそちらを使う方法もありかもしれない。<br>
+
+## ssh接続先にローカルのbashrc・vimrcを、ファイルを作らずにリモートのシェルで使用する
+bashの場合、シェル起動時に--rcfileオプションでbashrcファイルを指定できるのだが、そこにプロセス置換でローカルのbashrcファイルの内容を渡すことで実現する。<br>
+このとき、そのまま渡すと改行やエスケープ、クォーテーションが悪さをするのでbase64にしてssh接続先に渡すようにする。<br>
+### Linuxでのコマンド
+Linuxでバンドルされてるbase64の場合、-w0を付けないと改行が入ってしまう。<br>
+```
+ssh -t user@host '
+    bash --rcfile <(
+        echo -e ' $(cat <(echo "function lvim() { vim -u <(echo "$(cat ~/.vimrc|base64)"|base64 -d) $@ ; }") \
+                        ~/dotfiles/{.bashrc,sh_function,sh_alias,bash_prompt} \
+                        <(echo -e alias vim=lvim) | \
+                        base64 -w0
+                   ) ' \
+        |base64 -d)'
+
+```
+
+## パラレルにpingを実行して一気にセグメント内の疎通確認を行う
+pingを実行する際、xargsで並列にプロセスを立ち上げることで一気に複数ホストへのpingをして、短時間で一気に疎通確認を行える<br>
+```
+# 192.168.0.1-254に一気にpingをして疎通できたIPアドレスだけ抽出
+$ echo 192.168.0.{1..254} | xargs -P254 -n1 ping -s1 -c1 -w1 | grep ttl | sort -V -k4
 ```
