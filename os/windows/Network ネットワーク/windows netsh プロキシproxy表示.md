@@ -18,6 +18,9 @@ C:\windows\system32>ipconfig /flushdns
 Windows IP 構成
 DNS リゾルバー キャッシュは正常にフラッシュされました。
 ```
+```
+netsh winhttp set proxy proxy-server="proxy.xxx.co.jp:8080" bypass-list="<local>;*.microsoft.com
+```
 
 ## [Netsh コマンドの構文、コンテキスト、形式](https://docs.microsoft.com/ja-jp/windows-server/networking/technologies/netsh/netsh-contexts)
 netshコンテキスト
