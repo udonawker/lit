@@ -500,3 +500,11 @@ numfmt コマンドに --to=iec を渡すことで、下記のように K・M・
 2.4G /usr/share
 2.5G /usr/local
 ```
+
+## find -pathオプション
+```
+[root@kumotori /]# find /etc/sysconfig/ -path "*network-scripts/*eth*"
+/etc/sysconfig/network-scripts/ifup-eth
+/etc/sysconfig/network-scripts/ifcfg-eth0
+/etc/sysconfig/network-scripts/ifdown-eth
+```
