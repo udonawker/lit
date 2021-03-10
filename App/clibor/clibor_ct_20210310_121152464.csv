@@ -1,0 +1,182 @@
+定型文グループ,定型文,メモ,ホットキー
+vim,"e ++enc=utf8",文字コード読み直し,
+vim,$MYVIMRC,".vimrc _vimrcの環境変数",
+vim,":[count]tabnew [++opt] [+cmd] {file}
+:tabnew  "" カレントタブページの後ろに新規タブページを作成
+:.tabnew "" 同上
+:+tabnew "" 右のタブページの後ろに新規タブページを作成
+:-tabnew "" カレントタブページの前に新規タブページを作成
+:0tabnew "" 新規タブページを左端に作成
+:$tabnew "" 新規タブページを右端に作成",タブ新規作成,
+vim,":tabc[lose][!] {count}
+{count} 番目のタブページを閉じます。
+:-tabclose      "" カレントタブページの前のタブページを
+                "" 閉じる
+:+tabclose      "" カレントタブページの次のタブページを
+                "" 閉じる
+:1tabclose      "" 左端のタブページを閉じる
+:$tabclose      "" 右端のタブページを閉じる
+:tabclose -2    "" 2つ前のタブページを閉じる
+:tabclose +     "" 次のタブページを閉じる
+:tabclose 3     "" 3番目のタブページを閉じる
+:tabclose $     "" 右端のタブページを閉じる
+",タブクローズ,
+vim,":{count}tabn[ext]
+:tabn[ext] {count}
+{count} 番目のタブページに移動します。最初のタブページの番号は
+1 です。
+    :-tabnext   "" 前のタブページに移動する
+    :+tabnext   "" 次のタブページに移動する
+    :+2tabnext  "" 2つ次のタブページに移動する
+    :1tabnext   "" 最初のタブページに移動する
+    :$tabnext   "" 最後のタブページに移動する
+    :tabnext $  "" 同上
+    :tabnext -  "" 前のタブページに移動する
+    :tabnext -1 "" 同上
+    :tabnext +  "" 次のタブページに移動する
+    :tabnext +1 "" 同上",タブ移動,
+vim,"*  'カーソルの下にある単語を後方検索
+#  'カーソルの下にある単語を前方検索
+g* 'カーソルの下にある単語が含まれる文字列を後方検索
+g# 'カーソルの下にある単語が含まれる文字列を前方検索
+/ Ctrl + F '検索履歴表示",検索,
+vim,":,$s/{検索文字列}/{置換文字列}/gc",置換:現在行からファイルの最後までが検索対象,
+vim,"# ブックマーク登録
+m[a-zA-Z]
+
+# ブックマーク削除
+:delmarks[a-zA-Z]
+:delmarks!         '一括削除
+
+# ブックマーク表示
+:marks
+
+# ブックマーク移動
+""         '直前のマークへ移動
+Ctrl + o  '古いマークへ移動
+Ctrl + i  '新しくマークへ移動
+`[a-zA-Z] '指定のマークに移動
+'[a-zA-Z] '指定のマークの行頭に移動",ブックマーク,
+vim,"## ファイルエクスプローラを開く
+:E[xplore]  開いているファイルのあるディレクトリを開く
+:S[explore] 開いているファイルのあるディレクトリを上下分割で開く
+:Ve[xplore] 開いているファイルのあるディレクトリを左右分割で開く
+:e .        現在のディレクトリを開く
+## ファイルエクスプローラ内での操作
+<enter>     ファイル／ディレクトリを開く
+o           新しいウィンドウで開く(上下分割)
+v           新しいウィンドウで開く(左右分割)
+t           新しいタブで開く
+p           プレビュー表示
+c           選択ディレクトリをカレントディレクトリに
+-           一つ上のディレクトリへ
+d           ディレクトリ作成
+R           名前変更(mvコマンド的)
+D           ファイル削除(確認あり)
+i           表示切り替え
+s           ソート切り替え
+b           カレントディレクトリをブックマーク
+B           ブックマークにジャンプ",エクスプローラ,
+vim,"""*yG    : クリップボードに全てコピー
+""1y     : 1レジスタに1行コピー",レジスタ,
+vim,":cd %:h",開いているファイルのディレクトリに移動する,
+linux,"################################
+# 状態の表示（サービス単位）
+################################
+# CentOS7系
+$ /usr/bin/systemctl status {unit名}
+
+# CentOS6系
+$ /sbin/service {サービス名} status
+$ /etc/init.d/{サービス名} status
+
+################################
+#状態の表示（全サービス）
+################################
+# CentOS7系
+$ /usr/bin/systemctl {list-units} --type service
+
+# CentOS6系
+$ /sbin/service --status-all",サービスの状態確認,
+linux,"################################
+# サービスの起動・停止・再起動
+################################
+# CentOS7系
+$ /usr/bin/ststemctl {start / stop / restart / reload} {unit名}
+
+# CentOS6系
+$ /sbin/service  {start / stop / restart / reload} {サービス名}
+$ $ /etc/init.d/{サービス名} {start / stop / restart / reload} 
+
+################################
+# サービスの強制終了
+################################
+# CentOS7系
+$ /usr/bin/systemctl kill -s 9 {unit名}
+
+# CentOS6系
+$ kill -9 PID",サービスの起動・停止・再起動・設定反映・強制終了,
+linux,"################################
+# サービス定義の表示（全サービス）・登録（サービス単位）
+################################
+# CentOS7系
+$ /usr/bin/systemctl list-units --type service
+$ /usr/bin/systemctl daemon-reload
+
+# CentOS6系
+$ ls /etc/init.d/
+$ /sbin/chkconfig --add / --del {サービス名}
+
+################################
+# サービスの自動起動確認
+################################
+# CentOS7系
+$ /usr/bin/systemctl list-unit-files | grep {unit名}
+$ /usr/bin/systemctl is-enabled {unit名}
+
+# CentOS6系
+$ /sbin/chkconfig --list {サービス名}
+
+################################
+# サービスの有効化・無効化
+################################
+# CentOS7系
+$ /usr/bin/systemctl enable / disable {unit名}
+
+# CentOS6系
+$ /sbin/chkconfig --level 2345 {サービス名} on / off",サービスの登録・解除・登録確認,
+linux,"# 改行コード確認
+$ od -c ファイル名  'LF[\n] CR+LF[\r\n]
+
+# 文字コード確認
+$ nkf --guess　ファイル名
+$ file -i ファイル名
+
+# 文字コード・改行コード変換
+文字コード変換オプション
+-j : JIS(ISO-2022-JP)
+-e : EUC
+-s : Shift-JIS
+-w : UTF-8(BOM無し)
+改行コード変換オプション
+-d,-Lu : unix形式(LF)
+-c,-Lw : windows形式(CRLF)
+-Lm    : macintosh形式(CR)
+実行例
+$ find -type f -name ""*.cpp"" -or -name ""*.hpp"" | xargs nkf -w -x -d --overwrite",文字コード、改行コード確認・変換,
+linux,"$ cat <<EOF > test
+line1
+line2
+line3
+EOF",ヒアドキュメント,
+vscode,"""サイドバイサイドにプレビュー表示
+Ctrl + k → v
+"" 別タブにプレビュー表示
+Ctrl + Shift + V
+
+"" コマンドパレット
+Ctrl + Shift + P",vscodeショートカット,
+vscode,""" 一行削除
+Ctrl + Shift + L
+"" 矩形選択
+Alt + ドラッグ",vsショートカット,
