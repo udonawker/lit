@@ -2,7 +2,6 @@
 ## [Windowsのコマンドでファイルを結合する 2018/10/7](https://qiita.com/5zm/items/6688ded69d2ddc4bec10)
 
 ### `copy /b` コマンドで結合<br/>
-<br/>
 bunkatsu.zip.001<br/>
 bunkatsu.zip.002<br/>
 bunkatsu.zip.003<br/>
@@ -14,7 +13,6 @@ copy /b bunkatsu.zip.001+bunkatsu.zip.002+bunkatsu.zip.003 ketsugou.zip
 
 
 ### Linux<br/>
-<pre>
 $ cat file1 file2 file3 > out_file
 </pre>
 
