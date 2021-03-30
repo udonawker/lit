@@ -1,5 +1,5 @@
 ## Markdown Prevew Enhance の場合
-1. Ctrl + Shift + p
+1. TOCを挿入する場所にカーソルを置いて Ctrl + Shift + p
 2. `Create TOC`コマンド実行
 3. ファイルセーブ
 
