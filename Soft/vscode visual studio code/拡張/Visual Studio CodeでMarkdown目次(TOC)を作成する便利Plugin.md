@@ -1,3 +1,10 @@
+## Markdown Prevew Enhance の場合
+1. Ctrl + Shift + p
+2. `Create TOC`コマンド実行
+3. ファイルセーブ
+
+---
+
 ## [Visual Studio CodeでMarkdown目次(TOC)を作成する便利Plugin](https://qiita.com/bj1024/items/16ec641dc88f74028192)
 
 [Markdown-Toc | Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AlanWalk.markdown-toc)<br>
