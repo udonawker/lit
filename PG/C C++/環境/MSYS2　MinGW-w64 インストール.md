@@ -8,7 +8,8 @@
 - [4. MSYS2以外からのパッケージの利用](#4-msys2以外からのパッケージの利用)
 - [5. 参考](#5-参考)
 - [6. プロキシ設定](#6-プロキシ設定)
-- [7. msys2からcl.exeを呼び出す](#7-msys2からclexeを呼び出す)
+- [7. 開発環境インストール](#7-開発環境インストール)
+- [8. msys2からcl.exeを呼び出す](#8-msys2からclexeを呼び出す)
 
 <!-- /code_chunk_output -->
 
@@ -92,6 +93,16 @@ endlocal
 ## 6. プロキシ設定
 [msys2 + pacmanをproxy環境で使う](https://nantonaku-shiawase.hatenablog.com/entry/2014/10/11/163342)
 
+## 7. 開発環境インストール
+```
+# pacman --needed -Sy bash pacman pacman-mirrors msys2-runtime
+```
+```
+# pacman -S mingw-w64-i686-toolchain
+# pacman -S mingw-w64-x86_64-toolchain
+; or
+# pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-gdb make
+```
 `C:\msys64\etc\profile.d` 配下に `proxy.sh` を作成し以下を記述
 ```
 export http_proxy=http://proxy.co.jp:8080
@@ -104,7 +115,7 @@ export no_proxy="localhost,127.0.0.1"
 export NO_PROXY="localhost,127.0.0.1"
 ```
 
-## 7. msys2からcl.exeを呼び出す
+## 8. msys2からcl.exeを呼び出す
 [msys2からcl.exeを呼び出す(OpenH264のmake)](https://teratail.com/questions/156771)
 
 `Developer Command Prompt for VS 201*`を起動して`set MSYS2_PATH_TYPE=inherit`を実行
