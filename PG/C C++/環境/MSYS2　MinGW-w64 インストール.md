@@ -12,8 +12,8 @@
 
 <!-- /code_chunk_output -->
 
-[MSYS2](https://sites.google.com/site/toriaezuzakki/msys2?tmpl=%2Fsystem%2Fapp%2Ftemplates%2Fprint%2F)
-[MSYS2/MinGW-w64 (64bit/32bit) インストール手順 メモ](https://gist.github.com/Hamayama/eb4b4824ada3ac71beee0c9bb5fa546d) 
+[MSYS2](https://sites.google.com/site/toriaezuzakki/msys2?tmpl=%2Fsystem%2Fapp%2Ftemplates%2Fprint%2F)<br>
+[MSYS2/MinGW-w64 (64bit/32bit) インストール手順 メモ](https://gist.github.com/Hamayama/eb4b4824ada3ac71beee0c9bb5fa546d) <br>
 
 ## 1. MSYS2とMinGW-w64の関係
 * MSYS2はPOSIXシェル環境を提供するもの
@@ -34,11 +34,10 @@ MSYS2をインストールすると、(64bitの場合)下記の3つのシェル�
 [公式サイト](https://sourceforge.net/projects/msys2/)からインストーラをダウンロードし、実行します。
 パッケージの場所は下記の通りです。<br>
 
-[32-bit版](http://sourceforge.net/projects/msys2/files/Base/i686/)
-[64-bit版](http://sourceforge.net/projects/msys2/files/Base/x86_64/)
+[32-bit版](http://sourceforge.net/projects/msys2/files/Base/i686/)<br>
+[64-bit版](http://sourceforge.net/projects/msys2/files/Base/x86_64/)<br>
 
 インストールが完了すると、ダイアログで「MSYS2 64bit を実行中」というチェックボックスが現れますが多分「実行する」の誤訳かと。チェックONのまま完了すればMSYS2 Shellが
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 起動されます。<br>
 通常は引き続きMSYS2 Shellで環境の更新を実施するので、ONのまま完了します。<br>
 
@@ -46,9 +45,9 @@ MSYS2をインストールすると、(64bitの場合)下記の3つのシェル�
 インストーラのリリース後に更新された各種パッケージを最新にしておきます。<br>
 リリースが最近なら既に最新なので、下記手順を踏んでも、更新されること無く終了します。<br>
 
-__(1回目の更新)__ MSYS2 Shellを再起動後、コマンドpacman -Syuを実行します。
-これは1回目の更新で、後でもう一度実施する必要があります。
-完了してもプロンプトに復帰しないので、ウィンドウを閉じて終了させます。
+__(1回目の更新)__ MSYS2 Shellを再起動後、コマンドpacman -Syuを実行します。<br>
+これは1回目の更新で、後でもう一度実施する必要があります。<br>
+完了してもプロンプトに復帰しないので、ウィンドウを閉じて終了させます。<br>
 ```
 $ pacman -Syu
 
