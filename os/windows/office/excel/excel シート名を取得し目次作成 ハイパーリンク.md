@@ -26,5 +26,17 @@
 各シート名を表示したいセルに以下の式
 =SUBSTITUTE(INDEX(book,x),"["&doc&"]","")
   # xは表示したいシートインデックス
+  # もしくはxの場所にROW()±x とする
+=SUBSTITUTE(INDEX(book,ROW()-1),"["&doc&"]","")
 </pre>
 
+5. 目次シートで各シート名のハイパーリンク
+### [HYPERLINK関数で、同じブック内のシートにハイパーリンク](https://www.relief.jp/docs/000998.html) 
+### [HYPERLINK関数の使い方](http://www.eurus.dti.ne.jp/~yoneyama/Excel/kansu/hyperlink.htm)
+
+```
+=HYPERLINK(リンク先,別名)
+
+=HYPERLINK("#" & SUBSTITUTE(INDEX(book,4),"["&doc&"]","") & "!A1", SUBSTITUTE(INDEX(book,4),"["&doc&"]",""))
+ # シートxのA1にリンク 表示はシート名
+```
