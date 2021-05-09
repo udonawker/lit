@@ -1,1 +1,0 @@
-## [2 つの日付の差を計算する](https://support.microsoft.com/ja-jp/office/2-%E3%81%A4%E3%81%AE%E6%97%A5%E4%BB%98%E3%81%AE%E5%B7%AE%E3%82%92%E8%A8%88%E7%AE%97%E3%81%99%E3%82%8B-8235e7c9-b430-44ca-9425-46100a162f38)
