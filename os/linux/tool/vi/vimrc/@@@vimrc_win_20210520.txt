@@ -117,7 +117,33 @@ set completeopt=menuone,noinsert
 inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
 inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
 
+" C/C++ のソースファイルを開いたときに自動的に cindent モードを設定する ↓
+" ファイルタイプ検出を有効にする
+filetype on
+
+augroup vimrc
+    " 以前の autocmd コマンドをクリア
+    autocmd!
+
+    " C/C++/Java 言語系のファイルタイプが設定されたら cindent モードを有効にする
+    autocmd FileType h,hpp,c,cpp,java  setl cindent
+    autocmd FileType h,hpp,c,cpp,java  setl expandtab tabstop=4 shiftwidth=4 softtabstop=4 shiftround
+augroup END
+" C/C++ のソースファイルを開いたときに自動的に cindent モードを設定する ↑
+
+" :vimgrepに加えて:grep、:Ggrepでも自動的にquickfix-windowを開く
 autocmd QuickFixCmdPost *grep* cwindow
+
+" エクスプローラ設定↓
+" 上部に表示される情報を非表示
+let g:netrw_banner = 0
+" 表示形式をTreeViewに変更
+let g:netrw_liststyle = 3
+" 左右分割を右側に開く
+let g:netrw_altv = 1
+" 分割で開いたときに85%のサイズで開く
+let g:netrw_winsize = 85
+" エクスプローラ設定↑
 
 " ctermのターミナルの色を変える場合， ctermbg / ctermfg を変更し， GUIのターミナルの色を変えたい場合は guibg / guifg を変更します．
 " 対応する括弧のハイライトの色を設定:
