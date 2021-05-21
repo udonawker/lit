@@ -151,3 +151,5 @@ let g:netrw_winsize = 85
 " ctermのターミナルの色を変える場合， ctermbg / ctermfg を変更し， GUIのターミナルの色を変えたい場合は guibg / guifg を変更します．
 " 対応する括弧のハイライトの色を設定:
 hi MatchParen term=standout ctermbg=Green ctermfg=Blue
+" 対応する括弧のハイライト停止
+" let loaded_matchparen = 1
