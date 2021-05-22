@@ -10,6 +10,12 @@
 # C++
 ## [C++実行 wandbox](https://wandbox.org/)
 
+# bash
+## [bash実行 Execute Bash Shell Online](https://www.tutorialspoint.com/execute_bash_online.php)
+## [bash実行 JDOODLE](https://www.jdoodle.com/test-bash-shell-script-online)
+## [bash実行 ShellCheck](https://www.shellcheck.net/)
+## [bash実行 Learn Shell](http://www.learnshell.org/)
+
 # 正規表現
 ## [regexr](https://regexr.com/)
 ## [正規表現チェックツールまとめ](https://qiita.com/aqril_1132/items/c185c7ad84c129e5a2df)
@@ -19,3 +25,6 @@
 ## [Json Editor Online](https://jsoneditoronline.org/)
 ## [JSONきれい ～JSON整形ツール～](https://tools.m-bsys.com/development_tooles/json-beautifier.php)
 
+# 競技プログラミング
+## [LeetCode](https://leetcode.com/)
+## [LeetCodeを使い倒す① ~入門編~](https://zenn.dev/ryokotmng/articles/36af0a82e8a4f5)
