@@ -1,1 +1,2 @@
 ## [Bashの便利な構文だがよく忘れてしまうものの備忘録 2021/04/20](https://qiita.com/Ping/items/57fd75465dfada76e633)
+## [bash 入門](https://qiita.com/SARDONYX/items/16cd2ef2ea4b842915a9?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=24e07bf727-Qiita_newsletter_463_05_26_2021&utm_medium=email&utm_term=0_e44feaa081-24e07bf727-33166269)
