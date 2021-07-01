@@ -4,5 +4,6 @@
 |:--|:--|:--|
 |[YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)|Red Hat|YAML のバリデーションなど|
 |[indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)|oderwat|インデントのレベルを区別しやすく色付け表示|
-|[Ansible](https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible)|Microsoft|オートコンプリートや環境との連携など|
+|~~[Ansible](https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible)~~|Microsoft|オートコンプリートや環境との連携など|
+|[Ansible Language](https://marketplace.visualstudio.com/items?itemName=zbr.vscode-ansible)|Red Hat|Ansible extension for vscode and vscodium|
 |[Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)|Microsoft|リモートの環境を手元の VS Code で直接編集、デバッグなど|
