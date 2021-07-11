@@ -1,0 +1,7 @@
+- name: Execute reboot
+  shell: 'sleep 2 && reboot'
+  async: 1
+  poll: 0
+- name: Wait for system to become reachable
+  wait_for_connection:
+    delay: 60
