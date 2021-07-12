@@ -1,7 +1,12 @@
 - name: Execute reboot
-  shell: 'sleep 2 && reboot'
+#  shell: 'sleep 2 && reboot'
+  shell: sleep 2; /usr/sbin/shutdown -r now
   async: 1
   poll: 0
+#  register: result
+
+# - debug: var=result
+
 - name: Wait for system to become reachable
   wait_for_connection:
     delay: 60
