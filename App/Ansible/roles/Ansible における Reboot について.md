@@ -58,3 +58,21 @@ ok: [10.69.34.191] => {
 PLAY RECAP **********************************************************************************************************
 10.69.34.191               : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
+
+## [逆引きマニュアル: Ansibleでリブートする方法](https://www.ikemo3.com/inverted/ansible/reboot/)
+### Ansible 2.7でrebootモジュールが追加
+[reboot - Reboot a machine — Ansible Documentation](https://docs.ansible.com/ansible/latest/modules/reboot_module.html#reboot-module)
+
+```
+    - name: reboot
+      shell: "sleep 5 && reboot"
+      async: 1
+      poll: 0
+
+    - name: wait
+      wait_for_connection:
+        connect_timeout: 20
+        sleep: 5
+        delay: 5
+        timeout: 60
+```
