@@ -29,19 +29,37 @@
 * 個人的に気をつけていること
     * ディレクトリ構成
 
-[Ansible: tarファイルをディレクトリ指定で展開する方法](https://www.ikemo3.com/inverted/ansible/extract-tar-with-directory/)<br>
-[Ansible: ドキュメントをローカルで表示する方法](https://www.ikemo3.com/inverted/ansible/create-docs-locally/)<br>
-[Ansible 2.7でyum + with_itemsを使うと出る警告の直し方](https://www.ikemo3.com/inverted/ansible/2.7-yum/)<br>
-[Ansibleでリブートする方法](https://www.ikemo3.com/inverted/ansible/reboot/)<br>
-[Ansible: Mavenアーティファクトの利用方法](https://www.ikemo3.com/inverted/ansible/maven-artifact/)<br>
-[Ansible: 開発環境と本番環境を同じように管理する方法](https://www.ikemo3.com/inverted/ansible/development/)<br>
-[Ansible: チェックモードでエラーが起きて停止してしまう場合の修正](https://www.ikemo3.com/inverted/ansible/fix-error-in-check-mode/)<br>
-[Ansible: 文字列からファイルを作成](https://www.ikemo3.com/inverted/ansible/create-from-string/)<br>
-[Ansible + Vagrant + CentOS: パスワード認証を有効化する](https://www.ikemo3.com/inverted/ansible/enable-password-authentication/)<br>
-[Ansible: command,shellモジュールの結果を検証したい場合](https://www.ikemo3.com/inverted/ansible/check-command-and-shell-result/)<br>
-[Ansible: sudoで環境を引き継ぎたい場合](https://www.ikemo3.com/inverted/ansible/sudo-environment/)<br>
-[Ansible: ルーティング対応](https://www.ikemo3.com/inverted/ansible/routing/)<br>
-[Ansible: 設定の外部ファイルによる管理](https://www.ikemo3.com/inverted/ansible/use-external-setting/)<br>
-[Ansible: 対象ホストを間違えないようにする方法](https://www.ikemo3.com/inverted/ansible/restrict-target-host/)<br>
-[Ansible: 相対パスでシンボリックリンクを作成する方法](https://www.ikemo3.com/inverted/ansible/create-relative-symbolic-link/)<br>
+## 公式サイト
+* [Ansible Documentation](https://docs.ansible.com/)
+* [ansible-playbook ? Ansible Documentation](http://docs.ansible.com/ansible/latest/ansible-playbook.html)
+* [ansible ? Ansible Documentation](http://docs.ansible.com/ansible/latest/ansible.html)
+* [Patterns ? Ansible Documentation](http://docs.ansible.com/ansible/latest/intro_patterns.html)
 
+## 外部サイト
+* [Ansible マジック変数の一覧と内容 - Qiita](https://qiita.com/h2suzuki/items/15609e0de4a2402803e9)
+* [Ansible オレオレベストプラクティス - Qiita](https://qiita.com/yteraoka/items/5ed2bddefff32e1b9faf)
+* [Ansibleのplaybookで使用できるアトリビュートの一覧 - Qiita](https://qiita.com/yunano/items/8494e785390360011a88)
+* [jinja2 - Ansible: Get all the IP addresses of a group - Stack Overflow](https://stackoverflow.com/questions/36328907/ansible-get-all-the-ip-addresses-of-a-group)
+* [ansible で prompt (入力待ち) の実現とその周辺テクニックのまとめ - Qiita](https://qiita.com/waterada/items/5f3e5d776c50f2aadec4)
+
+## 関連項目
+* [辞書: Ansible](https://www.ikemo3.com/dic/ansible/)
+* [タグ: Ansible](https://www.ikemo3.com/tags/ansible/)
+* [マニュアル: Ansible Container](https://www.ikemo3.com/manual/ansible-container/)
+
+## [逆引きマニュアル]
+* [Ansible: tarファイルをディレクトリ指定で展開する方法](https://www.ikemo3.com/inverted/ansible/extract-tar-with-directory/)<br>
+* [Ansible: ドキュメントをローカルで表示する方法](https://www.ikemo3.com/inverted/ansible/create-docs-locally/)<br>
+* [Ansible 2.7でyum + with_itemsを使うと出る警告の直し方](https://www.ikemo3.com/inverted/ansible/2.7-yum/)<br>
+* [Ansibleでリブートする方法](https://www.ikemo3.com/inverted/ansible/reboot/)<br>
+* [Ansible: Mavenアーティファクトの利用方法](https://www.ikemo3.com/inverted/ansible/maven-artifact/)<br>
+* [Ansible: 開発環境と本番環境を同じように管理する方法](https://www.ikemo3.com/inverted/ansible/development/)<br>
+* [Ansible: チェックモードでエラーが起きて停止してしまう場合の修正](https://www.ikemo3.com/inverted/ansible/fix-error-in-check-mode/)<br>
+* [Ansible: 文字列からファイルを作成](https://www.ikemo3.com/inverted/ansible/create-from-string/)<br>
+* [Ansible + Vagrant + CentOS: パスワード認証を有効化する](https://www.ikemo3.com/inverted/ansible/enable-password-authentication/)<br>
+* [Ansible: command,shellモジュールの結果を検証したい場合](https://www.ikemo3.com/inverted/ansible/check-command-and-shell-result/)<br>
+* [Ansible: sudoで環境を引き継ぎたい場合](https://www.ikemo3.com/inverted/ansible/sudo-environment/)<br>
+* [Ansible: ルーティング対応](https://www.ikemo3.com/inverted/ansible/routing/)<br>
+* [Ansible: 設定の外部ファイルによる管理](https://www.ikemo3.com/inverted/ansible/use-external-setting/)<br>
+* [Ansible: 対象ホストを間違えないようにする方法](https://www.ikemo3.com/inverted/ansible/restrict-target-host/)<br>
+* [Ansible: 相対パスでシンボリックリンクを作成する方法](https://www.ikemo3.com/inverted/ansible/create-relative-symbolic-link/)<br>
