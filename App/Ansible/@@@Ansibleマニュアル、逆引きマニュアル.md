@@ -63,3 +63,7 @@
 * [Ansible: 設定の外部ファイルによる管理](https://www.ikemo3.com/inverted/ansible/use-external-setting/)<br>
 * [Ansible: 対象ホストを間違えないようにする方法](https://www.ikemo3.com/inverted/ansible/restrict-target-host/)<br>
 * [Ansible: 相対パスでシンボリックリンクを作成する方法](https://www.ikemo3.com/inverted/ansible/create-relative-symbolic-link/)<br>
+* [タスクを部分的に実行する](https://qiita.com/noel9109/items/fb9c52aab90324cb0e9a#%E3%82%BF%E3%82%B9%E3%82%AF%E3%82%92%E9%83%A8%E5%88%86%E7%9A%84%E3%81%AB%E5%AE%9F%E8%A1%8C%E3%81%99%E3%82%8B)
+    * タスクにタグを付け、オプションでタグを指定する。タスクのまとまり毎に同じタグを付ける
+* [対象サーバのホスト名を変数にセットする](https://qiita.com/noel9109/items/fb9c52aab90324cb0e9a#%E5%AF%BE%E8%B1%A1%E3%82%B5%E3%83%BC%E3%83%90%E3%81%AE%E3%83%9B%E3%82%B9%E3%83%88%E5%90%8D%E3%82%92%E5%A4%89%E6%95%B0%E3%81%AB%E3%82%BB%E3%83%83%E3%83%88%E3%81%99%E3%82%8B)
+    * {{ inventory_hostname }}
