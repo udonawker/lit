@@ -34,6 +34,34 @@ playbook例<br>
         msg: Finish!
 ```
 
+## [Ansibleのwait_for_connectionをつかってOSの再起動を待つ](https://www.kabegiwablog.com/entry/2018/05/18/100000)
+
+#### playbook例
+```
+- hosts: target
+  gather_facts: false
+
+  tasks:
+    - name: connect check
+      ping:
+
+    - name: restart machine
+      shell: sleep 2 && shutdown -r now
+      async: 1
+      poll: 0
+      become: true
+      ignore_errors: true
+
+    - name: wait for reboot
+      wait_for_connection:
+        delay: 30
+        timeout: 300
+
+    - name: connect check
+      ping:
+```
+`shell`でサーバの再起動を実施しています。`async`と`pollを指定することでsshコネクションが切断されても処理をそのまま続けることができます。<br> wait_for_conenctionを利用してssh:22ポートがオープンするまで待機する設定をいれています。<br>
+
 実行結果<br>
 ```
 PLAY [all] **********************************************************************************************************
@@ -76,3 +104,33 @@ PLAY RECAP *********************************************************************
         delay: 5
         timeout: 60
 ```
+
+## [Ansibleのwait_for_connectionをつかってOSの再起動を待つ](https://www.kabegiwablog.com/entry/2018/05/18/100000)
+
+#### playbook例
+```
+- hosts: target
+  gather_facts: false
+
+  tasks:
+    - name: connect check
+      ping:
+
+    - name: restart machine
+      shell: sleep 2 && shutdown -r now
+      async: 1
+      poll: 0
+      become: true
+      ignore_errors: true
+
+    - name: wait for reboot
+      wait_for_connection:
+        delay: 30
+        timeout: 300
+
+    - name: connect check
+      ping:
+```
+`shell`でサーバの再起動を実施しています。`async`と`poll`を指定することでsshコネクションが切断されても処理をそのまま続けることができます。<br>
+`wait_for_conenction`を利用してssh:22ポートがオープンするまで待機する設定をいれています。<br>
+
