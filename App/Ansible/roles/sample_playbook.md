@@ -26,5 +26,5 @@
       register: date_result
     
     - debug: var=date_result.stdout
-    - debug: msg="message"
+    - debug: msg="message {{ variable }} message"
 ```
