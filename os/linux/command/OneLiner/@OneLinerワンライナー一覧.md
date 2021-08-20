@@ -508,3 +508,15 @@ numfmt コマンドに --to=iec を渡すことで、下記のように K・M・
 /etc/sysconfig/network-scripts/ifcfg-eth0
 /etc/sysconfig/network-scripts/ifdown-eth
 ```
+
+## tar 圧縮してsshでファイルを転送する方法
+```
+$ tar czf - * | ssh hoge@fuga.com "tar xzf -"
+```
+
+## diffでコマンドの出力の結果を直接比較する
+```
+$ diff <(ls dir1) <(ls dir2)
+```
+`<(...)` はコマンドの結果を(名前付き)パイプに放り込む方法で、名前付きパイプはファイルと同等の扱いをされます。<br>
+この結果、`ls dir1`の結果　と　`ls dir2`の結果　が名前付きパイプとしてファイル扱いされ、diffによって比較されることとなります。<br>
