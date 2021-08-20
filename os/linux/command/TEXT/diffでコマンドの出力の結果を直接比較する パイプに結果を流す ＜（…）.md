@@ -11,6 +11,7 @@ $ diff file_list.dir1.txt file_list.dir2.txt
 ```
 tar czf - * | ssh hoge@fuga.com "tar xzf -"
 ```
+圧縮してファイルを転送する方法<br>
 
 ### パイプに結果を流す。
 ```
