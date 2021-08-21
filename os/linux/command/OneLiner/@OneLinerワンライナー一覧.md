@@ -514,7 +514,7 @@ numfmt コマンドに --to=iec を渡すことで、下記のように K・M・
 $ tar czf - * | ssh hoge@fuga.com "tar xzf -"
 ```
 
-## diffでコマンドの出力の結果を直接比較する
+## diffでコマンドの出力の結果を直接比較する(パイプに結果を流す)
 ```
 $ diff <(ls dir1) <(ls dir2)
 ```
