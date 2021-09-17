@@ -12,3 +12,11 @@ HandlePowerKey=ignore
 
 もしくは、以下のドキュメントで、その他の方法が紹介されています。<br>
 [RHEL 7 - 5.12. Configuring ACPI For Use with Integrated Fence Devices](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/High_Availability_Add-On_Reference/s1-acpi-CA.html)<br>
+
+
+/var/log/auth.log<br>
+```
+Aug 13 21:07:22 node01 systemd-logind:Power key pressed. 
+Aug 13 21:07:22 node01 systemd-logind:Powering Off...
+Aug 13 21:07:22 node01 systemd-logind:System is powering down.
+```
