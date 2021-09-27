@@ -40,4 +40,22 @@ playbook.yml<br>
 
 roles/test_role/tasks/main.yml<br>
 ```
+---
+- name: command whoami test_user2
+  become: yes
+  become_user: test_user2
+  command: whoami
+  register: result_test_user2
+
+- name: debug result_test_user2
+  debug:
+    msg: "result_test_user2={{ result_test_user2.stdout }}"
+
+- name: command whoami root
+  command: whoami
+  register: result_root
+
+- name: debug root
+  debug:
+    msg: "result={{ result_root.stdout }}"
 ```
