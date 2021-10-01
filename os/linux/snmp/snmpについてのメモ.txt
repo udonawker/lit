@@ -1,0 +1,83 @@
+https://gist.github.com/shtoma/7967774
+
+■概要
+Simple Network Management Protocol（シンプル ネットワーク マネージメント プロトコル、SNMP）は、DARPAモデルに準じたIP ネットワーク上のネットワーク機器を監視（モニタリング）・制御するための情報の通信方法を定めるプロトコルである。
+※wikiより
+http://ja.wikipedia.org/wiki/Simple_Network_Management_Protocol
+
+
+■砕けて言うと
+サーバのNFSマウント情報、負荷情報、ネットワーク情報などいろんな情報が
+サーバに入らなくてもわかる。
+
+古くからあるやつと、NET-SNMPというやつがあるらしい。
+
+■使い方
+snmpwalk -c [コミュニティ名] -v [バージョン] [ホスト名] [OID or MIBシンボル名]
+or
+snmpget  -c [コミュニティ名] -v [バージョン] [ホスト名] [OID or MIBシンボル名]
+
+例）snmpwalk -cabc -v1 yourhost hrFSRemoteMountPoint
+HOST-RESOURCES-MIB::hrFSRemoteMountPoint.1 = ""
+HOST-RESOURCES-MIB::hrFSRemoteMountPoint.2 = ""
+HOST-RESOURCES-MIB::hrFSRemoteMountPoint.3 = STRING: "nhoge100.jp:/nfsd_vol"
+HOST-RESOURCES-MIB::hrFSRemoteMountPoint.4 = STRING: "nhoge200.jp:/vol/php"
+HOST-RESOURCES-MIB::hrFSRemoteMountPoint.5 = STRING: "backup300.hoge.jp:/vol/apache_log"
+
+snmp共通の、snmpcmdというコマンドがあり、
+だいたいこちらのオプションと共通なので、
+manコマンドの説明省かれてることがある。
+ちゃんと知りたければ、man snmpcmd。
+
+
+■簡単な解説
+・コミュニティ名とは、、、
+ -snmp認証に使われる文字列。パスワードのようなものらしい。
+ -本来、snmp.confの[com2sec]という項目で定義されるらしい
+
+・バージョンについて
+ snmpのバージョン。1|2c|3 の3種類あるらしい。
+ 
+・OID or MIBシンボル名
+ ここで、何の情報を知りたいのか指定する。
+ OIDはIPアドレス、MIBシンボル名はドメイン名みたいな関係。
+ 
+ OIDはまず覚えられない。
+ 
+ OID -> MIBシンボル名の解決は
+ http://www.alvestrand.no/objectid/top.html
+ 
+ もしくは上位のOIDをsnmpwalkで打つと、下位ごとごっそり出てくるからその時覚える。
+ もしくは「snmptranslate」というコマンドを使う。
+例)
+ ・正引き
+ > snmptranslate .1.2.3.4.5.6.7890.1.1
+ UCD-SNMP-MIB::memTotalSwap
+
+
+ ・逆引き（-Onオプション）
+ > snmptranslate -On TCP-MIB::tcpConnRemPort
+  .1.2.3.4.5.6.7890.1.1
+
+
+■よく使いそうなMIBシンボル名調査
+・メモリ系
+UCD-SNMP-MIB::
+  memTotalSwap.0
+  memAvailSwap.0 
+  memTotalReal.0 
+  memAvailReal.0 
+  memTotalFree.0 
+
+
+・CPU系
+UCD-SNMP-MIB::
+  #Load Averate
+  #1分ごと平均
+  laLoad.1
+  
+  #5分ごと平均
+  laLoad.2
+  
+  #15分ごと平均
+  laLoad.3
