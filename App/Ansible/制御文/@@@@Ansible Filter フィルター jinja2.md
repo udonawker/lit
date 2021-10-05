@@ -34,3 +34,18 @@
     * コンピューター理論のアサーション
     * 人間が読み取り可能
     * 人間からバイト
+
+
+```
+- name set_fact
+  set_fact:
+    test_var: '/path/to/file'
+  
+- name debug basename
+  debug: var='{{ test_var | basename }}'
+  # file
+
+- name debug dirname
+  debug: var='{{ test_var | dirname }}'
+  # /path/to
+```
