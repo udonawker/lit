@@ -1,0 +1,1 @@
+## [Ansibleの操作対象ホスト上でファイルやディレクトリをコピーする：synchronizeモジュールの振る舞い](https://www.simpline.co.jp/recruit/blog/tech_ty/ansible%E3%81%AE%E6%93%8D%E4%BD%9C%E5%AF%BE%E8%B1%A1%E3%83%9B%E3%82%B9%E3%83%88%E4%B8%8A%E3%81%A7%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%84%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA/)
