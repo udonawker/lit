@@ -33,3 +33,8 @@ journalctl -u 'up*'
 ```
 journalctl -xeu サービス名
 ```
+
+カーネルのログ<br>
+```
+journalctl -k
+```
