@@ -1,4 +1,5 @@
 ## [journalctl 最低限覚えておくコマンド](https://qiita.com/aosho235/items/9fbff75e9cccf351345c)
+## [journalctl コマンドの使い方](https://qiita.com/hana_shin/items/96095571b7bf1b721255)
 
 最近のメッセージを表示（-e）<br>
 ```
