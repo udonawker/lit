@@ -1,0 +1,1 @@
+## [VSCode + Markdownでスライドや書籍も書いちゃおう！](https://qiita.com/loftkun/items/414ed6c7789b49ed0c5e?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=92cc89a1a4-Qiita_newsletter_494_12_24_2021&utm_medium=email&utm_term=0_e44feaa081-92cc89a1a4-33166269)
