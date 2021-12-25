@@ -1,0 +1,1 @@
+## [たぶんもう怖くないGit ~Git内部の仕組み~](https://qiita.com/marchin_1989/items/2ec01553e907f3a9e6bb?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=92cc89a1a4-Qiita_newsletter_494_12_24_2021&utm_medium=email&utm_term=0_e44feaa081-92cc89a1a4-33166269)
