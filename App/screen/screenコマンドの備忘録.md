@@ -22,17 +22,14 @@
 |セッション一覧|screen -ls|
 |セッションの削除|screen -r PID|
 |セッションのデタッチ|screen -d PID|
-|セッションのデタッチ(-dオプションでデタッチ出来ない場合)|ps x | grep pts | grep sshd|
-|kill -KILL {PID}|
-|# grepが走っていない擬似端末のPIDを切る|
+|セッションのデタッチ(-dオプションでデタッチ出来ない場合)|ps x &#124; grep pts &#124; grep sshd <br> kill -KILL {PID} <br> # grepが走っていない擬似端末のPIDを切る|
 |セッション名をつけてアッタチ|screen -S {セッション名}|
 |セッションアタッチ（既にアッタチ済みは無理）|screen -r PID|
 |セッション強制アタッチ|screen -d -r PID|
 |セッション重複アタッチ|screen -x PID|
 |直前のセッションアタッチ|screen -R|
 |死んだセッションの削除|screen -wipe|
-|セッション一括削除|screen -r -X quit|
-|rm -rf /var/run/screen/S-名前/*|
+|セッション一括削除|screen -r -X quit <br> rm -rf /var/run/screen/S-名前/*|
 |マニュアル|man screen|
 
 ## ウィンドウの操作
@@ -40,17 +37,14 @@
 |項目|値|
 |--- |---|
 |ウィンドウ一覧取得|ctrl+a w|
-|ウィンドウ作成|ctrl+a c|
-|ctrl+a ctrl+a|
+|ウィンドウ作成|ctrl+a c<br>ctrl+a ctrl+a|
 |ウィンドウ切り替え選択|ctrl+a "|
 |ウィンドウ切り替え|ctrl+a {画面番号}|
 |直前のウィンドウ切り替え|ctrl+a ctrl+a|
 |昇順にウィンドウの切り替え|ctrl+a space|
 |前方のウィンドウの切り替え|ctrl+a n|
 |後方のウィンドウの切り替え|ctrl+a p|
-|ウィンドウ終了|exit|
-|ctrl+D|
-|ctrl+a k|
+|ウィンドウ終了|exit<br>ctrl+D<br>ctrl+a k|
 |セッションデタッチ|ctrl+a ctrl+d|
 |ウィンドウ全終了|ctrl+a \|
 |セッションの停止|ctrl+z|
