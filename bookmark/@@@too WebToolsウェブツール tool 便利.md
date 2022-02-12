@@ -30,6 +30,9 @@
 ## [Json Editor Online](https://jsoneditoronline.org/)
 ## [JSONきれい ～JSON整形ツール～](https://tools.m-bsys.com/development_tooles/json-beautifier.php)
 
+# Gnu / Linuxオンライン端末
+## [ブラウザからコマンドを練習するためのGnu / Linuxオンライン端末](https://ubunlog.com/ja/gnulinux%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E7%AB%AF%E6%9C%AB%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/#JSLinux)
+
 # 競技プログラミング
 ## [LeetCode](https://leetcode.com/)
 ## [LeetCodeを使い倒す① ~入門編~](https://zenn.dev/ryokotmng/articles/36af0a82e8a4f5)
