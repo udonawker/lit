@@ -2,6 +2,8 @@
 
 ## [RHEL7/CentOS7のnmcliコマンドでTeamデバイス/Bondingデバイス/VLAN/ブリッジを組み合わせる方法](https://enakai00.hatenablog.com/entry/20150118/1421587442)
 
+## [CentOS7でNICのBondingを行うには](https://ytooyama.hatenadiary.jp/entry/2017/05/27/015158)
+
 ## [【CentOS 8】ネットワークボンディング設定について](https://nwengblog.com/centos-bonding/)
 
 ボンディングモードの確認<br>
