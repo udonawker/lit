@@ -4,3 +4,4 @@
 ## [3.3. NMCLI を使用する IP ネットワークの設定](https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/7/html/networking_guide/sec-configuring_ip_networking_with_nmcli)
 ## [RHEL7 Teamingによる冗長化](https://qiita.com/legitwhiz/items/be8ac173a78e8ba98fd1)
 ## [teamd.conf (5)](https://www.systutorials.com/docs/linux/man/5-teamd.conf/)
+## [ubuntu teamd.conf](https://www.systutorials.com/docs/linux/man/5-teamd.conf/)
