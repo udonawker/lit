@@ -1,0 +1,1 @@
+## [C#最新言語仕様を使った『宣言的プログラミング』でバグが少なく可読性の高い高品質なコードを書こう](https://qiita.com/jun1s/items/5f60bbb886626d897abc?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=20c882c6ae-Qiita_newsletter_505_03_09_2022&utm_medium=email&utm_term=0_e44feaa081-20c882c6ae-33166269)
