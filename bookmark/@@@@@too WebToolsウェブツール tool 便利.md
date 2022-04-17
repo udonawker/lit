@@ -1,6 +1,9 @@
 # ブラウザプログラム
 ## [paiza.io](https://paiza.io/ja/projects/new?language=bash)
 
+# 翻訳
+## [meta翻訳](https://meta-school.web.app/)
+
 # ツール
 ## [長い文字列作成ツール](https://tools.m-bsys.com/ex/long_text_maker.php)
 ## [文字列ジェネレーター](https://lazesoftware.com/tool/strgen/)
