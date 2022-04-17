@@ -1,0 +1,1 @@
+## [新しいメンバーがジョインしたときのAWSトレーニング/ハンズオン](https://qiita.com/shu85t/items/00564e29ff8a87e1dbae?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=1015ab82d7-Qiita_newsletter_510_04_13_2022&utm_medium=email&utm_term=0_e44feaa081-1015ab82d7-33166269)
