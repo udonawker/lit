@@ -1,0 +1,1 @@
+## [RHEL8 第5章 NFS 共有のエクスポート](https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/8/html/deploying_different_types_of_servers/exporting-nfs-shares_deploying-different-types-of-servers)
