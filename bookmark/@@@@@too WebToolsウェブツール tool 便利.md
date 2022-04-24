@@ -29,6 +29,7 @@
 ## [regexr](https://regexr.com/)
 ## [正規表現チェックツールまとめ](https://qiita.com/aqril_1132/items/c185c7ad84c129e5a2df)
 ## [regexper](https://regexper.com/)
+## [スライド型正規表現学習ゲーム【Regex Hunting】](https://www.regex-hunting.com/)
 
 # Json
 ## [Json Editor Online](https://jsoneditoronline.org/)
