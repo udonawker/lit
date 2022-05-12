@@ -15,6 +15,7 @@
 ## [Keisan 生活や実務に役立つ計算サイト](https://keisan.casio.jp/)
 ## [IPアドレス・サブネットマスク計算ツール](https://hogehoge.tk/ip/)
 ## [無料オンラインOCR - EzOCR](https://ezocr.net/)
+## [RAID容量計算電卓](https://note.cman.jp/server/raid/raidcal/)
 
 # C++
 ## [C++実行 wandbox](https://wandbox.org/)
