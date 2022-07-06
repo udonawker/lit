@@ -3,6 +3,7 @@
 
 # 翻訳
 ## [meta翻訳](https://meta-school.web.app/)
+## [doctransrator pdf翻訳](https://www.onlinedoctranslator.com/)
 ## [google翻訳のための英語論文(pdf文書)の文末整形ツール（javascript）](https://www.robotech-note.com/entry/2016/11/22/120020)
 
 # ツール
