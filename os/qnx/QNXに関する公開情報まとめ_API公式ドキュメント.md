@@ -7,3 +7,5 @@
 ## [QNX®ソフトウェア開発プラットフォームへのロードマップ](http://www.qnx.com/developers/docs/6.5.0SP1.update/index.html#./650_webhelp/momentics/bookset.html)
 
 ## [QNXNeutrinoマイクロカーネル POSXI_APIとの比較](http://www.qnx.com/developers/docs/6.5.0SP1.update/com.qnx.doc.neutrino_sys_arch/kernel.html)
+
+## [Appendix: POSIX Conformance POSIXとの比較 システムコール等](http://www.qnx.com/developers/docs/6.5.0SP1.update/com.qnx.doc.neutrino_prog/posix_conformance.html)
