@@ -49,3 +49,7 @@
 
 # RFC
 ## [RFC文書を自動翻訳したページ一覧](https://tex2e.github.io/rfc-translater/html/index.html)
+
+# チートシート
+## [VSCODEチートシート](https://qiita.com/saboriman/items/b7461f0ab5526845a0a5?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=be748d8cfd-Qiita_newsletter_532_09_14_2022&utm_medium=email&utm_term=0_e44feaa081-be748d8cfd-33166269)
+## [正規表現](http://yoshikawaweb.com/w/wp-content/uploads/regex-cheat-sheet.pdf)
