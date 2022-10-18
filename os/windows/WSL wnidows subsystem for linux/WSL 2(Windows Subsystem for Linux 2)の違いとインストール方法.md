@@ -2,3 +2,4 @@
 ## [WSL2(Windows Subsystem for Linux2)の概要と導入](https://qiita.com/na-777/items/7ead86b723c683346eba)
 ## [【連載】WSL2、Visual Studio Code、DockerでグッとよくなるWindows開発環境 〜 その2：WSL1＆2のしくみ 〜](https://tech-lab.sios.jp/archives/21045)
 ## [【Windows10+WSL2+Docker】ローカル環境を汚さずに使い捨ての開発環境を手に入れる](https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/)
+## [Windows 10におけるWSL2を用いたUbuntu環境の構築](https://www.aise.ics.saitama-u.ac.jp/~gotoh/UbuntuOnWSL2.html)
