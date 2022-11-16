@@ -1,0 +1,1 @@
+## [API設計まとめ](https://qiita.com/KNR109/items/d3b6aa8803c62238d990?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=30c7bd08e7-Qiita_newsletter_541_11_16_2022&utm_medium=email&utm_term=0_e44feaa081-30c7bd08e7-33166269)
