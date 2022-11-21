@@ -1,3 +1,6 @@
+# Webサービス全般
+## [窓の杜 Webサービス](https://forest.watch.impress.co.jp/category/program/prog/web/index.html)
+
 # ブラウザプログラム
 ## [paiza.io](https://paiza.io/ja/projects/new?language=bash)
 
@@ -35,6 +38,7 @@
 ## [正規表現チェックツールまとめ](https://qiita.com/aqril_1132/items/c185c7ad84c129e5a2df)
 ## [regexper](https://regexper.com/)
 ## [スライド型正規表現学習ゲーム【Regex Hunting】](https://www.regex-hunting.com/)
+## [ソースコード生成AI「AI Programmer」説明から正規表現を生成](https://aiprogrammer.hashlab.jp/)
 
 # Json
 ## [Json Editor Online](https://jsoneditoronline.org/)
