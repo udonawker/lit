@@ -1,0 +1,1 @@
+## [Docker Desktop の代わりになるかも。AWS が OSS として公開した「Finch」を使ってみた。](https://qiita.com/yoshii0110/items/692018729b5b2f41b9ac?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=075c9a54c3-Qiita_newsletter_545_12_14_2022&utm_medium=email&utm_term=0_e44feaa081-075c9a54c3-33166269)
