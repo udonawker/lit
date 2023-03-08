@@ -1,0 +1,1 @@
+## [ChatGPTやAI関連で面白かった・気になった事例まとめ](https://qiita.com/nyanko5656/items/147e2f12dcb75e65b1e4?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=b551579424-Qiita_newsletter_556_03_08_2023&utm_medium=email&utm_term=0_e44feaa081-b551579424-33166269)
