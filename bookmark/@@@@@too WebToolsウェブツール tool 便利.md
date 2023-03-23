@@ -58,5 +58,8 @@
 ## [VSCODEチートシート](https://qiita.com/saboriman/items/b7461f0ab5526845a0a5?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=be748d8cfd-Qiita_newsletter_532_09_14_2022&utm_medium=email&utm_term=0_e44feaa081-be748d8cfd-33166269)
 ## [正規表現](http://yoshikawaweb.com/w/wp-content/uploads/regex-cheat-sheet.pdf)
 
+# 活用サイト
+## [エンジニアにオススメの Figma 活用](https://speakerdeck.com/kazuyaseki/enzinianiosusumeno-figma-huo-yong)
+
 # その他
 ## [ブミ助Excel(工程管理/ガントチャート/スケジュール)](https://www.soft222.com/%E3%83%96%E3%83%9F%E5%8A%A9excel/)
