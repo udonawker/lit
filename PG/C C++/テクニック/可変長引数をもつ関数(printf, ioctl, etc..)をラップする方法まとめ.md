@@ -64,3 +64,8 @@ PRINTF : 20
 PRINTF_GCC : 20
 PRINTF_GCC : format only
 ```
+
+[本の虫: Variadic Templatesの解説](http://cpplover.blogspot.jp/2010/03/variadic-templates.html)<br>
+[c++ - 可変長引数関数のラッピング方法 - スタック・オーバーフロー](http://ja.stackoverflow.com/questions/11487/%E5%8F%AF%E5%A4%89%E9%95%B7%E5%BC%95%E6%95%B0%E9%96%A2%E6%95%B0%E3%81%AE%E3%83%A9%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E6%96%B9%E6%B3%95)<br>
+[C言語 可変引数マクロの作り方 - Qiita](http://qiita.com/saltheads/items/e1b0ab54d3d6029c9593)<br>
+[C／C++での可変引数（stdarg他）](http://www.02.246.ne.jp/~torutk/cxx/tips/varargs.html)<br>
