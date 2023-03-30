@@ -1,4 +1,5 @@
 # [【Linux】ダミーファイルを任意のサイズで作成する](https://tsuredurediary.com/archives/linux-dummy-file.html)
+# [Linuxでダミーファイルを作る4つの方法](https://www.410gone.click/blog/dummyfiles/)
 
 # Linuxでダミーファイル作成
 
