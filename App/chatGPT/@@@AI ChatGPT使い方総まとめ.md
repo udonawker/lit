@@ -3,3 +3,5 @@
 ## [ChatGPTに要件定義をお願いしたらハンパなかった](https://dev.classmethod.jp/articles/gpt-requirement-definition/) 2023/03/23<br>
 
 ## [ChatGPTの使い方のコツをまとめる](https://www.bioerrorlog.work/entry/chatgpt-tips) 2023/03/27<br>
+
+## [ChatGPT plugins (OpenAI)](https://openai.com/blog/chatgpt-plugins)
