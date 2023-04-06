@@ -1,0 +1,1 @@
+## [ChatGPTプロンプトエンジニアリングのコツ8箇条～OpenAI公式のベストプラクティスから学ぶ～](https://qiita.com/iwaken71/items/45b3cf0019c381a59f6d?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=07ff5c737b-Qiita_newsletter_560_04_05_2023&utm_medium=email&utm_term=0_e44feaa081-07ff5c737b-33166269)
