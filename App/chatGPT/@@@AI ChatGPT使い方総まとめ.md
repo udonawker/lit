@@ -5,3 +5,9 @@
 ## [ChatGPTの使い方のコツをまとめる](https://www.bioerrorlog.work/entry/chatgpt-tips) 2023/03/27<br>
 
 ## [ChatGPT plugins (OpenAI)](https://openai.com/blog/chatgpt-plugins)
+
+## [Prompt Engineering Guide プロンプトエンジニアリングガイド](https://www.promptingguide.ai/jp)
+
+## 20230418 [ChatGPTでstep by stepもロールプレイもやめたらプロダクト開発で使える精度になったよ](https://note.com/mryy/n/nd0aff5c9fc4f)
+
+## 20230418 [議事録作成の手間を解消？音声ファイルをChatGPTとWhisperで自動要約](https://recruit.gmo.jp/engineer/jisedai/blog/eliminating-meeting-minutes-creation-hassles-automatic-summary-of-audio-files-using-chatgpt-and-whisper/)
