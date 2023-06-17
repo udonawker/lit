@@ -61,5 +61,8 @@
 # 活用サイト
 ## [エンジニアにオススメの Figma 活用](https://speakerdeck.com/kazuyaseki/enzinianiosusumeno-figma-huo-yong)
 
+# python
+## [「Python」学習環境「PyWeb」](https://pyweb.ayax.jp/PyWeb.html)
+
 # その他
 ## [ブミ助Excel(工程管理/ガントチャート/スケジュール)](https://www.soft222.com/%E3%83%96%E3%83%9F%E5%8A%A9excel/)
