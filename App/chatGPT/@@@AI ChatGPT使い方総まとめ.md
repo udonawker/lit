@@ -11,3 +11,5 @@
 ## 20230418 [ChatGPTでstep by stepもロールプレイもやめたらプロダクト開発で使える精度になったよ](https://note.com/mryy/n/nd0aff5c9fc4f)
 
 ## 20230418 [議事録作成の手間を解消？音声ファイルをChatGPTとWhisperで自動要約](https://recruit.gmo.jp/engineer/jisedai/blog/eliminating-meeting-minutes-creation-hassles-automatic-summary-of-audio-files-using-chatgpt-and-whisper/)
+
+## 20230728 [エンジニアのためのChatGPTプラグイン3選+1](https://nowokay.hatenablog.com/entry/2023/05/15/090555)
