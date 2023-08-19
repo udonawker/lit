@@ -65,4 +65,5 @@
 ## [「Python」学習環境「PyWeb」](https://pyweb.ayax.jp/PyWeb.html)
 
 # その他
+## 20230819 [Qiita CLI](https://github.com/increments/qiita-cli)
 ## [ブミ助Excel(工程管理/ガントチャート/スケジュール)](https://www.soft222.com/%E3%83%96%E3%83%9F%E5%8A%A9excel/)
