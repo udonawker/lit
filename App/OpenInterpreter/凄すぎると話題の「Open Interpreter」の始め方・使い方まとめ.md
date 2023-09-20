@@ -1,0 +1,1 @@
+## 20230920 [凄すぎると話題の「Open Interpreter」の始め方・使い方まとめ](https://qiita.com/ot12/items/d2672144b914cb6f252f?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=c801b216cc-Qiita_newsletter_584_09_20&utm_medium=email&utm_term=0_e44feaa081-c801b216cc-33166269)
