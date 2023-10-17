@@ -22,6 +22,7 @@
 ## [IPアドレス・サブネットマスク計算ツール](https://hogehoge.tk/ip/)
 ## [無料オンラインOCR - EzOCR](https://ezocr.net/)
 ## [RAID容量計算電卓](https://note.cman.jp/server/raid/raidcal/)
+## [ソースコードを静的解析するオープンソースのSourcetrailで効率よく解析](https://tracpath.com/works/development/sourcetrail/)
 
 # C++
 ## [C++実行 wandbox](https://wandbox.org/)
