@@ -29,3 +29,11 @@ find . -type f -name "*test*" -or -name "*dev*"
 ```
 find . -type d -name "*test*" -or -name "*dev*"
 ```
+
+---
+---
+
+### ディレクトリのみ再帰コピー
+```
+$ find /path/to/srcdir -type d | cpio -pdm /path/to/destdir
+```
