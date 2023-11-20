@@ -14,3 +14,4 @@
 
 ## 20230728 [エンジニアのためのChatGPTプラグイン3選+1](https://nowokay.hatenablog.com/entry/2023/05/15/090555)
 ## 20230728 [Jupyter AIが出た！試した！！すごい！！！](https://qiita.com/moritalous/items/a270d5932ebee18d0ba8)
+## 20231120 [無料・無制限で「GPT-4」を使い放題！ 生成AIチャットサービス「リートン」（wrtn）](https://forest.watch.impress.co.jp/docs/review/1548064.html)
