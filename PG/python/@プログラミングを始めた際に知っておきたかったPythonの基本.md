@@ -1,0 +1,1 @@
+## 20231129 [プログラミングを始めた際に知っておきたかったPythonの基本](https://qiita.com/katsuki_ono/items/2dd1ff68dd4e740eb2ab?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=5bcbdb4745-Qiita_newsletter_594_11_29&utm_medium=email&utm_term=0_e44feaa081-5bcbdb4745-33166269)
