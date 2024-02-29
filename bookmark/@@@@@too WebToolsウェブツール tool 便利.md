@@ -3,6 +3,7 @@
 
 # ブラウザプログラム
 ## [paiza.io](https://paiza.io/ja/projects/new?language=bash)
+## 20240229 [exercism.ioでプログラミングを勉強する](https://qiita.com/turmericN/items/e4983edee88efce53a58)
 
 # 翻訳
 ## [meta翻訳](https://meta-school.web.app/)
@@ -51,7 +52,7 @@
 
 # 競技プログラミング
 ## [LeetCode](https://leetcode.com/)
-## [LeetCodeを使い倒す① ~入門編~](https://zenn.dev/ryokotmng/articles/36af0a82e8a4f5)
+## [LeetCodeを使い倒す① 入門編](https://zenn.dev/ryokotmng/articles/36af0a82e8a4f5)
 
 # RFC
 ## [RFC文書を自動翻訳したページ一覧](https://tex2e.github.io/rfc-translater/html/index.html)
@@ -65,6 +66,9 @@
 
 # python
 ## [「Python」学習環境「PyWeb」](https://pyweb.ayax.jp/PyWeb.html)
+
+# フリーソフト
+## 20240229 [日経XTech Linuxフリーソフト100選 Linuxのゲームでプログラミングセンスを磨く、ファイル操作も楽々](https://xtech.nikkei.com/atcl/nxt/column/18/02713/011200004/)
 
 # その他
 ## 20230819 [Qiita CLI](https://github.com/increments/qiita-cli)
