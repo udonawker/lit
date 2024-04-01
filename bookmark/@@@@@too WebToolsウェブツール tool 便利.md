@@ -70,6 +70,9 @@
 # フリーソフト
 ## 20240229 [日経XTech Linuxフリーソフト100選 Linuxのゲームでプログラミングセンスを磨く、ファイル操作も楽々](https://xtech.nikkei.com/atcl/nxt/column/18/02713/011200004/)
 
+# フリー素材
+## 20240401 [甘茶の音楽工房 フリー音楽素材](https://amachamusic.chagasi.com/index.html)
+
 # その他
 ## 20230819 [Qiita CLI](https://github.com/increments/qiita-cli)
 ## [ブミ助Excel(工程管理/ガントチャート/スケジュール)](https://www.soft222.com/%E3%83%96%E3%83%9F%E5%8A%A9excel/)
