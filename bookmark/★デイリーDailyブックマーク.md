@@ -3,3 +3,4 @@
 ### 20240319 [たった２つのステップを意識するだけで書けない単体テストがほぼなくなる](https://qiita.com/_mi/items/ce66aa922ee46b00ab2d)
 ### 20240401 [超簡単にChromeの拡張機能を作ってみる【誰でもできるよ】](https://qiita.com/kim_t0814/items/084bb8c042defc1e232d)
 ### 20240401 [Linuxでトラブルが発生したときの診断に役立つツール一覧、「事前のインストールを強く推奨」とリストの作者は語る](https://gigazine.net/news/20240327-linux-crisis-tools/)
+### 20240403 [Qiita TCP/IP構造と通信](https://qiita.com/lz910201/items/3441ef3bf3a19cdbce81?utm_source=Qiita%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9&utm_campaign=a929ca8d64-Qiita_newsletter_612_04_03&utm_medium=email&utm_term=0_e44feaa081-a929ca8d64-33166269)
