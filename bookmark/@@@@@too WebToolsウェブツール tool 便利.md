@@ -25,6 +25,7 @@
 ## [RAID容量計算電卓](https://note.cman.jp/server/raid/raidcal/)
 ## [ソースコードを静的解析するオープンソースのSourcetrailで効率よく解析](https://tracpath.com/works/development/sourcetrail/)
 ## 2023/12/20 [Power Automate Desktopで表形式ではないWebページの情報をスクレイピング](https://forest.watch.impress.co.jp/docs/serial/offitech/1555131.html)
+## 2024/06/27 [金融電卓](https://www.wealthadvisor.co.jp/tools/simulation/fc2_1.html)
 
 # C++
 ## [C++実行 wandbox](https://wandbox.org/)
