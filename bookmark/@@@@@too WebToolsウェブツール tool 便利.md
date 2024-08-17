@@ -74,6 +74,10 @@
 # フリー素材
 ## 20240401 [甘茶の音楽工房 フリー音楽素材](https://amachamusic.chagasi.com/index.html)
 
+# 勉強
+## 20240818 [RedHat さまざまな種類のサーバーのデプロイメント](https://docs.redhat.com/ja/documentation/red_hat_enterprise_linux/8/html/deploying_different_types_of_servers/index)
+Apache HTTP Webサーバ NGINX Samba DIND_DNS Squidキャッシングプロキシサーバ データベースサーバ Postfix_SMTPサーバ Devecot_IMAP_POP3サーバ 印刷設定<br>
+
 # その他
 ## 20230819 [Qiita CLI](https://github.com/increments/qiita-cli)
 ## [ブミ助Excel(工程管理/ガントチャート/スケジュール)](https://www.soft222.com/%E3%83%96%E3%83%9F%E5%8A%A9excel/)
