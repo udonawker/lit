@@ -77,6 +77,7 @@
 # 勉強
 ## 20240818 [RedHat さまざまな種類のサーバーのデプロイメント](https://docs.redhat.com/ja/documentation/red_hat_enterprise_linux/8/html/deploying_different_types_of_servers/index)
 Apache HTTP Webサーバ NGINX Samba DIND_DNS Squidキャッシングプロキシサーバ データベースサーバ Postfix_SMTPサーバ Devecot_IMAP_POP3サーバ 印刷設定<br>
+## 20240818 [Red Hat Enterprise Linux 8](https://docs.redhat.com/ja/documentation/red_hat_enterprise_linux/8/)
 
 # その他
 ## 20230819 [Qiita CLI](https://github.com/increments/qiita-cli)
