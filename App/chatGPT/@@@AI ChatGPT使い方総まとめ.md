@@ -15,3 +15,6 @@
 ## 20230728 [エンジニアのためのChatGPTプラグイン3選+1](https://nowokay.hatenablog.com/entry/2023/05/15/090555)
 ## 20230728 [Jupyter AIが出た！試した！！すごい！！！](https://qiita.com/moritalous/items/a270d5932ebee18d0ba8)
 ## 20231120 [無料・無制限で「GPT-4」を使い放題！ 生成AIチャットサービス「リートン」（wrtn）](https://forest.watch.impress.co.jp/docs/review/1548064.html)
+
+# その他
+## 20240819 [GIGA ZINE Metaの大規模言語モデル「Llama 3.1」をファインチューニングしたAIモデル「Hermes 3」がリリースされる](https://gigazine.net/news/20240819-hermes-3-llama-3.1/)
