@@ -72,6 +72,29 @@ grepする時間を指定して出力がなければエラー終了<br>
 $ timeout 5 tailf hoge.txt | grep -q --line-buffered "hoge"
 ```
 
+<br>
+
+### ファイルを検索して、各ファイルに処理を実行
+検索したファイルに、sedで置換処理をかける例です。最初に find コマンドでファイルを絞り込み、その後に for-in でループして処理します。<br>
+
+```
+~$ files=$(find . -name '*.java'); for file in $files; do sed -i '.bak' -e 's/foo/bar/g' $file; done
+```
+grepを使い、さらに絞り込むこともできます。<br>
+
+```
+~$ files=$(find . -name '*.java' | xargs grep 'foo'); for file in $files; do sed -i '.bak' -e 's/foo/bar/g' $file; done
+```
+特定のファイルを全部消すには、以下のようにします。<br>
+```
+~$ files=$(find . -name '*.java' | xargs grep 'foo'); for file in $files; do rm $file; done
+```
+あるディレクトリにあるファイル名の中の「スペース」を、まとめてアンダースコアに変換する例は、以下です。（ファイル群があるディレクトリに移動してから実行してください）。<br>
+```
+for file in * ; do echo $file ; mv "${file}" `echo $file | sed -e 's/ /_/g'` ; done
+```
+<br>
+
 ## ●テキスト
 ヘッダーとフッターを除外して表示<br>
 ```
@@ -197,4 +220,24 @@ $ head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo ''
 表示整形 column<br>
 ```
 $ mount | column -t
+```
+
+### 定期的に処理を実行
+以下の例は、1秒間隔で5回、dateコマンドを実行します。<br>
+```
+~$ i=1; while [ $i -le "5" ]; do date; sleep 1; i=$(($i+1)); done
+2012年  6月 30日 土曜日 21:17:21 JST
+2012年  6月 30日 土曜日 21:17:22 JST
+2012年  6月 30日 土曜日 21:17:23 JST
+2012年  6月 30日 土曜日 21:17:24 JST
+2012年  6月 30日 土曜日 21:17:25 JST
+```
+最初に、ループ用の変数iを初期化しています。'do'の後から、whileループ内で実行するコマンドを書きます。今回は、「dateコマンドの実行」「sleepコマンドの実行」「変数iのインクリメント」の3つを実行しています。<br>
+
+無限ループ<br>
+```
+#while true; do date; sleep 1; done
+2023年 12月 20日 水曜日22:44:00 JST
+2023年 12月 20日 水曜日22:44:01 JST
+2023年 12月 20日 水曜日22:44:02 JST
 ```
