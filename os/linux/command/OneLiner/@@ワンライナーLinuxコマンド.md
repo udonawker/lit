@@ -222,6 +222,8 @@ $ head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo ''
 $ mount | column -t
 ```
 
+## ●繰り返し処理
+
 ### 定期的に処理を実行
 以下の例は、1秒間隔で5回、dateコマンドを実行します。<br>
 ```
@@ -240,4 +242,83 @@ $ mount | column -t
 2023年 12月 20日 水曜日22:44:00 JST
 2023年 12月 20日 水曜日22:44:01 JST
 2023年 12月 20日 水曜日22:44:02 JST
+```
+
+#### {数字..数字}による一括実行
+{01..10}とすることで、01~10までのループ文として実行<br>
+```
+~/work # echo {01..10}
+01 02 03 04 05 06 07 08 09 10
+```
+
+#### for文による一括実行
+{01..10}をfor文の変数（ここでは変数i）に入れることでループ文として実行<br>
+単純にコマンドを指定回数実行することも可能<br>
+```
+~/work # for i in {01..10} ; do echo $i; done
+01
+02
+03
+...
+```
+
+#### awkコマンド結果をfor文に入れた一括実行
+awkコマンドにより、出力結果から特定の列を入力とすることでループ文として実行<br>
+```
+# for i in `[for文の入力としたいコマンド] | [awkコマンド]` ; do echo "$i"; done
+```
+Number 01~Number 10が書かれたファイルを用意し、数字列に記載された名前のディレクトリ（01等）を作成<br>
+```
+~/work # for i in {01..10} ; do echo "Number $i" >> file_awk_test ; done
+~/work # cat file_awk_test
+Number 01
+Number 02
+Number 03
+...
+```
+```
+~/work # for i in `cat file_awk_test | awk '{print $2}'` ; do echo "$i"; done
+01
+02
+03
+...
+```
+```
+~/work # for i in `cat file_awk_test | awk '{print $2}'` ; do mkdir "$i"; done
+~/work # ll
+total 0
+drwxr-xr-x 1 root root 4096 Oct  5 13:40 01
+drwxr-xr-x 1 root root 4096 Oct  5 13:40 02
+drwxr-xr-x 1 root root 4096 Oct  5 13:40 03
+...
+```
+
+#### xargsコマンドによる一括実行
+標準入力からリストを読み込み、それをコマンドの引数として実行<br>
+```
+~/work # mkdir {01..10}
+~/work # ll
+total 0
+drwxr-xr-x 1 root root 4096 Oct  5 12:51 01
+drwxr-xr-x 1 root root 4096 Oct  5 12:51 02
+drwxr-xr-x 1 root root 4096 Oct  5 12:51 03
+...
+```
+
+```
+~/work # find /root/work -mindepth 1 -type d -print0 | xargs -0 -I% echo %
+/root/work/01
+/root/work/02
+/root/work/03
+...
+```
+
+```
+~/work # find /root/work -mindepth 1 -type d -print0 | xargs -0 -I% mv % %_2020-10-05
+~/work # ll
+total 0
+drwxr-xr-x 1 root root 4096 Oct  5 12:51 01_2020-10-05
+drwxr-xr-x 1 root root 4096 Oct  5 12:51 02_2020-10-05
+drwxr-xr-x 1 root root 4096 Oct  5 12:51 03_2020-10-05
+...
 ```
