@@ -55,6 +55,10 @@
 ## [LeetCode](https://leetcode.com/)
 ## [LeetCodeを使い倒す① 入門編](https://zenn.dev/ryokotmng/articles/36af0a82e8a4f5)
 
+# デバッグツール
+## 20241108 [EchoAPI](https://www.echoapi.jp/)
+## 20241108 Qiita[EchoAPI for VSCode: REST APIの開発をシンプルにする](https://qiita.com/patata/items/73ddfb37c031a1d443a6)
+
 # RFC
 ## [RFC文書を自動翻訳したページ一覧](https://tex2e.github.io/rfc-translater/html/index.html)
 
