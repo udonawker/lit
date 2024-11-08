@@ -58,6 +58,7 @@
 # デバッグツール
 ## 20241108 [EchoAPI](https://www.echoapi.jp/)
 ## 20241108 Qiita[EchoAPI for VSCode: REST APIの開発をシンプルにする](https://qiita.com/patata/items/73ddfb37c031a1d443a6)
+## 20241108 Qiita[EchoAPI: Postmanの軽量な代替ツール](https://qiita.com/mir042302/items/7605f877f28b6567caf9)
 
 # RFC
 ## [RFC文書を自動翻訳したページ一覧](https://tex2e.github.io/rfc-translater/html/index.html)
