@@ -29,3 +29,7 @@ int main(void){
 target_data=11223344
 data_result=44332211
 */
+/*
+C言語でバイトオーダー変換
+https://qiita.com/stanaka2/items/8b5da26302ec1eb2930f
+*/
