@@ -27,6 +27,8 @@
 ## 2023/12/20 [Power Automate Desktopで表形式ではないWebページの情報をスクレイピング](https://forest.watch.impress.co.jp/docs/serial/offitech/1555131.html)
 ## 2024/06/27 [金融電卓](https://www.wealthadvisor.co.jp/tools/simulation/fc2_1.html)
 ## 2024/11/13 [bit演算お試し 式と演算子(javascript)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators)
+## 20250110[コマンドラインでの作業効率が上がる！CLIツール20選](https://qiita.com/midiambear/items/2b0f17b6859e88b4f7ca)
+
 # C++
 ## [C++実行 wandbox](https://wandbox.org/)
 ## [君はまだWandboxの真の実力を知らない～C++er目線で～](https://qiita.com/yumetodo/items/ef24708900b0535aa28c)
