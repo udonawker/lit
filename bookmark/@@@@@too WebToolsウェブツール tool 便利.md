@@ -28,6 +28,7 @@
 ## 2024/06/27 [金融電卓](https://www.wealthadvisor.co.jp/tools/simulation/fc2_1.html)
 ## 2024/11/13 [bit演算お試し 式と演算子(javascript)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators)
 ## 20250110[コマンドラインでの作業効率が上がる！CLIツール20選](https://qiita.com/midiambear/items/2b0f17b6859e88b4f7ca)
+## 20250220 [keisan 生活や実務に役立つ高精度計算サイト 割り算の商と余り](https://keisan.casio.jp/exec/system/1510710795)
 
 # C++
 ## [C++実行 wandbox](https://wandbox.org/)
