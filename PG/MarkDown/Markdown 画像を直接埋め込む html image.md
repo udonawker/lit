@@ -3,6 +3,8 @@
 1. [画像をbase64エンコードするツール](https://x.allabout.co.jp/rd/ur_301.php?v=r&p=m&aapage=https%3A%2F%2Fallabout.co.jp%2Fgm%2Fgc%2F23977%2F2%2F&gs=1053&type=cc&id=23977&e_url=https%3A%2F%2Flab.syncer.jp%2FTool%2FBase64-encode%2F)で画像をBase64化
 2. HTMLソース内に画像を埋め込む書式：img要素のsrc属性値に記述
 <br><br>
+[htmlタグ作成付き画像Base64 エンコード](https://web-toolbox.dev/tools/base64-encode-image)<br>
+<br>
 
 ■画像ファイルを読み込む場合の記述：<br>
 src属性の値には、画像ファイルのURLを記述します。<br>
