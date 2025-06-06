@@ -88,6 +88,9 @@
 Apache HTTP Webサーバ NGINX Samba DIND_DNS Squidキャッシングプロキシサーバ データベースサーバ Postfix_SMTPサーバ Devecot_IMAP_POP3サーバ 印刷設定<br>
 ## 20240818 [Red Hat Enterprise Linux 8](https://docs.redhat.com/ja/documentation/red_hat_enterprise_linux/8/)
 
+# AI ChatGPT
+## 20250606 [「Cursor」で「素の議事録」を「要件定義書」に高速でまとめなおした話](https://qiita.com/WdknWdkn/items/79980f4201c8cf9145bf)
+
 # その他
 ## 20230819 [Qiita CLI](https://github.com/increments/qiita-cli)
 ## [ブミ助Excel(工程管理/ガントチャート/スケジュール)](https://www.soft222.com/%E3%83%96%E3%83%9F%E5%8A%A9excel/)
