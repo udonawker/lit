@@ -1,3 +1,6 @@
+# 技術全般
+## 20250903 [gihyo.jp 技術評論社](https://gihyo.jp/)
+
 # Webサービス全般
 ## [窓の杜 Webサービス](https://forest.watch.impress.co.jp/category/program/prog/web/index.html)
 
