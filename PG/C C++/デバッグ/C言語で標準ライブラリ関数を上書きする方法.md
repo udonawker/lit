@@ -1,0 +1,1 @@
+## 20260306 [C言語で標準ライブラリ関数を上書きする方法](https://hiroyukichishiro.com/how-to-override-standard-library-functions-in-c-language/#C%E8%A8%80%E8%AA%9E%E3%81%A7%E6%A8%99%E6%BA%96%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E9%96%A2%E6%95%B0%E3%82%92%E4%B8%8A%E6%9B%B8%E3%81%8D%E3%81%99%E3%82%8B%E4%B8%BB%E3%81%AA%E7%94%A8%E9%80%94)
