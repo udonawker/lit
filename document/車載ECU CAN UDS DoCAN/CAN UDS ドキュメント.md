@@ -1,0 +1,5 @@
+## 20260427 [はじめての UDS：CAN 診断通信「リクエスト - 組み込み道](https://ku3ko3.net/747/)
+## 20260427 [pythonでcanログを変換（BLF形式、ASCII形式→エクセル）](https://telecom-engineer.blog/blog/2023/06/25/python-canlog-excel/)
+## 20260427 [pythonでcanログを変換（BLF形式⇔ASCII形式）](https://telecom-engineer.blog/blog/2023/06/24/python-canlog/)
+## 20260427 [UDSを理解しよう ~ISO 14229の概要~](https://telecom-engineer.blog/blog/2023/06/06/iso-14229/)
+## 20260427 [pythonでDoIP　~③DoIPプロトコル通信フォーマット概要~](https://telecom-engineer.blog/blog/category/python/python-doip/)
