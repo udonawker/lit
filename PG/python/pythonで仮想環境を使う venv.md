@@ -10,3 +10,11 @@ pip install パッケージ名
 ```
 
 ## 20260708 [venvで手軽にPythonの仮想環境を構築しよう](https://qiita.com/shun_sakamoto/items/7944d0ac4d30edf91fde)
+仮想環境のアクティベート<br>
+```
+. [仮想環境名]/bin/activate
+```
+仮想環境のディアクティベート<br>
+```
+deactivate
+```
